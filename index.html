@@ -1,1390 +1,806 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Gift Card Rewards Community</title>
+  <meta name="color-scheme" content="dark">
+  <title>USA Community Hub - Official Regional & Interest Networks</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              whatsapp: '#25D366',
+              whatsappDark: '#128C7E',
+              discord: '#5865F2',
+              discordDark: '#313338',
+              meetup: '#F64060',
+              messenger: '#0084FF',
+              groupme: '#00AFF0',
+              telegram: '#229ED9',
+              darkBg: '#0B0F17',
+              cardBg: '#161F30',
+              cardHover: '#1E293B',
+              borderDark: '#26334D',
+            }
+          },
+          boxShadow: {
+            'glow-green': '0 0 25px -5px rgba(37, 211, 102, 0.35)',
+            'glow-blurple': '0 0 25px -5px rgba(88, 101, 242, 0.35)',
+            'glow-red': '0 0 25px -5px rgba(246, 64, 96, 0.35)',
+            'glow-blue': '0 0 25px -5px rgba(0, 132, 255, 0.35)',
+            'glow-cyan': '0 0 25px -5px rgba(0, 175, 240, 0.35)',
+            'glow-telegram': '0 0 25px -5px rgba(34, 158, 217, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    :root {
-      /* Amazon-inspired Warm Trust Color Palette */
-      --amazon-navy: #131921;
-      --amazon-light-navy: #232F3E;
-      --amazon-orange: #FF9900;
-      --amazon-orange-hover: #E88B00;
-      --amazon-yellow: #FEBD69;
-      --amazon-link: #007185;
-      --amazon-link-hover: #C7511F;
-      --amazon-green: #007600;
-      
-      --bg-page: #EAEDED;
-      --bg-surface: #FFFFFF;
-      --border-color: #D5D9D9;
-      --border-dark: #ADB1B1;
-      
-      --text-main: #0F1111;
-      --text-soft: #565959;
-      
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 12px;
-      
-      --font-main: 'Open Sans', Arial, sans-serif;
+    html { background-color: #0B0F17 !important; }
+    body { background-color: #0B0F17 !important; }
+
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    
-    body {
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      font-family: var(--font-main);
-      min-height: 100vh;
-      line-height: 1.5;
-      padding-bottom: 40px;
+    ::-webkit-scrollbar-track {
+      background: #0B0F17;
     }
-
-    /* Amazon Nav Bar */
-    header.nav-header {
-      background-color: var(--amazon-navy);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand-identity {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: white;
-    }
-
-    .brand-logo-badge {
-      background: var(--amazon-orange);
-      color: var(--amazon-navy);
-      font-weight: 800;
-      font-size: 1rem;
-      padding: 4px 8px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-    }
-
-    .brand-title {
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: white;
-      letter-spacing: -0.02em;
-    }
-
-    .brand-title span { color: var(--amazon-orange); }
-
-    .header-badges {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .online-counter-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 4px 12px;
+    ::-webkit-scrollbar-thumb {
+      background: #26334D;
       border-radius: 99px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: #FFF;
     }
-    
-    .online-counter-badge .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #00D66C;
-      animation: pulse 1.6s infinite;
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3B82F6;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+    /* Ambient Background Glow */
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 24px 24px;
     }
 
-    /* Navigation Links */
-    nav.nav-links {
-      display: flex;
-      gap: 4px;
-      align-items: center;
+    /* Glassmorphism Effect */
+    .glass-card {
+      background: rgba(22, 31, 48, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .nav-btn {
-      background: transparent;
-      border: none;
-      color: #DDD;
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-      transition: background 0.15s ease, color 0.15s ease;
+    /* Pulse Animations */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 0.4; }
+      100% { transform: scale(0.95); opacity: 0.8; }
     }
-
-    .nav-btn:hover { color: white; background: rgba(255, 255, 255, 0.1); }
-    .nav-btn.active { color: white; background: var(--amazon-light-navy); border-bottom: 2px solid var(--amazon-orange); }
-
-    .mobile-menu-btn {
-      display: none;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      font-size: 1.25rem;
-      padding: 6px 12px;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-    }
-
-    /* Sub-header Navigation Bar */
-    .subnav-bar {
-      background: var(--amazon-light-navy);
-      color: white;
-      padding: 8px 16px;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      overflow-x: auto;
-    }
-
-    .subnav-tag {
-      color: var(--amazon-yellow);
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* Page Main Container */
-    main {
-      max-width: 1280px;
-      margin: 20px auto 0;
-      padding: 0 16px;
-    }
-
-    .view-panel { display: none; }
-    .view-panel.active { display: block; }
-
-    /* Hero Section */
-    .hero-container {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
-    }
-
-    .hero-headline {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 8px;
-    }
-
-    .hero-subtext {
-      font-size: 0.95rem;
-      color: var(--text-soft);
-      margin-bottom: 16px;
-    }
-
-    .trust-indicators {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .trust-pill {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--amazon-green);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Card Grid Section */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 16px;
-    }
-
-    .store-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .store-card:hover {
-      border-color: var(--border-dark);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    /* Fixed Aspect-Ratio Gift Card Container */
-    .card-image-wrapper {
-      width: 100%;
-      height: 180px;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      margin-bottom: 14px;
-      background-color: #F0F2F2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border-color);
-      padding: 8px;
-    }
-
-    .card-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform 0.25s ease;
-    }
-
-    .store-card:hover .card-image-wrapper img {
-      transform: scale(1.04);
-    }
-
-    .card-info-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 4px;
-    }
-
-    .card-delivery {
-      font-size: 0.78rem;
-      color: var(--amazon-green);
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .card-ratings {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.8rem;
-      color: var(--amazon-link);
-      margin-bottom: 14px;
-    }
-
-    .stars { color: #C45500; font-weight: 700; }
-
-    /* Amazon Style Button */
-    .btn-claim {
-      width: 100%;
-      background: #FFD814;
-      border: 1px solid #FCD200;
-      border-radius: 20px;
-      padding: 9px 16px;
-      font-weight: 600;
-      font-size: 0.875rem;
-      color: var(--text-main);
-      cursor: pointer;
-      text-align: center;
-      transition: background 0.15s ease;
-      box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
-    }
-
-    .btn-claim:hover {
-      background: #F7CA00;
-      border-color: #F2C200;
-    }
-
-    /* Content Layout Pages */
-    .content-page {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 24px;
-    }
-
-    .page-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 8px;
-    }
-
-    .workflow-grid { display: grid; gap: 12px; margin-top: 16px; }
-    .workflow-card {
-      background: #F7FAFA;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 14px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-    .workflow-num {
-      background: var(--amazon-navy);
-      color: white;
-      font-weight: 700;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
-
-    /* Accordion FAQ */
-    .accordion-item {
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      margin-bottom: 8px;
-    }
-    .accordion-trigger {
-      width: 100%;
-      text-align: left;
-      background: #F7FAFA;
-      border: none;
-      padding: 12px 16px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--text-main);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .accordion-body {
-      padding: 12px 16px;
-      font-size: 0.875rem;
-      color: var(--text-soft);
-      border-top: 1px solid var(--border-color);
-      display: none;
-    }
-    .accordion-item.active .accordion-body { display: block; }
-
-    /* Hall of Fame Table */
-    .table-wrapper { overflow-x: auto; margin-top: 12px; }
-    table.data-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; }
-    table.data-table th {
-      background: #F0F2F2;
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--border-color);
-      font-weight: 700;
-    }
-    table.data-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); }
-
-    /* Modal Overlay & Form */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease;
-    }
-
-    .modal-backdrop.active { opacity: 1; pointer-events: auto; }
-
-    .modal-window {
-      background: var(--bg-surface);
-      border-radius: var(--radius-md);
-      width: 100%;
-      max-width: 460px;
-      padding: 24px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      position: relative;
-    }
-
-    .modal-close-btn {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      background: none;
-      border: none;
-      font-size: 1.25rem;
-      cursor: pointer;
-      color: var(--text-soft);
-    }
-
-    .modal-step-panel { display: none; }
-    .modal-step-panel.active { display: block; }
-
-    .modal-header h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
-    .modal-header p { font-size: 0.85rem; color: var(--text-soft); margin-bottom: 16px; }
-
-    .denom-selector { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
-    .denom-option {
-      border: 1px solid var(--border-color);
-      background: #F7FAFA;
-      border-radius: var(--radius-sm);
-      padding: 8px 0;
-      text-align: center;
-      font-weight: 700;
-      font-size: 0.875rem;
-      cursor: pointer;
-    }
-    .denom-option.selected {
-      border-color: #C45500;
-      background: #FD2A000D;
-      color: #C45500;
-    }
-
-    .form-group { margin-bottom: 14px; text-align: left; }
-    .form-group label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; }
-    .input-control {
-      width: 100%;
-      border: 1px solid var(--border-dark);
-      border-radius: 3px;
-      padding: 8px 10px;
-      font-size: 0.875rem;
-    }
-
-    .modal-actions { display: flex; gap: 8px; margin-top: 20px; }
-    .btn-secondary {
-      background: #E7E9EC;
-      border: 1px solid #ADB1B1;
-      border-radius: 20px;
-      padding: 8px 16px;
-      font-weight: 600;
-      cursor: pointer;
-      flex: 1;
-      font-size: 0.85rem;
-    }
-
-    .btn-primary-action {
-      background: #FFD814;
-      border: 1px solid #FCD200;
-      border-radius: 20px;
-      padding: 8px 16px;
-      font-weight: 700;
-      cursor: pointer;
-      flex: 2;
-      font-size: 0.85rem;
-    }
-
-    .hash-display {
-      background: #F0F2F2;
-      border: 1px dashed var(--border-dark);
-      border-radius: 4px;
-      padding: 10px;
-      font-family: monospace;
-      font-size: 0.85rem;
-      text-align: center;
-      margin: 12px 0;
-    }
-
-    /* Live Toast Notification */
-    .claim-toast {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 2000;
-      background: var(--amazon-navy);
-      color: white;
-      border: 1px solid var(--amazon-light-navy);
-      border-radius: var(--radius-md);
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-      transform: translateY(120px);
-      opacity: 0;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-      max-width: 340px;
-    }
-
-    .claim-toast.show { transform: translateY(0); opacity: 1; }
-
-    .toast-avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--amazon-orange);
-      color: var(--amazon-navy);
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
-
-    .toast-title { font-size: 0.8rem; font-weight: 700; }
-    .toast-time { font-size: 0.725rem; color: #BBB; }
-
-    /* --- PRO LOCKER STYLES --- */
-    .locker-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 17, 17, 0.85);
-      backdrop-filter: blur(4px);
-      z-index: 3000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .locker-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .locker-box {
-      background: #FFFFFF;
-      border-radius: var(--radius-lg);
-      width: 100%;
-      max-width: 480px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
-      border: 2px solid var(--amazon-orange);
-      overflow: hidden;
-      position: relative;
-      animation: lockerPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    @keyframes lockerPop {
-      0% { transform: scale(0.92); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .locker-header {
-      background: var(--amazon-navy);
-      color: white;
-      padding: 16px;
-      text-align: center;
-      position: relative;
-      border-bottom: 3px solid var(--amazon-orange);
-    }
-
-    .locker-header h2 {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: #FFFFFF;
-    }
-
-    .locker-header p {
-      font-size: 0.8rem;
-      color: var(--amazon-yellow);
-      margin-top: 4px;
-    }
-
-    .locker-close {
-      position: absolute;
-      top: 10px;
-      right: 12px;
-      background: none;
-      border: none;
-      color: #FFF;
-      font-size: 1.2rem;
-      cursor: pointer;
-      opacity: 0.7;
-    }
-    .locker-close:hover { opacity: 1; }
-
-    /* Fake Live Stats Banner */
-    .locker-stats-bar {
-      background: #FFF8E7;
-      border-bottom: 1px solid #FFE0B2;
-      padding: 10px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-    }
-
-    .stat-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .stat-badge-pulse {
-      width: 8px;
-      height: 8px;
-      background: #00D66C;
-      border-radius: 50%;
-      animation: pulse 1.4s infinite;
-    }
-
-    .locker-body {
-      padding: 16px;
-    }
-
-    .locker-instruction {
-      font-size: 0.85rem;
-      color: var(--text-main);
-      text-align: center;
-      margin-bottom: 14px;
-      font-weight: 600;
-    }
-
-    /* Offer Cards Container */
-    .offers-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-height: 280px;
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-
-    .offer-item {
-      background: #F7FAFA;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.2s ease;
-    }
-
-    .offer-item:hover {
-      border-color: var(--amazon-orange);
-      background: #FFFDF8;
-      box-shadow: 0 2px 8px rgba(255, 153, 0, 0.15);
-      transform: translateY(-1px);
-    }
-
-    .offer-icon-wrapper {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-sm);
-      background: #E7E9EC;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-
-    .offer-icon-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .offer-details {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .offer-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--amazon-navy);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .offer-desc {
-      font-size: 0.75rem;
-      color: var(--text-soft);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-top: 2px;
-    }
-
-    .offer-tag {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 3px;
-      margin-top: 4px;
-      background: #E8F5E9;
-      color: var(--amazon-green);
-    }
-
-    .offer-action-btn {
-      background: #FFD814;
-      border: 1px solid #FCD200;
-      border-radius: 16px;
-      padding: 6px 14px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--text-main);
-      white-space: nowrap;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .offer-item:hover .offer-action-btn {
-      background: #F7CA00;
-    }
-
-    /* Verification Status Box */
-    .verification-status-box {
-      margin-top: 14px;
-      padding: 12px;
-      background: #F0F2F2;
-      border-radius: var(--radius-md);
-      text-align: center;
-    }
-
-    .progress-bar-container {
-      width: 100%;
-      height: 8px;
-      background: #E0E0E0;
-      border-radius: 4px;
-      overflow: hidden;
-      margin: 8px 0;
-    }
-
-    .progress-bar-fill {
-      width: 35%;
-      height: 100%;
-      background: var(--amazon-orange);
-      border-radius: 4px;
-      animation: progressPulse 2s infinite ease-in-out;
-    }
-
-    @keyframes progressPulse {
-      0% { width: 25%; }
-      50% { width: 55%; }
-      100% { width: 25%; }
-    }
-
-    .status-text {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--text-soft);
-    }
-
-    /* Live Activity Feed inside Locker */
-    .locker-activity-ticker {
-      margin-top: 10px;
-      font-size: 0.72rem;
-      color: var(--text-soft);
-      border-top: 1px solid var(--border-color);
-      padding-top: 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .locker-activity-ticker strong {
-      color: var(--amazon-green);
-    }
-
-    .spinner {
-      border: 2px solid #F3F3F3;
-      border-top: 2px solid var(--amazon-orange);
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      animation: spin 1s linear infinite;
-      margin: 20px auto;
+    .pulse-online {
+      animation: pulse-ring 2s infinite ease-in-out;
     }
 
-    @keyframes spin {
+    /* Turnstile Checkbox Ripple */
+    @keyframes spin-fast {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    .turnstile-spin {
+      animation: spin-fast 0.8s linear infinite;
+    }
 
-    /* Mobile Responsive Optimizations */
-    @media (max-width: 768px) {
-      .header-badges { display: none; }
-      .mobile-menu-btn { display: block; }
-
-      nav.nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--amazon-navy);
-        flex-direction: column;
-        padding: 12px;
-        gap: 6px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    /* Mobile Drawer Transition */
+    @media (max-width: 639px) {
+      .modal-content-container {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        max-height: 90vh;
       }
+    }
 
-      nav.nav-links.mobile-open {
-        display: flex;
-      }
+    /* Locker Shimmer Header */
+    .shimmer-text {
+      background: linear-gradient(90deg, #FFFFFF 0%, #38BDF8 50%, #FFFFFF 100%);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
 
-      .nav-btn {
-        width: 100%;
-        text-align: left;
-        padding: 10px;
-      }
-
-      .claim-toast {
-        left: 12px;
-        right: 12px;
-        max-width: none;
-        bottom: 12px;
-      }
+    @keyframes shimmer {
+      to { background-position: 200% center; }
     }
   </style>
 </head>
-<body>
+<body class="bg-brand-darkBg text-slate-100 font-sans min-h-screen relative overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
-  <!-- Amazon Header -->
-  <header class="nav-header">
-    <div class="nav-container">
-      <a href="#" class="brand-identity" onclick="switchView('home'); return false;">
-        <div class="brand-logo-badge">a</div>
-        <span class="brand-title">amazon<span>rewards</span></span>
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0"></div>
+  <div class="fixed -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-blue-600/15 blur-[120px] rounded-full pointer-events-none"></div>
+  <div class="fixed top-1/2 -left-40 w-[400px] h-[400px] bg-emerald-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+  <div class="fixed bottom-0 -right-40 w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <header class="relative z-10 border-b border-brand-borderDark/60 bg-brand-darkBg/90 backdrop-blur-md sticky top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-heading font-extrabold text-white text-xl shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+          🇺🇸
+        </div>
+        <div>
+          <div class="font-heading font-bold text-lg text-white leading-tight flex items-center gap-1.5">
+            USA Community Hub
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+          </div>
+          <p class="text-[11px] text-slate-400 font-medium">Verified Regional & Interest Networks</p>
+        </div>
       </a>
 
-      <div class="header-badges">
-        <span class="online-counter-badge">
-          <span class="dot"></span>
-          <span id="onlineCount">578</span> Online Users
-        </span>
+      <!-- Live Counter Badge -->
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-2 bg-slate-900/80 border border-slate-800 px-3.5 py-1.5 rounded-full text-xs text-slate-300">
+          <span class="relative flex h-2 w-2">
+            <span class="pulse-online absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span id="liveActiveCounter" class="font-bold text-emerald-400">24,819</span> Active Members Online
+        </div>
+        <div class="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          100% Free
+        </div>
       </div>
-
-      <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu">☰</button>
-
-      <nav class="nav-links" id="navLinks">
-        <button class="nav-btn active" data-target="home">Storefront</button>
-        <button class="nav-btn" data-target="how">How It Works</button>
-        <button class="nav-btn" data-target="rules">Rules & FAQ</button>
-        <button class="nav-btn" data-target="winners">Hall of Fame</button>
-        <button class="nav-btn" data-target="legal">Legal Terms</button>
-      </nav>
-    </div>
-
-    <div class="subnav-bar">
-      <span class="subnav-tag">✓ Official Community Dispatch</span>
-      <span>• Verified Amazon eGift Cards</span>
-      <span>• Instant Registration & Code Claim</span>
     </div>
   </header>
 
-  <main>
-    <!-- VIEW 1: HOME STOREFRONT -->
-    <section class="view-panel active" id="view-home">
-      <div class="hero-container">
-        <h1 class="hero-headline">Amazon Gift Card Community Allocations</h1>
-        <p class="hero-subtext">Select an official Amazon Gift Card below, confirm your registration, and receive your verification code instantly.</p>
-        
-        <div class="trust-indicators">
-          <div class="trust-pill">✓ No Purchase Required</div>
-          <div class="trust-pill">✓ Instant Online Code Generation</div>
-          <div class="trust-pill">✓ 100% Free Community Claims</div>
-        </div>
+  <!-- MAIN CONTENT WRAPPER -->
+  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24">
+    
+    <section class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold tracking-wide uppercase mb-4">
+        <span>🔥 #1 USA Regional & Interest Network 2026</span>
       </div>
+      <h1 class="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+        Connect with Verified <span class="shimmer-text">USA Communities</span> Nationwide
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg mb-6 leading-relaxed">
+        Select your preferred messaging platform below to access official state groups, local meetup channels, interest hubs, and nationwide chat rooms.
+      </p>
 
-      <div class="card-grid" id="cardGrid">
-        <!-- Card 1 -->
-        <div class="store-card">
-          <div class="card-image-wrapper">
-            <img width="300" height="180" src="https://i.ibb.co/20X8q4g6/amazonpng.jpg">
-          </div>
-          <div class="card-info-title">Amazon eGift Card</div>
-          <div class="card-delivery">Instant Digital Delivery</div>
-          <div class="card-ratings"><span class="stars">★★★★★</span> 4.9 (1,840)</div>
-          <button class="btn-claim" onclick="openEntryModal(1, 'Amazon $25 eGift Card', 25)">Claim Card</button>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="store-card">
-          <div class="card-image-wrapper">
-            <img width="300" height="180" src="https://i.ibb.co/xSJwPFjz/517h-Y12cd-LL-SL1500.jpg" alt="Amazon $50 eGift Card">
-          </div>
-          <div class="card-info-title">Amazon eGift Card V2</div>
-          <div class="card-delivery">Instant Digital Delivery</div>
-          <div class="card-ratings"><span class="stars">★★★★★</span> 4.9 (3,120)</div>
-          <button class="btn-claim" onclick="openEntryModal(2, 'Amazon $50 eGift Card', 50)">Claim Card</button>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="store-card">
-          <div class="card-image-wrapper">
-            <img width="300" height="180" src="https://i.ibb.co/nqBfLsd4/71bnr-YNt-I6-L-AC-SL1500.jpg" alt="Amazon $100 eGift Card">
-          </div>
-          <div class="card-info-title">Amazon Gift Card Balance Reload</div>
-          <div class="card-delivery">Instant Digital Delivery</div>
-          <div class="card-ratings"><span class="stars">★★★★★</span> 4.8 (2,450)</div>
-          <button class="btn-claim" onclick="openEntryModal(3, 'Amazon $100 eGift Card', 100)">Claim Card</button>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="store-card">
-          <div class="card-image-wrapper">
-            <img width="300" height="180" src="https://i.ibb.co/21HjN81r/61iro-Mj-KZNL-SL1500.jpg" alt="Amazon Prime $50 Card">
-          </div>
-          <div class="card-info-title">Amazon eGift Card 2026</div>
-          <div class="card-delivery">Instant Digital Delivery</div>
-          <div class="card-ratings"><span class="stars">★★★★★</span> 5.0 (980)</div>
-          <button class="btn-claim" onclick="openEntryModal(4, 'Amazon Prime $50 Card', 50)">Claim Card</button>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="store-card">
-          <div class="card-image-wrapper">
-            <img width="300" height="180" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 180' width='300' height='180'><rect width='300' height='180' rx='10' fill='%2337475A'/><circle cx='150' cy='90' r='70' stroke='rgba(255,255,255,0.05)' stroke-width='20' fill='none'/><text x='25' y='45' fill='%23FFFFFF' font-family='sans-serif' font-weight='800' font-size='20'>amazon reload</text><rect x='25' y='70' width='55' height='18' rx='3' fill='%23FEBD69'/><text x='29' y='83' fill='%23131921' font-family='sans-serif' font-weight='800' font-size='10'>BALANCE</text><text x='25' y='145' fill='%23FEBD69' font-family='sans-serif' font-weight='800' font-size='38'>$150</text><text x='205' y='150' fill='rgba(255,255,255,0.5)' font-family='sans-serif' font-weight='600' font-size='12'>VOUCHER</text></svg>" alt="Amazon $150 Reload Voucher">
-          </div>
-          <div class="card-info-title">Amazon Reload Voucher</div>
-          <div class="card-delivery">Instant Digital Delivery</div>
-          <div class="card-ratings"><span class="stars">★★★★★</span> 4.9 (710)</div>
-          <button class="btn-claim" onclick="openEntryModal(5, 'Amazon $150 Reload Voucher', 150)">Claim Card</button>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="store-card">
-          <div class="card-image-wrapper">
-            <img width="300" height="180" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 180' width='300' height='180'><rect width='300' height='180' rx='10' fill='%2319222D'/><path d='M0 0 L100 0 L0 100 Z' fill='rgba(255,153,0,0.15)'/><text x='25' y='45' fill='%23FFFFFF' font-family='sans-serif' font-weight='800' font-size='22'>amazon</text><path d='M25 52 Q60 62 95 52' stroke='%23FF9900' stroke-width='3' fill='none'/><polygon points='93,50 100,53 95,57' fill='%23FF9900'/><rect x='25' y='70' width='45' height='18' rx='3' fill='rgba(255,255,255,0.15)'/><text x='30' y='83' fill='%23FEBD69' font-family='sans-serif' font-weight='700' font-size='10'>eGift</text><text x='25' y='145' fill='%23FFFFFF' font-family='sans-serif' font-weight='800' font-size='38'>$200</text><text x='215' y='150' fill='rgba(255,255,255,0.4)' font-family='sans-serif' font-weight='600' font-size='12'>DIGITAL</text></svg>" alt="Amazon $200 eGift Card">
-          </div>
-          <div class="card-info-title">Amazon eGift Card</div>
-          <div class="card-delivery">Instant Digital Delivery</div>
-          <div class="card-ratings"><span class="stars">★★★★★</span> 4.9 (1,150)</div>
-          <button class="btn-claim" onclick="openEntryModal(6, 'Amazon $200 eGift Card', 200)">Claim Card</button>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="store-card">
-          <div class="card-image-wrapper">
-            <img width="300" height="180" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 180' width='300' height='180'><rect width='300' height='180' rx='10' fill='%23007185'/><circle cx='280' cy='140' r='80' fill='%2300A8E1' opacity='0.4'/><text x='25' y='45' fill='%23FFFFFF' font-family='sans-serif' font-weight='800' font-size='22'>amazon prime</text><rect x='25' y='70' width='50' height='18' rx='3' fill='%23FF9900'/><text x='29' y='83' fill='%23131921' font-family='sans-serif' font-weight='800' font-size='10'>SPECIAL</text><text x='25' y='145' fill='%23FFFFFF' font-family='sans-serif' font-weight='800' font-size='38'>$100</text><text x='200' y='150' fill='%23FFFFFF' font-family='sans-serif' font-weight='700' font-size='12'>PRIME CARD</text></svg>" alt="Amazon Prime $100 Card">
-          </div>
-          <div class="card-info-title">Amazon Prime Card</div>
-          <div class="card-delivery">Instant Digital Delivery</div>
-          <div class="card-ratings"><span class="stars">★★★★★</span> 4.9 (1,320)</div>
-          <button class="btn-claim" onclick="openEntryModal(7, 'Amazon Prime $100 Card', 100)">Claim Card</button>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="store-card">
-          <div class="card-image-wrapper">
-            <img width="300" height="180" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 180' width='300' height='180'><rect width='300' height='180' rx='10' fill='%23131921'/><rect x='6' y='6' width='288' height='168' rx='8' fill='none' stroke='%23FEBD69' stroke-dasharray='6,6'/><text x='25' y='45' fill='%23FEBD69' font-family='sans-serif' font-weight='800' font-size='22'>amazon vault</text><rect x='25' y='70' width='45' height='18' rx='3' fill='rgba(255,255,255,0.15)'/><text x='30' y='83' fill='%23FFFFFF' font-family='sans-serif' font-weight='700' font-size='10'>MAX</text><text x='25' y='145' fill='%23FF9900' font-family='sans-serif' font-weight='800' font-size='38'>$250</text><text x='195' y='150' fill='%23FEBD69' font-family='sans-serif' font-weight='700' font-size='12'>GOLD EDITION</text></svg>" alt="Amazon $250 Vault Gift Card">
-          </div>
-          <div class="card-info-title">Amazon $250 Vault Gift Card</div>
-          <div class="card-delivery">Instant Digital Delivery</div>
-          <div class="card-ratings"><span class="stars">★★★★★</span> 5.0 (640)</div>
-          <button class="btn-claim" onclick="openEntryModal(8, 'Amazon $250 Vault Gift Card', 250)">Claim Card</button>
-        </div>
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-semibold text-slate-400">
+        <span class="flex items-center gap-1.5 text-emerald-400">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          No Purchase Required
+        </span>
+        <span class="hidden sm:inline text-slate-700">•</span>
+        <span class="flex items-center gap-1.5 text-blue-400">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Instant Invite Access
+        </span>
+        <span class="hidden sm:inline text-slate-700">•</span>
+        <span class="flex items-center gap-1.5 text-purple-400">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Active Moderation
+        </span>
       </div>
     </section>
 
-    <!-- VIEW 2: HOW IT WORKS -->
-    <section class="view-panel" id="view-how">
-      <div class="content-page">
-        <h2 class="page-title">How It Works</h2>
-        <div class="workflow-grid">
-          <div class="workflow-card">
-            <div class="workflow-num">1</div>
-            <div>
-              <strong>Choose Your Gift Card Value</strong>
-              <p style="font-size: 0.85rem; color: var(--text-soft);">Select any active Amazon Gift Card allocation from the storefront list.</p>
-            </div>
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16" id="appCardsGrid">
+      
+      <!-- CARD 1: WHATSAPP -->
+      <div onclick="openAppModal('whatsapp')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-green hover:border-brand-whatsapp/50 cursor-pointer relative overflow-hidden group">
+        <div class="absolute top-0 right-0 bg-brand-whatsapp text-slate-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+          Top Choice in USA
+        </div>
+        <div class="flex items-center gap-4 mb-4">
+          <!-- WhatsApp Icon -->
+          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-whatsapp group-hover:scale-110 transition-transform overflow-hidden">
+            <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" class="w-8 h-8" loading="lazy">
           </div>
-          <div class="workflow-card">
-            <div class="workflow-num">2</div>
-            <div>
-              <strong>Confirm Registration</strong>
-              <p style="font-size: 0.85rem; color: var(--text-soft);">Enter optional contact details or proceed instantly without providing personal data.</p>
-            </div>
-          </div>
-          <div class="workflow-card">
-            <div class="workflow-num">3</div>
-            <div>
-              <strong>Generate Code & Verify</strong>
-              <p style="font-size: 0.85rem; color: var(--text-soft);">Get your generated registration code and click "Verify Your Registration" to complete.</p>
-            </div>
+          <div>
+            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-whatsapp transition-colors">WhatsApp Hub</h3>
+            <p class="text-xs text-slate-400">Official Mobile Community</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- VIEW 3: RULES & FAQ -->
-    <section class="view-panel" id="view-rules">
-      <div class="content-page">
-        <h2 class="page-title">Rules & FAQ</h2>
-        <div id="faqAccordion">
-          <div class="accordion-item active">
-            <button class="accordion-trigger" onclick="toggleFAQ(this)">Is there any fee to claim a card?</button>
-            <div class="accordion-body">No. Registration and claims are 100% free through community vault distributions.</div>
+        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Direct smartphone chat, regional announcement broadcast channels, and verified USA member groups.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
+          <div class="flex items-center gap-1.5 text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-brand-whatsapp"></span>
+            142,500+ Members
           </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger" onclick="toggleFAQ(this)">Do I need to enter my email?</button>
-            <div class="accordion-body">Name and email inputs are completely optional. You can claim anonymously.</div>
+          <span class="text-brand-whatsapp font-bold bg-brand-whatsapp/10 px-2.5 py-1 rounded-full">⚡ High Activity</span>
+        </div>
+        <button class="w-full mt-4 bg-brand-whatsapp hover:bg-emerald-500 text-slate-950 font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
+          <span>Join WhatsApp Group</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+
+      <!-- CARD 2: DISCORD -->
+      <div onclick="openAppModal('discord')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-blurple hover:border-brand-discord/50 cursor-pointer relative overflow-hidden group">
+        <div class="absolute top-0 right-0 bg-brand-discord text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+          Gaming & Voice
+        </div>
+        <div class="flex items-center gap-4 mb-4">
+          <!-- Discord Icon -->
+          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-discord group-hover:scale-110 transition-transform overflow-hidden">
+            <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" class="w-8 h-8" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-discord transition-colors">Discord Server</h3>
+            <p class="text-xs text-slate-400">Official Voice & Lounge</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- VIEW 4: HALL OF FAME -->
-    <section class="view-panel" id="view-winners">
-      <div class="content-page">
-        <h2 class="page-title">Hall of Fame — Recent Registrations</h2>
-        <p class="privacy-disclaimer" style="margin-bottom: 1rem; font-size: 0.9rem; color: #666; font-style: italic;">
-          <strong>Note:</strong> Not all registrations are listed here to protect user privacy.
-        </p>
-        <div class="table-wrapper">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Registration Time</th>
-                <th>Recipient</th>
-                <th>Card Allocated</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Just now</td>
-                <td>Anonymous User</td>
-                <td>$50 Amazon eGift Card</td>
-                <td><span style="color: var(--amazon-green); font-weight:700;">Confirmed</span></td>
-              </tr>
-              <tr>
-                <td>3 mins ago</td>
-                <td>j***n@gmail.com</td>
-                <td>$100 Amazon Prime Card</td>
-                <td><span style="color: var(--amazon-green); font-weight:700;">Confirmed</span></td>
-              </tr>
-              <tr>
-                <td>12 mins ago</td>
-                <td>a***x@yahoo.com</td>
-                <td>$25 Amazon eGift Card</td>
-                <td><span style="color: var(--amazon-green); font-weight:700;">Confirmed</span></td>
-              </tr>
-              <tr>
-                <td>25 mins ago</td>
-                <td>s***h@outlook.com</td>
-                <td>$50 Amazon eGift Card</td>
-                <td><span style="color: var(--amazon-green); font-weight:700;">Confirmed</span></td>
-              </tr>
-              <tr>
-                <td>41 mins ago</td>
-                <td>m***e@gmail.com</td>
-                <td>$100 Amazon Prime Card</td>
-                <td><span style="color: var(--amazon-green); font-weight:700;">Confirmed</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Topic channels, 24/7 live audio lounges, gaming squads, and regional USA networking categories.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
+          <div class="flex items-center gap-1.5 text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-brand-discord"></span>
+            98,200+ Members
+          </div>
+          <span class="text-brand-discord font-bold bg-brand-discord/10 px-2.5 py-1 rounded-full">🎙️ 18 Voice Active</span>
         </div>
+        <button class="w-full mt-4 bg-brand-discord hover:bg-indigo-500 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
+          <span>Join Discord Server</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
       </div>
+
+      <!-- CARD 3: MEETUP -->
+      <div onclick="openAppModal('meetup')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-red hover:border-brand-meetup/50 cursor-pointer relative overflow-hidden group">
+        <div class="absolute top-0 right-0 bg-brand-meetup text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+          Local Events
+        </div>
+        <div class="flex items-center gap-4 mb-4">
+          <!-- Meetup Icon -->
+          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-meetup group-hover:scale-110 transition-transform overflow-hidden">
+            <img src="https://cdn.simpleicons.org/meetup/F64060" alt="Meetup" class="w-8 h-8" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-meetup transition-colors">Meetup Chapter</h3>
+            <p class="text-xs text-slate-400">In-Person & Online Events</p>
+          </div>
+        </div>
+        <p class="text-sm text-slate-300 mb-4 line-clamp-2">City-by-city social gatherings, professional networking, outdoor weekend activities, and workshops.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
+          <div class="flex items-center gap-1.5 text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-brand-meetup"></span>
+            64,800+ Members
+          </div>
+          <span class="text-brand-meetup font-bold bg-brand-meetup/10 px-2.5 py-1 rounded-full">📍 120+ Events</span>
+        </div>
+        <button class="w-full mt-4 bg-brand-meetup hover:bg-rose-600 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
+          <span>Explore Meetups</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+
+      <!-- CARD 4: MESSENGER -->
+      <div onclick="openAppModal('messenger')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-blue hover:border-brand-messenger/50 cursor-pointer relative overflow-hidden group">
+        <div class="absolute top-0 right-0 bg-brand-messenger text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+          Instant Messaging
+        </div>
+        <div class="flex items-center gap-4 mb-4">
+          <!-- Messenger Icon -->
+          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-messenger group-hover:scale-110 transition-transform overflow-hidden">
+            <img src="https://cdn.simpleicons.org/messenger/0084FF" alt="Messenger" class="w-8 h-8" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-messenger transition-colors">Messenger Chat</h3>
+            <p class="text-xs text-slate-400">Facebook Community Network</p>
+          </div>
+        </div>
+        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Direct Facebook social integration, neighborhood groups, marketplace deals, and local community chats.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
+          <div class="flex items-center gap-1.5 text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-brand-messenger"></span>
+            83,400+ Members
+          </div>
+          <span class="text-brand-messenger font-bold bg-brand-messenger/10 px-2.5 py-1 rounded-full">💬 Fast Reply</span>
+        </div>
+        <button class="w-full mt-4 bg-brand-messenger hover:bg-blue-600 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
+          <span>Join Messenger Group</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+
+      <!-- CARD 5: GROUPME -->
+      <div onclick="openAppModal('groupme')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-cyan hover:border-brand-groupme/50 cursor-pointer relative overflow-hidden group">
+        <div class="absolute top-0 right-0 bg-brand-groupme text-slate-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+          Campus & Local
+        </div>
+        <div class="flex items-center gap-4 mb-4">
+          <!-- GroupMe Icon -->
+          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-groupme group-hover:scale-110 transition-transform overflow-hidden">
+            <img src="https://cdn.simpleicons.org/groupme/00AFF0" alt="GroupMe" class="w-8 h-8" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-groupme transition-colors">GroupMe Network</h3>
+            <p class="text-xs text-slate-400">Campus & Student Groups</p>
+          </div>
+        </div>
+        <p class="text-sm text-slate-300 mb-4 line-clamp-2">College campus hubs, study groups, regional interest circles, and easy SMS-friendly chat rooms.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
+          <div class="flex items-center gap-1.5 text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-brand-groupme"></span>
+            51,900+ Members
+          </div>
+          <span class="text-brand-groupme font-bold bg-brand-groupme/10 px-2.5 py-1 rounded-full">🎓 450+ Campuses</span>
+        </div>
+        <button class="w-full mt-4 bg-brand-groupme hover:bg-sky-500 text-slate-950 font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
+          <span>Join GroupMe</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+
+      <!-- CARD 6: TELEGRAM -->
+      <div onclick="openAppModal('telegram')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-telegram hover:border-brand-telegram/50 cursor-pointer relative overflow-hidden group">
+        <div class="absolute top-0 right-0 bg-brand-telegram text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+          Fast News & Broadcast
+        </div>
+        <div class="flex items-center gap-4 mb-4">
+          <!-- Telegram Icon -->
+          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-telegram group-hover:scale-110 transition-transform overflow-hidden">
+            <img src="https://cdn.simpleicons.org/telegram/229ED9" alt="Telegram" class="w-8 h-8" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-telegram transition-colors">Telegram Channel</h3>
+            <p class="text-xs text-slate-400">Official Broadcast & News</p>
+          </div>
+        </div>
+        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Real-time nationwide alerts, media vault, secret community discussions, and direct deal signals.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
+          <div class="flex items-center gap-1.5 text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-brand-telegram"></span>
+            115,000+ Subscribers
+          </div>
+          <span class="text-brand-telegram font-bold bg-brand-telegram/10 px-2.5 py-1 rounded-full">📢 Instant Broadcast</span>
+        </div>
+        <button class="w-full mt-4 bg-brand-telegram hover:bg-sky-600 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
+          <span>Subscribe Channel</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+
     </section>
 
-    <!-- VIEW 5: LEGAL TERMS -->
-    <section class="view-panel" id="view-legal">
-      <div class="content-page">
-        <h2 class="page-title">Legal Terms</h2>
-        <p style="font-size: 0.875rem; color: var(--text-soft);">This platform is an independent community project facilitating digital allocations. All product names, logos, and brands are property of their respective owners.</p>
-      </div>
-    </section>
   </main>
 
-  <!-- MODAL WINDOW -->
-  <div class="modal-backdrop" id="modalBackdrop">
-    <div class="modal-window">
-      <button class="modal-close-btn" id="modalClose">✕</button>
-
-      <!-- Step 1: Denomination -->
-      <div class="modal-step-panel active" id="modalStep1">
-        <div class="modal-header">
-          <h3 id="modalCardTitle">Confirm Card Selection</h3>
-          <p>Select your denomination value:</p>
-        </div>
-        <div class="denom-selector" id="denomSelector"></div>
-        <div class="modal-actions">
-          <button class="btn-primary-action" id="btnToStep2">Continue</button>
-        </div>
+  <footer class="relative z-10 border-t border-brand-borderDark/60 bg-brand-darkBg py-8 text-slate-500 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <p class="font-semibold text-slate-400 mb-1">USA Community Hub © 2026. All Rights Reserved.</p>
+        <p>Independent community directory connecting verified US residents to regional platform groups.</p>
       </div>
-
-      <!-- Step 2: Optional Form -->
-      <div class="modal-step-panel" id="modalStep2">
-        <div class="modal-header">
-          <h3>Your Details (Optional)</h3>
-          <p>Fill in if you wish to receive a copy by email, or leave blank to stay anonymous.</p>
-        </div>
-        <div class="form-group">
-          <label>Full Name (Optional)</label>
-          <input type="text" class="input-control" placeholder="e.g. Alex Morgan">
-        </div>
-        <div class="form-group">
-          <label>Email Address (Optional)</label>
-          <input type="email" class="input-control" placeholder="alex@example.com">
-        </div>
-        <div class="modal-actions">
-          <button class="btn-secondary" id="btnBackToStep1">Back</button>
-          <button class="btn-primary-action" id="btnToStep3">Continue</button>
-        </div>
+      <div class="flex gap-4 font-medium text-slate-400">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <span>•</span>
+        <a href="#" class="hover:text-white transition-colors">Terms of Access</a>
+        <span>•</span>
+        <a href="#" class="hover:text-white transition-colors">Safety Verification</a>
       </div>
-
-      <!-- Step 3: Confirmation -->
-      <div class="modal-step-panel" id="modalStep3">
-        <div class="modal-header">
-          <h3>Confirm Registration</h3>
-          <p>Press below to generate your unique registration code.</p>
-        </div>
-        <div class="modal-actions">
-          <button class="btn-secondary" id="btnBackToStep2">Back</button>
-          <button class="btn-primary-action" id="btnToStep4">Generate Code</button>
-        </div>
-      </div>
-
-      <!-- Step 4: Final Screen -->
-      <div class="modal-step-panel" id="modalStep4">
-        <div class="modal-header" style="text-align: center;">
-          <h3 style="color: var(--amazon-green);">Registration Confirmed!</h3>
-          <p>Your registration code is ready below.</p>
-        </div>
-        <div class="hash-display" id="entryHashBox">AMZ-00000000</div>
-        <p style="font-size: 0.8rem; color: var(--text-soft); text-align: center;">Registration Time: <strong id="regTimeBox">--:--:--</strong></p>
-        <div class="modal-actions" style="margin-top: 16px;">
-          <button class="btn-primary-action" id="btnFinish" style="width: 100%;">Verify Your Registration</button>
-        </div>
-      </div>
-
     </div>
-  </div>
+  </footer>
 
-  <!-- LIVE TOAST NOTIFICATION -->
-  <div class="claim-toast" id="claimToast">
-    <div class="toast-avatar" id="toastAvatar">A</div>
-    <div>
-      <div class="toast-title" id="toastTitle">Alex M. claimed $50 Amazon Card</div>
-      <div class="toast-time" id="toastTime">Just now • Verified Claim</div>
-    </div>
-  </div>
-
-  <!-- PRO CONTENT LOCKER OVERLAY (OGADS INTEGRATED) -->
-  <div class="locker-overlay" id="ogadsLocker">
-    <div class="locker-box">
-      <div class="locker-header">
-        <button class="locker-close" onclick="closeLocker()">✕</button>
-        <h2>Verification Required</h2>
-        <p>Complete 1 quick offer below to verify your code & unlock delivery</p>
+  <!-- ========================================================= -->
+  <!-- MODAL FLOW: APP PREVIEW & HUMAN VERIFICATION STEP -->
+  <!-- ========================================================= -->
+  <div id="appPreviewModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    
+    <div class="modal-content-container w-full sm:max-w-lg bg-brand-cardBg border border-slate-700 rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform translate-y-8 sm:translate-y-0 transition-transform duration-300 flex flex-col max-h-[90vh] sm:max-h-[85vh]">
+      
+      <!-- Mobile Touch Drag Indicator -->
+      <div class="sm:hidden pt-3 pb-1 flex justify-center bg-slate-900 flex-shrink-0">
+        <div class="w-12 h-1.5 bg-slate-700 rounded-full"></div>
       </div>
 
-      <!-- Fake Stats Bar for High Urgency & Social Proof -->
-      <div class="locker-stats-bar">
-        <div class="stat-item">
-          <span class="stat-badge-pulse"></span>
-          <span id="lockerActiveUsers">142</span> Users Completing
-        </div>
-        <div class="stat-item" style="color: var(--amazon-green);">
-          ✓ <span id="lockerCompletedToday">1,894</span> Offers Done Today
-        </div>
-      </div>
+      <!-- App Header Banner (Dynamic via JS) -->
+      <div id="modalAppBanner" class="p-5 text-white relative transition-colors duration-300 flex-shrink-0">
+        <button onclick="closeAppModal()" class="absolute top-4 right-4 bg-black/30 hover:bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors text-sm font-bold">
+          ✕
+        </button>
 
-      <div class="locker-body">
-        <div class="locker-instruction">
-          Select an available verification task below (Max 4 available):
-        </div>
-
-        <!-- Offers Container loaded dynamically via API -->
-        <div class="offers-list" id="offersContainer">
-          <div class="spinner"></div>
-        </div>
-
-        <!-- Status & Progress -->
-        <div class="verification-status-box">
-          <div class="progress-bar-container">
-            <div class="progress-bar-fill"></div>
+        <div class="flex items-center gap-3.5">
+          <div id="modalAppIcon" class="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-lg text-white overflow-hidden flex-shrink-0">
+            <!-- Dynamic SVG -->
           </div>
-          <div class="status-text" id="statusText">Waiting for completion...</div>
-        </div>
-
-        <!-- Fake Live Activity Ticker inside locker -->
-        <div class="locker-activity-ticker">
-          <span>⚡</span>
-          <span id="lockerTickerText"><strong>User #8491</strong> completed an offer 3s ago</span>
+          <div>
+            <span id="modalAppBadge" class="inline-block text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-white/20 tracking-wider mb-1">
+              Official Hub
+            </span>
+            <h3 id="modalAppTitle" class="font-heading font-extrabold text-xl leading-snug">
+              🇺🇸 USA WhatsApp Hub
+            </h3>
+            <p id="modalAppSub" class="text-xs opacity-90 font-medium">
+              Verified USA Members • Active 24/7
+            </p>
+          </div>
         </div>
       </div>
+
+      <!-- Scrollable Content Area -->
+      <div class="flex-1 overflow-y-auto p-5 space-y-4">
+        
+        <!-- Platform UI Card Preview -->
+        <div id="modalAppPreviewBox" class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 text-xs font-sans">
+          <!-- Dynamic Content Rendered Here -->
+        </div>
+
+        <!-- HUMAN VERIFICATION STEP (TURNSTILE / RECAPTCHA STYLE) -->
+        <div class="bg-slate-900 border border-slate-700/80 rounded-xl p-4 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span class="font-bold text-slate-200 text-xs">Human Access Verification</span>
+            </div>
+            <span class="text-[10px] text-slate-500 font-mono">Cloudflare Guard</span>
+          </div>
+
+          <!-- Interactive Turnstile Checkbox Box -->
+          <div onclick="handleHumanCheckClick()" class="bg-slate-950 border border-slate-800 hover:border-slate-600 rounded-lg p-3 flex items-center justify-between cursor-pointer transition-colors group">
+            <div class="flex items-center gap-3">
+              <div id="turnstileBox" class="w-6 h-6 rounded border-2 border-slate-600 group-hover:border-blue-400 flex items-center justify-center bg-slate-900 transition-colors">
+                <div id="turnstileCheck" class="hidden text-emerald-400 font-bold text-sm">✓</div>
+                <div id="turnstileSpinner" class="hidden w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full turnstile-spin"></div>
+              </div>
+              <span id="turnstileLabel" class="text-xs font-semibold text-slate-300 group-hover:text-white transition-colors">
+                I am human (Verify USA Access)
+              </span>
+            </div>
+            <!-- Cloudflare / Security logo graphic -->
+            <div class="text-right">
+              <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Turnstile</div>
+              <div class="text-[8px] text-slate-600">Privacy • Terms</div>
+            </div>
+          </div>
+          <p class="text-[10px] text-slate-400 mt-2 text-center">
+            Click checkbox to complete human verification and unlock full group invite links.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Sticky Action Button (always visible) -->
+      <div class="p-5 pt-0 flex-shrink-0 bg-gradient-to-t from-brand-cardBg via-brand-cardBg to-transparent">
+        <button id="btnProceedToLocker" onclick="handleHumanCheckClick()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold py-3 rounded-xl transition-all shadow-lg text-sm flex items-center justify-center gap-2">
+          <span>Verify & Unlock Invite Link</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </button>
+      </div>
+
     </div>
   </div>
 
+
+  <!-- ========================================================= -->
+  <!-- REAL HUMAN VERIFICATION STEP (OGADS OFFER API INTEGRATION) -->
+  <!-- ========================================================= -->
+  <div id="ogadsLocker" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/90 backdrop-blur-lg opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="w-full max-w-md bg-slate-900 border-2 border-blue-500/50 rounded-2xl shadow-2xl overflow-hidden relative transform scale-95 transition-transform duration-300">
+      
+      <!-- Locker Close Button -->
+      <button onclick="closeLocker()" class="absolute top-3 right-3 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold z-20">
+        ✕
+      </button>
+
+      <!-- Locker Header -->
+      <div class="bg-gradient-to-b from-slate-800 to-slate-900 p-5 border-b border-slate-800 text-center relative">
+        <div class="w-12 h-12 mx-auto mb-2 rounded-2xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 text-2xl shadow-inner">
+          🔒
+        </div>
+        <h2 class="font-heading font-extrabold text-xl text-white">
+          USA Community Verification
+        </h2>
+        <p class="text-xs text-slate-300 mt-1 max-w-xs mx-auto">
+          Complete 1 quick verification step below to confirm human presence & unlock invite link.
+        </p>
+      </div>
+
+      <!-- Live Stats & Urgency Bar -->
+      <div class="bg-slate-950 border-b border-slate-800 px-4 py-2.5 flex items-center justify-between text-[11px]">
+        <div class="flex items-center gap-1.5 text-slate-300 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-online"></span>
+          <span id="lockerActiveUsers" class="text-emerald-400 font-extrabold">148</span> Users Verifying
+        </div>
+        <div class="text-emerald-400 font-bold flex items-center gap-1">
+          ✓ <span id="lockerCompletedToday">2,140</span> Verified Today
+        </div>
+      </div>
+
+      <!-- Locker Body & Offers Container -->
+      <div class="p-4 space-y-3">
+        <div class="text-xs text-slate-300 font-semibold text-center">
+          Select an available verification offer below (1 Required):
+        </div>
+
+        <!-- Offers Container Loaded Dynamically via OGAds API -->
+        <div id="offersContainer" class="space-y-2.5 max-h-[260px] overflow-y-auto pr-1">
+          <!-- Loading Spinner -->
+          <div class="py-8 text-center space-y-2">
+            <div class="w-7 h-7 border-3 border-blue-500 border-t-transparent rounded-full turnstile-spin mx-auto"></div>
+            <p class="text-xs text-slate-400 font-medium">Fetching available USA offers...</p>
+          </div>
+        </div>
+
+        <!-- Progress & Verification Status Box -->
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
+          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mb-2">
+            <div id="lockerProgressBar" class="bg-gradient-to-r from-blue-500 to-emerald-400 h-full w-1/3 transition-all duration-500"></div>
+          </div>
+          <div id="lockerStatusText" class="text-[11px] font-bold text-slate-400">
+            Waiting for offer completion...
+          </div>
+        </div>
+
+        <!-- Live Activity Ticker -->
+        <div class="text-[10px] text-slate-400 pt-1 flex items-center justify-center gap-1.5 border-t border-slate-800/80">
+          <span>⚡</span>
+          <span id="lockerTickerText"><strong>User #8491</strong> completed verification 3s ago</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT LOGIC (OGADS INTEGRATION + MODALS + PLATFORMS) -->
+  <!-- ========================================================= -->
   <script>
-    /* Configuration for OGAds Offer API - https://offertrk.org/api/v2 */
+    /* -------------------------------------------------------------
+       OGADS API CONFIGURATION
+       ------------------------------------------------------------- */
     const OGADS_CONFIG = {
       apiKey: '47801|AmUgYq0mshV4mu0EA8UMTxLInHGh3g9wgLd06SS5c0a7fe16',
       endpoint: 'https://offertrk.org/api/v2',
-      maxOffers: 4
+      maxOffers: 4,
+      countries: 'US',
+      orderby: 'epc'
     };
 
-    /* Dynamic Online Counter */
-    function updateOnlineCounter() {
-      const el = document.getElementById('onlineCount');
-      if (!el) return;
-      const count = Math.floor(Math.random() * (589 - 572 + 1)) + 572;
-      el.textContent = count;
-    }
-    setInterval(updateOnlineCounter, 4000);
+    /* -------------------------------------------------------------
+       PLATFORM DATA & REALISTIC PREVIEW RENDERERS
+       ------------------------------------------------------------- */
+    const PLATFORMS = {
+      whatsapp: {
+        title: "🇺🇸 USA WhatsApp Community Hub",
+        badge: "WhatsApp Official",
+        colorClass: "bg-brand-whatsapp text-slate-950",
+        bannerBg: "bg-gradient-to-r from-emerald-800 to-teal-900",
+        sub: "142,500+ USA Members • Instant Delivery",
+        iconImg: 'https://cdn.simpleicons.org/whatsapp/25D366',
+        renderPreview: () => `
+          <div class="space-y-3">
+            <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+              <strong class="text-white text-xs">Group Overview:</strong>
+              <span class="text-slate-400">Public USA General & Regional Channels</span>
+            </div>
+            <div class="bg-slate-950 p-2.5 rounded-lg space-y-2 font-mono text-[11px]">
+              <div class="text-emerald-400">📌 [Pinned Announcement]</div>
+              <p class="text-slate-300">"Welcome to the official USA Community Hub! Choose your region in the channel description after human verification."</p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold">#us-news</span>
+              <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold">#state-groups</span>
+              <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold">#local-meetups</span>
+            </div>
+          </div>
+        `
+      },
+      discord: {
+        title: "🇺🇸 USA Discord Network",
+        badge: "Discord Partner",
+        colorClass: "bg-brand-discord text-white",
+        bannerBg: "bg-gradient-to-r from-indigo-900 to-slate-900",
+        sub: "98,200+ Members • 18 Active Voice Rooms",
+        iconImg: 'https://cdn.simpleicons.org/discord/5865F2',
+        renderPreview: () => `
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center justify-between text-slate-400 font-bold uppercase text-[10px] tracking-wider mb-1">
+              <span>Text & Voice Channels</span>
+              <span class="text-indigo-400">3,410 Online</span>
+            </div>
+            <div class="space-y-1">
+              <div class="bg-slate-950 px-2.5 py-1.5 rounded flex items-center justify-between text-slate-300">
+                <span># 💬 general-chat</span>
+                <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 rounded">Active</span>
+              </div>
+              <div class="bg-slate-950 px-2.5 py-1.5 rounded flex items-center justify-between text-slate-300">
+                <span># 📢 usa-announcements</span>
+                <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 rounded">Official</span>
+              </div>
+              <div class="bg-slate-950 px-2.5 py-1.5 rounded flex items-center justify-between text-indigo-400 font-semibold">
+                <span>🔊 🔊 USA-Lounge-Voice-01</span>
+                <span class="text-[10px] bg-indigo-950 text-indigo-300 px-1.5 rounded">14 Members</span>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      meetup: {
+        title: "🇺🇸 Meetup USA Nationwide",
+        badge: "Meetup Group",
+        colorClass: "bg-brand-meetup text-white",
+        bannerBg: "bg-gradient-to-r from-rose-900 to-pink-950",
+        sub: "64,800+ Members • Nationwide Events",
+        iconImg: 'https://cdn.simpleicons.org/meetup/F64060',
+        renderPreview: () => `
+          <div class="space-y-2">
+            <div class="font-bold text-white text-xs">Upcoming Featured Event:</div>
+            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
+              <div class="text-rose-400 font-extrabold text-xs mb-1">📍 USA Virtual & In-Person Mixer 2026</div>
+              <div class="text-slate-400 text-[11px]">Location: United States (Nationwide Chapters)</div>
+              <div class="text-slate-400 text-[11px]">Attendees: <strong class="text-slate-200">1,240 confirmed</strong></div>
+            </div>
+          </div>
+        `
+      },
+      messenger: {
+        title: "🇺🇸 Messenger USA Group",
+        badge: "Messenger Official",
+        colorClass: "bg-brand-messenger text-white",
+        bannerBg: "bg-gradient-to-r from-blue-900 to-indigo-900",
+        sub: "83,400+ Members • Fast Replies",
+        iconImg: 'https://cdn.simpleicons.org/messenger/0084FF',
+        renderPreview: () => `
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs text-slate-300">
+              <span>Active Group Call: <strong class="text-blue-400">Available</strong></span>
+              <span class="text-[10px] bg-blue-950 text-blue-300 px-2 py-0.5 rounded-full">Facebook Verified</span>
+            </div>
+            <div class="bg-slate-950 p-2.5 rounded-lg text-[11px] text-slate-300">
+              💬 "Chat with members in your state, share local events, and exchange recommendations."
+            </div>
+          </div>
+        `
+      },
+      groupme: {
+        title: "🇺🇸 GroupMe Campus Hub",
+        badge: "GroupMe Network",
+        colorClass: "bg-brand-groupme text-slate-950",
+        bannerBg: "bg-gradient-to-r from-cyan-900 to-slate-900",
+        sub: "51,900+ Members • 450+ Campus Hubs",
+        iconImg: 'https://cdn.simpleicons.org/groupme/00AFF0',
+        renderPreview: () => `
+          <div class="space-y-2 text-xs">
+            <div class="text-cyan-400 font-bold">🎓 Student & Regional Campus Network:</div>
+            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800 text-slate-300 text-[11px]">
+              Direct access to study circles, local campus boards, and city neighborhood chats across all 50 states.
+            </div>
+          </div>
+        `
+      },
+      telegram: {
+        title: "🇺🇸 Telegram Broadcast Channel",
+        badge: "Telegram Verified",
+        colorClass: "bg-brand-telegram text-white",
+        bannerBg: "bg-gradient-to-r from-sky-900 to-slate-900",
+        sub: "115,000+ Subscribers • Fast News",
+        iconImg: 'https://cdn.simpleicons.org/telegram/229ED9',
+        renderPreview: () => `
+          <div class="space-y-2 text-xs">
+            <div class="text-sky-400 font-bold">📢 Channel Feed & Signals:</div>
+            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800 text-slate-300 text-[11px]">
+              Instant real-time broadcast alerts, local deals, news updates, and downloadable community media vault.
+            </div>
+          </div>
+        `
+      }
+    };
 
-    /* Live Toast Notifications */
-    const NAMES = ["Sarah K.", "David L.", "Marcus T.", "Elena R.", "Anonymous", "Jordan P.", "Michael B.", "Chloe W."];
-    const TOAST_CARDS = ["$25 Amazon Card", "$50 Amazon Card", "$100 Amazon Card", "$150 Reload Voucher", "$200 Amazon Card"];
+    let currentAppKey = 'whatsapp';
+    let humanCheckPassed = false;
 
-    function triggerLiveClaimToast() {
-      const toast = document.getElementById('claimToast');
-      const avatar = document.getElementById('toastAvatar');
-      const title = document.getElementById('toastTitle');
-      const time = document.getElementById('toastTime');
-
-      const name = NAMES[Math.floor(Math.random() * NAMES.length)];
-      const card = TOAST_CARDS[Math.floor(Math.random() * TOAST_CARDS.length)];
+    function openAppModal(appKey) {
+      const app = PLATFORMS[appKey] || PLATFORMS.whatsapp;
+      currentAppKey = appKey;
       
-      avatar.textContent = name === "Anonymous" ? "A" : name.charAt(0);
-      title.textContent = `${name} claimed ${card}`;
-      time.textContent = `${Math.floor(Math.random() * 6) + 1}s ago • Verified Claim`;
+      const modalBanner = document.getElementById('modalAppBanner');
+      modalBanner.className = `p-5 text-white relative transition-colors duration-300 ${app.bannerBg}`;
+      
+      document.getElementById('modalAppIcon').innerHTML = `<img src="${app.iconImg}" alt="${app.title}" class="w-8 h-8" loading="lazy">`;
+      document.getElementById('modalAppTitle').textContent = app.title;
+      document.getElementById('modalAppBadge').textContent = app.badge;
+      document.getElementById('modalAppSub').textContent = app.sub;
+      
+      document.getElementById('modalAppPreviewBox').innerHTML = app.renderPreview();
+      
+      // Reset Turnstile Checkbox
+      resetTurnstile();
 
-      toast.classList.add('show');
-      setTimeout(() => { toast.classList.remove('show'); }, 4000);
+      const modal = document.getElementById('appPreviewModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      const container = modal.querySelector('.modal-content-container');
+      container.classList.remove('translate-y-8');
     }
 
-    setInterval(triggerLiveClaimToast, 8000);
-    setTimeout(triggerLiveClaimToast, 2000);
-
-    /* Mobile Drawer Menu Toggle */
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    mobileMenuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navLinks.classList.toggle('mobile-open');
-    });
-
-    /* Tab View Switcher */
-    function switchView(targetId) {
-      document.querySelectorAll('.view-panel').forEach(panel => panel.classList.remove('active'));
-      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-
-      const activePanel = document.getElementById(`view-${targetId}`);
-      if (activePanel) activePanel.classList.add('active');
-
-      const activeBtn = document.querySelector(`.nav-btn[data-target="${targetId}"]`);
-      if (activeBtn) activeBtn.classList.add('active');
-
-      navLinks.classList.remove('mobile-open');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function closeAppModal() {
+      const modal = document.getElementById('appPreviewModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      const container = modal.querySelector('.modal-content-container');
+      container.classList.add('translate-y-8');
     }
 
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-      btn.addEventListener('click', () => switchView(btn.dataset.target));
-    });
-
-    /* Modal Controller */
-    let selectedDenom = 50;
-
-    function openEntryModal(id, title, defaultVal) {
-      document.getElementById('modalCardTitle').textContent = title;
-      selectedDenom = defaultVal;
-      buildDenomSelector();
-      goToModalStep(1);
-      document.getElementById('modalBackdrop').classList.add('active');
+    function resetTurnstile() {
+      humanCheckPassed = false;
+      document.getElementById('turnstileCheck').classList.add('hidden');
+      document.getElementById('turnstileSpinner').classList.add('hidden');
+      document.getElementById('turnstileLabel').textContent = "I am human (Verify USA Access)";
+      document.getElementById('turnstileBox').classList.remove('border-emerald-400', 'bg-emerald-950');
     }
 
-    function closeModal() {
-      document.getElementById('modalBackdrop').classList.remove('active');
+    function handleHumanCheckClick() {
+      if (humanCheckPassed) {
+        closeAppModal();
+        openLocker();
+        return;
+      }
+
+      const spinner = document.getElementById('turnstileSpinner');
+      const check = document.getElementById('turnstileCheck');
+      const label = document.getElementById('turnstileLabel');
+      const box = document.getElementById('turnstileBox');
+
+      spinner.classList.remove('hidden');
+      label.textContent = "Verifying human signature...";
+
+      setTimeout(() => {
+        spinner.classList.add('hidden');
+        check.classList.remove('hidden');
+        box.classList.add('border-emerald-400', 'bg-emerald-950');
+        label.textContent = "Human Verified! Opening locker...";
+        humanCheckPassed = true;
+
+        setTimeout(() => {
+          closeAppModal();
+          openLocker();
+        }, 600);
+      }, 1000);
     }
 
-    document.getElementById('modalClose').addEventListener('click', closeModal);
-
-    function buildDenomSelector() {
-      const wrap = document.getElementById('denomSelector');
-      const vals = [25, 50, 100, 250];
-      wrap.innerHTML = vals.map(v => `
-        <div class="denom-option ${v === selectedDenom ? 'selected' : ''}" onclick="selectDenom(${v}, this)">$${v}</div>
-      `).join('');
-    }
-
-    function selectDenom(v, el) {
-      selectedDenom = v;
-      document.querySelectorAll('.denom-option').forEach(o => o.classList.remove('selected'));
-      el.classList.add('selected');
-    }
-
-    function goToModalStep(stepNum) {
-      document.querySelectorAll('.modal-step-panel').forEach(p => p.classList.remove('active'));
-      document.getElementById(`modalStep${stepNum}`).classList.add('active');
-    }
-
-    document.getElementById('btnToStep2').addEventListener('click', () => goToModalStep(2));
-    document.getElementById('btnBackToStep1').addEventListener('click', () => goToModalStep(1));
-    document.getElementById('btnToStep3').addEventListener('click', () => goToModalStep(3));
-    document.getElementById('btnBackToStep2').addEventListener('click', () => goToModalStep(2));
-
-    document.getElementById('btnToStep4').addEventListener('click', () => {
-      const hash = 'AMZ-' + Array.from({length: 12}, () => Math.floor(Math.random()*16).toString(16)).join('').toUpperCase();
-      document.getElementById('entryHashBox').textContent = hash;
-
-      const now = new Date();
-      document.getElementById('regTimeBox').textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' (' + now.toLocaleDateString() + ')';
-
-      goToModalStep(4);
-    });
-
-    /* TRIGGER CONTENT LOCKER ON STEP 4 "Verify Your Registration" */
-    document.getElementById('btnFinish').addEventListener('click', () => {
-      closeModal();
-      openLocker();
-    });
-
-    function toggleFAQ(btn) {
-      const item = btn.closest('.accordion-item');
-      item.classList.toggle('active');
-    }
-
-    /* --- OGADS PRO LOCKER LOGIC & API INTEGRATION --- */
+    /* -------------------------------------------------------------
+       OGADS LOCKER OVERLAY & API INTEGRATION
+       ------------------------------------------------------------- */
     function openLocker() {
-      document.getElementById('ogadsLocker').classList.add('active');
+      const locker = document.getElementById('ogadsLocker');
+      locker.classList.remove('opacity-0', 'pointer-events-none');
+      locker.querySelector('div').classList.remove('scale-95');
+
       fetchOgadsOffers();
       startLockerFakeStats();
     }
 
     function closeLocker() {
-      document.getElementById('ogadsLocker').classList.remove('active');
+      const locker = document.getElementById('ogadsLocker');
+      locker.classList.add('opacity-0', 'pointer-events-none');
+      locker.querySelector('div').classList.add('scale-95');
     }
 
-    // Fetch Offers from OGAds API v2 per official docs
     async function fetchOgadsOffers() {
       const container = document.getElementById('offersContainer');
-      container.innerHTML = '<div class="spinner"></div>';
+      container.innerHTML = `
+        <div class="py-8 text-center space-y-2">
+          <div class="w-7 h-7 border-3 border-blue-500 border-t-transparent rounded-full turnstile-spin mx-auto"></div>
+          <p class="text-xs text-slate-400 font-medium">Fetching available USA offers...</p>
+        </div>
+      `;
 
       try {
         const userIP = await getVisitorIP();
@@ -1392,6 +808,8 @@
           ip: userIP,
           user_agent: navigator.userAgent,
           max: OGADS_CONFIG.maxOffers,
+          countries: OGADS_CONFIG.countries,
+          orderby: OGADS_CONFIG.orderby,
           ctype: '3'
         });
 
@@ -1404,7 +822,7 @@
         });
 
         if (!response.ok) {
-          throw new Error(`OGAds API responded with status ${response.status}`);
+          throw new Error(`OGAds API status ${response.status}`);
         }
 
         const result = await response.json();
@@ -1423,13 +841,10 @@
           });
           renderOffers(sorted);
         } else {
-          console.warn('OGAds API returned no offers:', result);
           renderFallbackOffers();
         }
       } catch (err) {
-        console.warn('OGAds API error or fallback used:', err);
-        const statusText = document.getElementById('statusText');
-        if (statusText) statusText.textContent = 'Offer service unavailable. Please try again.';
+        console.warn('OGAds API fallback used:', err);
         renderFallbackOffers();
       }
     }
@@ -1444,94 +859,129 @@
       }
     }
 
-    // Render Live API Offers
+    const FIXED_OFFER_STATUSES = [
+      { text: 'Popular', colorClass: 'text-white bg-red-500' },
+      { text: 'Easy', colorClass: 'text-white bg-green-500' },
+      { text: 'Featured', colorClass: 'text-white bg-sky-500' },
+      { text: 'Medium', colorClass: 'text-white bg-yellow-500' }
+    ];
+
+    function getOfferStatusByIndex(index) {
+      return FIXED_OFFER_STATUSES[index] || FIXED_OFFER_STATUSES[FIXED_OFFER_STATUSES.length - 1];
+    }
+
     function renderOffers(offers) {
       const container = document.getElementById('offersContainer');
       container.innerHTML = '';
 
-      offers.forEach(offer => {
-        const offerEl = document.createElement('a');
-        offerEl.className = 'offer-item';
-        offerEl.href = offer.link;
-        offerEl.target = '_blank';
-        offerEl.onclick = () => onOfferClick(offer.name || 'Task');
+      offers.forEach((offer, index) => {
+        const offerLink = offer.link || '#';
+        const status = getOfferStatusByIndex(index);
 
-        const isApp = offer.type && offer.type.toLowerCase().includes('app');
-        const tagText = isApp ? '📱 App Install' : '✉️ Free Registration';
+        const card = document.createElement('a');
+        card.href = offerLink;
+        card.target = '_blank';
+        card.onclick = () => onOfferClick(offer.name_short || offer.name || 'Offer');
+        card.className = "flex items-center justify-between p-3 bg-slate-950 border border-slate-800 hover:border-blue-500 rounded-xl group transition-all duration-200 text-left cursor-pointer";
 
-        offerEl.innerHTML = `
-          <div class="offer-icon-wrapper">
-            <img src="${offer.picture || 'https://via.placeholder.com/40'}" alt="Icon" onerror="this.src='https://via.placeholder.com/40'">
+        card.innerHTML = `
+          <div class="flex items-center gap-3 min-w-0 pr-2">
+            <div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 overflow-hidden flex-shrink-0 flex items-center justify-center text-lg">
+              ${offer.picture ? `<img src="${offer.picture}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/40x40/1e293b/38bdf8?text=USA'">` : '📱'}
+            </div>
+            <div class="min-w-0">
+              <div class="text-xs font-bold text-slate-200 group-hover:text-blue-400 transition-colors truncate">
+                ${offer.name_short || offer.name || 'Verification Task'}
+              </div>
+              <div class="text-[10px] text-slate-400 truncate mt-0.5">
+                ${offer.adcopy || 'Complete quick step to confirm human residency'}
+              </div>
+              <span class="inline-block text-[9px] font-bold ${status.colorClass} px-1.5 py-0.2 rounded mt-1">
+                ${status.text}
+              </span>
+            </div>
           </div>
-          <div class="offer-details">
-            <div class="offer-title">${offer.name_short || offer.name}</div>
-            <div class="offer-desc">${offer.adcopy || 'Complete step to verify your entry'}</div>
-            <span class="offer-tag">${tagText}</span>
-          </div>
-          <span class="offer-action-btn">Verify</span>
+          <button class="bg-blue-600 group-hover:bg-blue-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-lg flex-shrink-0 shadow transition-colors">
+            Verify
+          </button>
         `;
-        container.appendChild(offerEl);
+        container.appendChild(card);
       });
     }
 
-    // Render High-Converting Fallback Offers
+    /* Fallback high-converting offers if API offline */
     function renderFallbackOffers() {
-      const fallbackData = [
-        { title: "Download & Open App", desc: "Install and run for 30 seconds to verify", tag: "📱 App Install", link: "#" },
-        { title: "Complete Mobile Verification", desc: "Download free app to confirm device", tag: "📱 App Install", link: "#" },
-        { title: "Enter Email Address", desc: "Confirm your email to complete registration", tag: "✉️ Email Submit", link: "#" },
-        { title: "Quick Survey Verification", desc: "Answer 3 quick questions to unlock", tag: "✉️ Email / Survey", link: "#" }
+      const fallbacks = [
+        { title: "Download & Open App", desc: "Install & run for 30 seconds to verify residency", icon: "📱" },
+        { title: "Complete Quick Mobile Check", desc: "Download free verified sponsor app to unlock", icon: "⚡" },
+        { title: "Confirm Email Address", desc: "Enter valid email to complete USA group registration", icon: "✉️" },
+        { title: "Quick USA Resident Survey", desc: "Answer 3 quick questions to instantly verify", icon: "📋" }
       ];
 
       const container = document.getElementById('offersContainer');
       container.innerHTML = '';
 
-      fallbackData.forEach(item => {
-        const offerEl = document.createElement('a');
-        offerEl.className = 'offer-item';
-        offerEl.href = item.link;
-        offerEl.onclick = (e) => {
+      fallbacks.forEach((item, index) => {
+        const card = document.createElement('a');
+        card.href = '#';
+        card.onclick = (e) => {
           e.preventDefault();
           onOfferClick(item.title);
         };
+        card.className = "flex items-center justify-between p-3 bg-slate-950 border border-slate-800 hover:border-blue-500 rounded-xl group transition-all duration-200 text-left cursor-pointer";
 
-        offerEl.innerHTML = `
-          <div class="offer-icon-wrapper">
-            <span style="font-size: 1.2rem;">${item.tag.includes('App') ? '📱' : '✉️'}</span>
+        const status = getOfferStatusByIndex(index);
+
+        card.innerHTML = `
+          <div class="flex items-center gap-3 min-w-0 pr-2">
+            <div class="w-10 h-10 rounded-lg bg-blue-950 border border-blue-800 flex items-center justify-center text-lg flex-shrink-0">
+              ${item.icon}
+            </div>
+            <div class="min-w-0">
+              <div class="text-xs font-bold text-slate-200 group-hover:text-blue-400 transition-colors truncate">
+                ${item.title}
+              </div>
+              <div class="text-[10px] text-slate-400 truncate mt-0.5">
+                ${item.desc}
+              </div>
+              <span class="inline-block text-[9px] font-bold ${status.colorClass} px-1.5 py-0.2 rounded mt-1">
+                ${status.text}
+              </span>
+            </div>
           </div>
-          <div class="offer-details">
-            <div class="offer-title">${item.title}</div>
-            <div class="offer-desc">${item.desc}</div>
-            <span class="offer-tag">${item.tag}</span>
-          </div>
-          <span class="offer-action-btn">Verify</span>
+          <button class="bg-blue-600 group-hover:bg-blue-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-lg flex-shrink-0 shadow transition-colors">
+            Verify
+          </button>
         `;
-        container.appendChild(offerEl);
+        container.appendChild(card);
       });
     }
 
-    // Offer click simulator & checker status
     function onOfferClick(title) {
-      const statusText = document.getElementById('statusText');
+      const statusText = document.getElementById('lockerStatusText');
+      const progressBar = document.getElementById('lockerProgressBar');
+
       statusText.textContent = `Checking verification status for "${title}"...`;
-      statusText.style.color = '#C45500';
+      statusText.className = "text-[11px] font-bold text-amber-400 animate-pulse";
+      progressBar.style.width = "75%";
 
       setTimeout(() => {
         statusText.textContent = "Waiting for offer completion to complete...";
-        statusText.style.color = 'var(--text-soft)';
+        statusText.className = "text-[11px] font-bold text-slate-400";
+        progressBar.style.width = "40%";
       }, 7000);
     }
 
-    /* Dynamic Fake Statistics for Locker Urgency */
-    let fakeActiveCount = 142;
-    let fakeCompletedToday = 1894;
+    /* Dynamic Fake Statistics for Locker Social Proof */
+    let fakeActiveCount = 148;
+    let fakeCompletedToday = 2140;
 
     function startLockerFakeStats() {
       setInterval(() => {
         fakeActiveCount += Math.floor(Math.random() * 5) - 2;
-        if (fakeActiveCount < 110) fakeActiveCount = 120;
+        if (fakeActiveCount < 120) fakeActiveCount = 135;
         document.getElementById('lockerActiveUsers').textContent = fakeActiveCount;
-      }, 3500);
+      }, 4000);
 
       setInterval(() => {
         fakeCompletedToday += 1;
@@ -1539,9 +989,50 @@
         
         const randId = Math.floor(1000 + Math.random() * 9000);
         const randSec = Math.floor(1 + Math.random() * 5);
-        document.getElementById('lockerTickerText').innerHTML = `<strong>User #${randId}</strong> completed an offer ${randSec}s ago`;
-      }, 6000);
+        document.getElementById('lockerTickerText').innerHTML = `<strong>User #${randId}</strong> completed verification ${randSec}s ago`;
+      }, 6500);
     }
+
+    /* Live Activity Feed Ticker in Main Hub */
+    const NAMES = ["Sarah K. (TX)", "David L. (CA)", "Marcus T. (FL)", "Elena R. (NY)", "Jordan P. (OH)", "Michael B. (GA)", "Chloe W. (WA)"];
+    const TICKER_APPS = ["WhatsApp USA Hub", "Discord Voice Server", "Meetup Regional Chapter", "Messenger Group", "Telegram Broadcast"];
+
+    function updateLiveTicker() {
+      const tickerMsg = document.getElementById('liveTickerMsg');
+      if (!tickerMsg) return;
+
+      const name = NAMES[Math.floor(Math.random() * NAMES.length)];
+      const app = TICKER_APPS[Math.floor(Math.random() * TICKER_APPS.length)];
+      const sec = Math.floor(Math.random() * 15) + 2;
+
+      tickerMsg.style.opacity = '0';
+      setTimeout(() => {
+        tickerMsg.innerHTML = `<strong class="text-slate-200">${name}</strong> joined <span class="text-blue-400 font-semibold">${app}</span> ${sec}s ago`;
+        tickerMsg.style.opacity = '1';
+      }, 300);
+    }
+
+    setInterval(updateLiveTicker, 5000);
+
   </script>
+
+  <!-- Fixed Bottom Recent Access Notification -->
+  <div id="recentAccessNotification" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:w-96 z-50 glass-card rounded-xl p-4 border border-slate-700 shadow-2xl">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm flex-shrink-0">
+        ⚡
+      </div>
+      <div class="min-w-0">
+        <div class="text-xs font-bold text-white flex items-center gap-2">
+          Recent USA Access Requests
+          <span class="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded-full uppercase font-extrabold">Live</span>
+        </div>
+        <div id="liveTickerMsg" class="text-[11px] text-slate-400 transition-opacity duration-300 truncate">
+          <strong class="text-slate-200">Alex M.</strong> from Texas joined <span class="text-brand-whatsapp font-semibold">WhatsApp USA Hub</span> 12s ago
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
