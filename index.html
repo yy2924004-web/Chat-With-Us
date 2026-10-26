@@ -1,1019 +1,772 @@
-<!doctype html>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USA Vault Giveaways — Premium Item Allocations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Outfit:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Tailwind Configuration -->
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            heading: ['Outfit', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              whatsapp: '#25D366',
-              whatsappDark: '#128C7E',
-              discord: '#5865F2',
-              discordDark: '#313338',
-              meetup: '#F64060',
-              messenger: '#0084FF',
-              groupme: '#00AFF0',
-              telegram: '#229ED9',
-              darkBg: '#0B0F17',
-              cardBg: '#161F30',
-              cardHover: '#1E293B',
-              borderDark: '#26334D',
-            }
-          },
-          boxShadow: {
-            'glow-green': '0 0 25px -5px rgba(37, 211, 102, 0.35)',
-            'glow-blurple': '0 0 25px -5px rgba(88, 101, 242, 0.35)',
-            'glow-red': '0 0 25px -5px rgba(246, 64, 96, 0.35)',
-            'glow-blue': '0 0 25px -5px rgba(0, 132, 255, 0.35)',
-            'glow-cyan': '0 0 25px -5px rgba(0, 175, 240, 0.35)',
-            'glow-telegram': '0 0 25px -5px rgba(34, 158, 217, 0.35)',
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
-    html { background-color: #0B0F17 !important; }
-    body { background-color: #0B0F17 !important; }
-
-    /* Custom Scrollbars */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0B0F17;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #26334D;
-      border-radius: 99px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #3B82F6;
-    }
-
-    /* Ambient Background Glow */
-    .bg-grid-pattern {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-      background-size: 24px 24px;
+    :root {
+      --vault-dark: #0B0F19;
+      --vault-card: #131B2E;
+      --vault-border: #1E293B;
+      --vault-accent: #F59E0B;
+      --vault-accent-hover: #D97706;
+      --vault-gold: #FBBF24;
+      --vault-green: #10B981;
+      --vault-blue: #3B82F6;
+      
+      --bg-page: #070A10;
+      --bg-surface: #111827;
+      
+      --text-main: #F9FAFB;
+      --text-soft: #9CA3AF;
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      
+      --font-main: 'Plus Jakarta Sans', sans-serif;
     }
 
-    /* Glassmorphism Effect */
-    .glass-card {
-      background: rgba(22, 31, 48, 0.85);
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      min-height: 100vh;
+      line-height: 1.5;
+      padding-bottom: 50px;
+    }
+
+    /* Navigation Bar */
+    header.nav-header {
+      background-color: rgba(11, 15, 25, 0.95);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid var(--vault-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    /* Pulse Animations */
-    @keyframes pulse-ring {
-      0% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.1); opacity: 0.4; }
-      100% { transform: scale(0.95); opacity: 0.8; }
-    }
-    .pulse-online {
-      animation: pulse-ring 2s infinite ease-in-out;
-    }
-
-    /* Turnstile Checkbox Ripple */
-    @keyframes spin-fast {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .turnstile-spin {
-      animation: spin-fast 0.8s linear infinite;
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    /* Mobile Drawer Transition */
-    @media (max-width: 639px) {
-      .modal-content-container {
-        border-bottom-left-radius: 0 !important;
-        border-bottom-right-radius: 0 !important;
-        max-height: 90vh;
-      }
+    .brand-identity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
     }
 
-    /* Locker Shimmer Header */
-    .shimmer-text {
-      background: linear-gradient(90deg, #FFFFFF 0%, #38BDF8 50%, #FFFFFF 100%);
-      background-size: 200% auto;
-      color: transparent;
+    .brand-logo-badge {
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: var(--vault-dark);
+      font-weight: 800;
+      font-size: 1.1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-title span { color: var(--vault-accent); }
+
+    /* Professional Live Status Badge */
+    .live-status-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #0F172A;
+      border: 1px solid var(--vault-border);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--vault-green);
+      box-shadow: 0 0 8px var(--vault-green);
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .live-status-container span strong {
+      color: white;
+      font-weight: 700;
+    }
+
+    /* Category Filter Bar */
+    .category-bar {
+      max-width: 1280px;
+      margin: 24px auto 0;
+      padding: 0 20px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .category-bar::-webkit-scrollbar { display: none; }
+
+    .cat-btn {
+      background: var(--vault-card);
+      border: 1px solid var(--vault-border);
+      color: var(--text-soft);
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .cat-btn:hover { border-color: var(--vault-accent); color: white; }
+    .cat-btn.active { background: var(--vault-accent); border-color: var(--vault-accent); color: var(--vault-dark); font-weight: 700; }
+
+    /* Page Main Container */
+    main {
+      max-width: 1280px;
+      margin: 20px auto 0;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero-container {
+      background: linear-gradient(135deg, #131B2E 0%, #0F172A 100%);
+      border: 1px solid var(--vault-border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .hero-container::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-headline {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #FFFFFF, #CBD5E1);
       -webkit-background-clip: text;
-      animation: shimmer 3s linear infinite;
+      -webkit-text-fill-color: transparent;
     }
 
-    @keyframes shimmer {
-      to { background-position: 200% center; }
+    .hero-subtext {
+      font-size: 1rem;
+      color: var(--text-soft);
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .trust-indicators {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--vault-border);
+    }
+
+    .trust-pill {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #34D399;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Item Grid Section */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .item-card {
+      background: var(--vault-card);
+      border: 1px solid var(--vault-border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .item-card:hover {
+      border-color: var(--vault-accent);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    .item-badge-top {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--vault-accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .stock-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #F87171;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .item-image-wrapper {
+      width: 100%;
+      height: 190px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 14px;
+      background-color: #0A0F1D;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--vault-border);
+      padding: 10px;
+    }
+
+    .item-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .item-card:hover .item-image-wrapper img {
+      transform: scale(1.06);
+    }
+
+    .item-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .item-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+
+    .item-meta span strong { color: var(--vault-gold); }
+
+    .btn-enter {
+      width: 100%;
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: var(--vault-dark);
+      cursor: pointer;
+      text-align: center;
+      transition: opacity 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+    }
+
+    .btn-enter:hover { opacity: 0.92; }
+    .btn-enter:active { transform: scale(0.98); }
+
+    /* Modal Overlay */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-backdrop.active { opacity: 1; pointer-events: auto; }
+
+    .modal-window {
+      background: var(--vault-card);
+      border: 1px solid var(--vault-border);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 460px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--vault-border);
+      color: var(--text-soft);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-close-btn:hover { color: white; background: rgba(255,255,255,0.1); }
+
+    .modal-step-panel { display: none; }
+    .modal-step-panel.active { display: block; }
+
+    .modal-header h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
+    .modal-header p { font-size: 0.85rem; color: var(--text-soft); margin-bottom: 20px; }
+
+    .form-group { margin-bottom: 16px; text-align: left; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; color: var(--text-soft); }
+    .input-control {
+      width: 100%;
+      background: var(--bg-page);
+      border: 1px solid var(--vault-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      color: white;
+      font-family: inherit;
+    }
+    .input-control:focus { outline: none; border-color: var(--vault-accent); }
+
+    .modal-actions { display: flex; gap: 10px; margin-top: 24px; }
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--vault-border);
+      color: white;
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      font-weight: 600;
+      cursor: pointer;
+      flex: 1;
+      font-size: 0.85rem;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    .btn-primary-action {
+      background: var(--vault-accent);
+      border: none;
+      color: var(--vault-dark);
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      flex: 2;
+      font-size: 0.875rem;
+    }
+    .btn-primary-action:hover { background: var(--vault-accent-hover); }
+
+    .hash-display {
+      background: var(--bg-page);
+      border: 1px dashed var(--vault-border);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      text-align: center;
+      margin: 16px 0;
+      color: var(--vault-gold);
+      letter-spacing: 0.05em;
+    }
+
+    /* Live Toast Notification */
+    .claim-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 2000;
+      background: var(--vault-card);
+      border: 1px solid var(--vault-border);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transform: translateY(120px);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      max-width: 360px;
+    }
+
+    .claim-toast.show { transform: translateY(0); opacity: 1; }
+    .toast-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--vault-accent); color: var(--vault-dark); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+    .toast-title { font-size: 0.8rem; font-weight: 700; color: white; }
+    .toast-time { font-size: 0.725rem; color: var(--vault-gold); }
+
+    @media (max-width: 768px) {
+      .hero-headline { font-size: 1.5rem; }
+      .claim-toast { left: 16px; right: 16px; max-width: none; }
     }
   </style>
+</head>
+<body>
 
-
-
-  <div class="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0"></div>
-  <div class="fixed -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-blue-600/15 blur-[120px] rounded-full pointer-events-none"></div>
-  <div class="fixed top-1/2 -left-40 w-[400px] h-[400px] bg-emerald-600/10 blur-[120px] rounded-full pointer-events-none"></div>
-  <div class="fixed bottom-0 -right-40 w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none"></div>
-
-  <header class="relative z-10 border-b border-brand-borderDark/60 bg-brand-darkBg/90 backdrop-blur-md sticky top-0">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-heading font-extrabold text-white text-xl shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
-          🇺🇸
-        </div>
-        <div>
-          <div class="font-heading font-bold text-lg text-white leading-tight flex items-center gap-1.5">
-            USA Community Hub
-            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-          </div>
-          <p class="text-[11px] text-slate-400 font-medium">Verified Regional & Interest Networks</p>
-        </div>
+  <!-- Header -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="#" class="brand-identity">
+        <div class="brand-logo-badge">V</div>
+        <span class="brand-title">vault<span>giveaways</span></span>
       </a>
 
-      <!-- Live Counter Badge -->
-      <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 bg-slate-900/80 border border-slate-800 px-3.5 py-1.5 rounded-full text-xs text-slate-300">
-          <span class="relative flex h-2 w-2">
-            <span class="pulse-online absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span id="liveActiveCounter" class="font-bold text-emerald-400">24,819</span> Active Members Online
-        </div>
-        <div class="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></path></svg>
-          100% Free
-        </div>
+      <!-- Professional Dynamic Online Status -->
+      <div class="live-status-container">
+        <div class="live-dot"></div>
+        <span>USA Active: <strong id="dynamicOnline">1,423</strong></span>
       </div>
     </div>
   </header>
 
-  <!-- MAIN CONTENT WRAPPER -->
-  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24">
-    
-    <section class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold tracking-wide uppercase mb-4">
-        <span>🔥 #1 USA Regional & Interest Network 2026</span>
-      </div>
-      <h1 class="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-        Connect with Verified <span class="shimmer-text">USA Communities</span> Nationwide
-      </h1>
-      <p class="text-slate-300 text-base sm:text-lg mb-6 leading-relaxed">
-        Select your preferred messaging platform below to access official state groups, local meetup channels, interest hubs, and nationwide chat rooms.
-      </p>
+  <!-- Category Filter Bar -->
+  <div class="category-bar">
+    <button class="cat-btn active" onclick="filterCategory('all', this)">🔥 All Giveaways</button>
+    <button class="cat-btn" onclick="filterCategory('gaming', this)">🎮 Gaming & Consoles</button>
+    <button class="cat-btn" onclick="filterCategory('tech', this)">💻 Tech & Smartphones</button>
+    <button class="cat-btn" onclick="filterCategory('audio', this)">🎧 Audio & Gear</button>
+    <button class="cat-btn" onclick="filterCategory('giftcards', this)">💳 Gift Cards</button>
+  </div>
 
-      <!-- Trust Badges -->
-      <div class="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-semibold text-slate-400">
-        <span class="flex items-center gap-1.5 text-emerald-400">
-          <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></path></svg>
-          No Purchase Required
-        </span>
-        <span class="hidden sm:inline text-slate-700">•</span>
-        <span class="flex items-center gap-1.5 text-blue-400">
-          <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></path></svg>
-          Instant Invite Access
-        </span>
-        <span class="hidden sm:inline text-slate-700">•</span>
-        <span class="flex items-center gap-1.5 text-purple-400">
-          <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></path></svg>
-          Active Moderation
-        </span>
-      </div>
-    </section>
-
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16" id="appCardsGrid">
+  <main>
+    <!-- Hero Section -->
+    <div class="hero-container">
+      <h1 class="hero-headline">Official USA Vault Item Giveaways</h1>
+      <p class="hero-subtext">Exclusive to United States residents. Choose your preferred premium item, secure your giveaway ticket instantly, and verify your entry to claim free delivery.</p>
       
-      <!-- CARD 1: WHATSAPP -->
-      <div onclick="openAppModal('whatsapp')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-green hover:border-brand-whatsapp/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-whatsapp text-slate-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Top Choice in USA
+      <div class="trust-indicators">
+        <div class="trust-pill">✓ USA Residents Only</div>
+        <div class="trust-pill">✓ Instant Ticket Code Generation</div>
+        <div class="trust-pill">✓ Free Nationwide Shipping</div>
+      </div>
+    </div>
+
+    <!-- Items Grid -->
+    <div class="card-grid" id="itemGrid">
+
+      <!-- Item 1: PS5 Pro -->
+      <div class="item-card" data-category="gaming">
+        <div class="item-badge-top">Trending #1</div>
+        <div class="stock-badge">Only <span class="stock-num" data-stock="13">13</span> left</div>
+        <div class="item-image-wrapper">
+          <img width="300" height="190" src="https://i5.walmartimages.com/seo/Newest-Sony-PlayStation-PS5-Pro-Console_2460462f-7cb9-4b3a-a20a-7a06cc510f53.11d268412085164117fab1b77617ee20.png" alt="PlayStation 5 Pro">
         </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- WhatsApp Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-whatsapp group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" class="w-8 h-8" loading="lazy" />
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-whatsapp transition-colors">WhatsApp Hub</h3>
-            <p class="text-xs text-slate-400">Official Mobile Community</p>
-          </div>
+        <div class="item-title">PlayStation 5 Pro Console</div>
+        <div class="item-meta">
+          <span>Tickets: <strong class="ticket-count" data-base="84210">84,210</strong></span>
+          <span style="color: #34D399;">Status: Active</span>
         </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Direct smartphone chat, regional announcement broadcast channels, and verified USA member groups.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-whatsapp"></span>
-            142,500+ Members
-          </div>
-          <span class="text-brand-whatsapp font-bold bg-brand-whatsapp/10 px-2.5 py-1 rounded-full">⚡ High Activity</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-whatsapp hover:bg-emerald-500 text-slate-950 font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Join WhatsApp Group</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></path></svg>
-        </button>
+        <button class="btn-enter" onclick="openEntryModal('PlayStation 5 Pro Console', 'gaming')">Enter Giveaway</button>
       </div>
 
-      <!-- CARD 2: DISCORD -->
-      <div onclick="openAppModal('discord')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-blurple hover:border-brand-discord/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-discord text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Gaming & Voice
+      <!-- Item 2: iPhone 17 Pro -->
+      <div class="item-card" data-category="tech">
+        <div class="item-badge-top">High Demand</div>
+        <div class="stock-badge">Only <span class="stock-num" data-stock="19">19</span> left</div>
+        <div class="item-image-wrapper">
+          <img width="300" height="190" src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-17-pro-max.jpg" alt="iPhone 17 Pro Max">
         </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- Discord Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-discord group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" class="w-8 h-8" loading="lazy" />
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-discord transition-colors">Discord Server</h3>
-            <p class="text-xs text-slate-400">Official Voice & Lounge</p>
-          </div>
+        <div class="item-title">iPhone 17 Pro Max (1TB)</div>
+        <div class="item-meta">
+          <span>Tickets: <strong class="ticket-count" data-base="92400">92,400</strong></span>
+          <span style="color: #34D399;">Status: Active</span>
         </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Topic channels, 24/7 live audio lounges, gaming squads, and regional USA networking categories.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-discord"></span>
-            98,200+ Members
-          </div>
-          <span class="text-brand-discord font-bold bg-brand-discord/10 px-2.5 py-1 rounded-full">🎙️ 18 Voice Active</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-discord hover:bg-indigo-500 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Join Discord Server</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></path></svg>
-        </button>
+        <button class="btn-enter" onclick="openEntryModal('iPhone 17 Pro Max (1TB)', 'tech')">Enter Giveaway</button>
       </div>
 
-      <!-- CARD 3: MEETUP -->
-      <div onclick="openAppModal('meetup')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-red hover:border-brand-meetup/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-meetup text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Local Events
+      <!-- Item 3: RTX 5090 -->
+      <div class="item-card" data-category="gaming">
+        <div class="item-badge-top">Ultimate GPU</div>
+        <div class="stock-badge">Only <span class="stock-num" data-stock="34">34</span> left</div>
+        <div class="item-image-wrapper">
+          <img width="300" height="190" src="https://osaka.ma/wp-content/uploads/2025/04/PNY-GeForce-RTX-5090-32GB-ARGB-Overclocked-Triple-Fan-NVIDIA-GPU-1-600x600.jpg" alt="NVIDIA RTX 5090">
         </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- Meetup Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-meetup group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/meetup/F64060" alt="Meetup" class="w-8 h-8" loading="lazy" />
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-meetup transition-colors">Meetup Chapter</h3>
-            <p class="text-xs text-slate-400">In-Person & Online Events</p>
-          </div>
+        <div class="item-title">NVIDIA RTX 5090 Graphics Card</div>
+        <div class="item-meta">
+          <span>Tickets: <strong class="ticket-count" data-base="67150">67,150</strong></span>
+          <span style="color: #34D399;">Status: Active</span>
         </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">City-by-city social gatherings, professional networking, outdoor weekend activities, and workshops.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-meetup"></span>
-            64,800+ Members
-          </div>
-          <span class="text-brand-meetup font-bold bg-brand-meetup/10 px-2.5 py-1 rounded-full">📍 120+ Events</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-meetup hover:bg-rose-600 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Explore Meetups</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></path></svg>
-        </button>
+        <button class="btn-enter" onclick="openEntryModal('NVIDIA RTX 5090 Graphics Card', 'gaming')">Enter Giveaway</button>
       </div>
 
-      <!-- CARD 4: MESSENGER -->
-      <div onclick="openAppModal('messenger')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-blue hover:border-brand-messenger/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-messenger text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Instant Messaging
+      <!-- Item 4: MacBook Pro M4 -->
+      <div class="item-card" data-category="tech">
+        <div class="item-badge-top">Pro Choice</div>
+        <div class="stock-badge">Only <span class="stock-num" data-stock="45">45</span> left</div>
+        <div class="item-image-wrapper">
+          <img width="300" height="190" src="https://cdn.mos.cms.futurecdn.net/v2/t:0,l:492,cw:1312,ch:984,q:80,w:1312/wNCj9urRKMRdrsjCsmSi9L.jpg" alt="MacBook Pro M4">
         </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- Messenger Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-messenger group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/messenger/0084FF" alt="Messenger" class="w-8 h-8" loading="lazy" />
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-messenger transition-colors">Messenger Chat</h3>
-            <p class="text-xs text-slate-400">Facebook Community Network</p>
-          </div>
+        <div class="item-title">MacBook Pro 16" M4 Max</div>
+        <div class="item-meta">
+          <span>Tickets: <strong class="ticket-count" data-base="54800">54,800</strong></span>
+          <span style="color: #34D399;">Status: Active</span>
         </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Direct Facebook social integration, neighborhood groups, marketplace deals, and local community chats.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-messenger"></span>
-            83,400+ Members
-          </div>
-          <span class="text-brand-messenger font-bold bg-brand-messenger/10 px-2.5 py-1 rounded-full">💬 Fast Reply</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-messenger hover:bg-blue-600 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Join Messenger Group</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></path></svg>
-        </button>
+        <button class="btn-enter" onclick="openEntryModal('MacBook Pro 16 M4 Max', 'tech')">Enter Giveaway</button>
       </div>
 
-      <!-- CARD 5: GROUPME -->
-      <div onclick="openAppModal('groupme')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-cyan hover:border-brand-groupme/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-groupme text-slate-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Campus & Local
+      <!-- Item 5: AirPods Max -->
+      <div class="item-card" data-category="audio">
+        <div class="item-badge-top">Audio Gear</div>
+        <div class="stock-badge">Only <span class="stock-num" data-stock="53">53</span> left</div>
+        <div class="item-image-wrapper">
+          <img width="300" height="190" src="https://iclusters.in/cdn/shop/files/71S889xFarL.jpg?v=1773387390" alt="AirPods Max">
         </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- GroupMe Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-groupme group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/groupme/00AFF0" alt="GroupMe" class="w-8 h-8" loading="lazy" />
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-groupme transition-colors">GroupMe Network</h3>
-            <p class="text-xs text-slate-400">Campus & Student Groups</p>
-          </div>
+        <div class="item-title">Apple AirPods Max Wireless</div>
+        <div class="item-meta">
+          <span>Tickets: <strong class="ticket-count" data-base="31900">31,900</strong></span>
+          <span style="color: #34D399;">Status: Active</span>
         </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">College campus hubs, study groups, regional interest circles, and easy SMS-friendly chat rooms.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-groupme"></span>
-            51,900+ Members
-          </div>
-          <span class="text-brand-groupme font-bold bg-brand-groupme/10 px-2.5 py-1 rounded-full">🎓 450+ Campuses</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-groupme hover:bg-sky-500 text-slate-950 font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Join GroupMe</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></path></svg>
-        </button>
+        <button class="btn-enter" onclick="openEntryModal('Apple AirPods Max Wireless', 'audio')">Enter Giveaway</button>
       </div>
 
-      <!-- CARD 6: TELEGRAM -->
-      <div onclick="openAppModal('telegram')" class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-telegram hover:border-brand-telegram/50 cursor-pointer relative overflow-hidden group">
-        <div class="absolute top-0 right-0 bg-brand-telegram text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
-          Fast News & Broadcast
+      <!-- Item 6: Steam Deck OLED -->
+      <div class="item-card" data-category="gaming">
+        <div class="item-badge-top">Handheld</div>
+        <div class="stock-badge">Only <span class="stock-num" data-stock="6">6</span> left</div>
+        <div class="item-image-wrapper">
+          <img width="300" height="190" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr6cH5XiihpckleaXAW1SCRinBn-JMjBQ03oO0VnNXoSoRp23hHEDQ0oE&s=10" alt="Steam Deck OLED">
         </div>
-        <div class="flex items-center gap-4 mb-4">
-          <!-- Telegram Icon -->
-          <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-brand-telegram group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="https://cdn.simpleicons.org/telegram/229ED9" alt="Telegram" class="w-8 h-8" loading="lazy" />
-          </div>
-          <div>
-            <h3 class="font-heading font-bold text-xl text-white group-hover:text-brand-telegram transition-colors">Telegram Channel</h3>
-            <p class="text-xs text-slate-400">Official Broadcast & News</p>
-          </div>
+        <div class="item-title">Steam Deck OLED 1TB</div>
+        <div class="item-meta">
+          <span>Tickets: <strong class="ticket-count" data-base="48300">48,300</strong></span>
+          <span style="color: #34D399;">Status: Active</span>
         </div>
-        <p class="text-sm text-slate-300 mb-4 line-clamp-2">Real-time nationwide alerts, media vault, secret community discussions, and direct deal signals.</p>
-        <div class="flex items-center justify-between pt-3 border-t border-slate-800 text-xs">
-          <div class="flex items-center gap-1.5 text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-brand-telegram"></span>
-            115,000+ Subscribers
-          </div>
-          <span class="text-brand-telegram font-bold bg-brand-telegram/10 px-2.5 py-1 rounded-full">📢 Instant Broadcast</span>
-        </div>
-        <button class="w-full mt-4 bg-brand-telegram hover:bg-sky-600 text-white font-extrabold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-md">
-          <span>Subscribe Channel</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></path></svg>
-        </button>
+        <button class="btn-enter" onclick="openEntryModal('Steam Deck OLED 1TB', 'gaming')">Enter Giveaway</button>
       </div>
 
-    </section>
+      <!-- Item 7: Amazon $500 Gift Card -->
+      <div class="item-card" data-category="giftcards">
+        <div class="item-badge-top">Instant Code</div>
+        <div class="stock-badge" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); color: var(--vault-accent);">Only <span class="stock-num" data-stock="47">47</span> left</div>
+        <div class="item-image-wrapper">
+          <img width="300" height="190" src="https://livecards.net/_pi/amazon-gift-card-500-try-70868.jpg" alt="Amazon $500 Gift Card">
+        </div>
+        <div class="item-title">Amazon $500 Gift Card</div>
+        <div class="item-meta">
+          <span>Tickets: <strong class="ticket-count" data-base="115200">115,200</strong></span>
+          <span style="color: #34D399;">Status: Active</span>
+        </div>
+        <button class="btn-enter" onclick="openEntryModal('Amazon $500 Gift Card', 'giftcards')">Enter Giveaway</button>
+      </div>
 
+    </div>
   </main>
 
-  <footer class="relative z-10 border-t border-brand-borderDark/60 bg-brand-darkBg py-8 text-slate-500 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
-      <div>
-        <p class="font-semibold text-slate-400 mb-1">USA Community Hub © 2026. All Rights Reserved.</p>
-        <p>Independent community directory connecting verified US residents to regional platform groups.</p>
-      </div>
-      <div class="flex gap-4 font-medium text-slate-400">
-        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-        <span>•</span>
-        <a href="#" class="hover:text-white transition-colors">Terms of Access</a>
-        <span>•</span>
-        <a href="#" class="hover:text-white transition-colors">Safety Verification</a>
-      </div>
-    </div>
-  </footer>
+  <!-- MODAL WINDOW -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modalClose">✕</button>
 
-  <!-- ========================================================= -->
-  <!-- MODAL FLOW: APP PREVIEW & HUMAN VERIFICATION STEP -->
-  <!-- ========================================================= -->
-  <div id="appPreviewModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
-    
-    <div class="modal-content-container w-full sm:max-w-lg bg-brand-cardBg border border-slate-700 rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform translate-y-8 sm:translate-y-0 transition-transform duration-300 flex flex-col max-h-[90vh] sm:max-h-[85vh]">
-      
-      <!-- Mobile Touch Drag Indicator -->
-      <div class="sm:hidden pt-3 pb-1 flex justify-center bg-slate-900 flex-shrink-0">
-        <div class="w-12 h-1.5 bg-slate-700 rounded-full"></div>
-      </div>
-
-      <!-- App Header Banner (Dynamic via JS) -->
-      <div id="modalAppBanner" class="p-5 text-white relative transition-colors duration-300 flex-shrink-0">
-        <button onclick="closeAppModal()" class="absolute top-4 right-4 bg-black/30 hover:bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors text-sm font-bold">
-          ✕
-        </button>
-
-        <div class="flex items-center gap-3.5">
-          <div id="modalAppIcon" class="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-lg text-white overflow-hidden flex-shrink-0">
-            <!-- Dynamic SVG -->
-          </div>
-          <div>
-            <span id="modalAppBadge" class="inline-block text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-white/20 tracking-wider mb-1">
-              Official Hub
-            </span>
-            <h3 id="modalAppTitle" class="font-heading font-extrabold text-xl leading-snug">
-              🇺🇸 USA WhatsApp Hub
-            </h3>
-            <p id="modalAppSub" class="text-xs opacity-90 font-medium">
-              Verified USA Members • Active 24/7
-            </p>
-          </div>
+      <!-- Step 1: Details Entry -->
+      <div class="modal-step-panel active" id="modalStep1">
+        <div class="modal-header">
+          <h3 id="modalItemTitle">Enter Giveaway</h3>
+          <p>Please provide your shipping/contact details (USA residents only) to register your ticket entry:</p>
+        </div>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="input-control" id="userNameInput" placeholder="e.g. Alex Morgan">
+        </div>
+        <div class="form-group">
+          <label>Email Address ( Optional ) :</label>
+          <input type="email" class="input-control" id="userEmailInput" placeholder="alex@example.com">
+        </div>
+        <div class="modal-actions">
+          <button class="btn-primary-action" onclick="goToStep(2)" style="width: 100%;">Continue to Generate Ticket</button>
         </div>
       </div>
 
-      <!-- Scrollable Content Area -->
-      <div class="flex-1 overflow-y-auto p-5 space-y-4">
-        
-        <!-- Platform UI Card Preview -->
-        <div id="modalAppPreviewBox" class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 text-xs font-sans">
-          <!-- Dynamic Content Rendered Here -->
+      <!-- Step 2: Confirmation & Ticket Generation -->
+      <div class="modal-step-panel" id="modalStep2">
+        <div class="modal-header" style="text-align: center;">
+          <h3 style="color: var(--vault-accent);">Ticket Registered!</h3>
+          <p>Your unique ticket hash has been generated below.</p>
         </div>
-
-        <!-- HUMAN VERIFICATION STEP (TURNSTILE / RECAPTCHA STYLE) -->
-        <div class="bg-slate-900 border border-slate-700/80 rounded-xl p-4 relative overflow-hidden">
-          <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></path></svg>
-              <span class="font-bold text-slate-200 text-xs">Human Access Verification</span>
-            </div>
-            <span class="text-[10px] text-slate-500 font-mono">Cloudflare Guard</span>
-          </div>
-
-          <!-- Interactive Turnstile Checkbox Box -->
-          <div onclick="handleHumanCheckClick()" class="bg-slate-950 border border-slate-800 hover:border-slate-600 rounded-lg p-3 flex items-center justify-between cursor-pointer transition-colors group">
-            <div class="flex items-center gap-3">
-              <div id="turnstileBox" class="w-6 h-6 rounded border-2 border-slate-600 group-hover:border-blue-400 flex items-center justify-center bg-slate-900 transition-colors">
-                <div id="turnstileCheck" class="hidden text-emerald-400 font-bold text-sm">✓</div>
-                <div id="turnstileSpinner" class="hidden w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full turnstile-spin"></div>
-              </div>
-              <span id="turnstileLabel" class="text-xs font-semibold text-slate-300 group-hover:text-white transition-colors">
-                I am human (Verify USA Access)
-              </span>
-            </div>
-            <!-- Cloudflare / Security logo graphic -->
-            <div class="text-right">
-              <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Turnstile</div>
-              <div class="text-[8px] text-slate-600">Privacy • Terms</div>
-            </div>
-          </div>
-          <p class="text-[10px] text-slate-400 mt-2 text-center">
-            Click checkbox to complete human verification and unlock full group invite links.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Sticky Action Button (always visible) -->
-      <div class="p-5 pt-0 flex-shrink-0 bg-gradient-to-t from-brand-cardBg via-brand-cardBg to-transparent">
-        <button id="btnProceedToLocker" onclick="handleHumanCheckClick()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold py-3 rounded-xl transition-all shadow-lg text-sm flex items-center justify-center gap-2">
-          <span>Verify & Unlock Invite Link</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></path></svg>
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- ========================================================= -->
-  <!-- REAL HUMAN VERIFICATION STEP (OGADS OFFER API INTEGRATION) -->
-  <!-- ========================================================= -->
-  <div id="ogadsLocker" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/90 backdrop-blur-lg opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="w-full max-w-md bg-slate-900 border-2 border-blue-500/50 rounded-2xl shadow-2xl overflow-hidden relative transform scale-95 transition-transform duration-300">
-      
-      <!-- Locker Close Button -->
-      <button onclick="closeLocker()" class="absolute top-3 right-3 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold z-20">
-        ✕
-      </button>
-
-      <!-- Locker Header -->
-      <div class="bg-gradient-to-b from-slate-800 to-slate-900 p-5 border-b border-slate-800 text-center relative">
-        <div class="w-12 h-12 mx-auto mb-2 rounded-2xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 text-2xl shadow-inner">
-          🔒
-        </div>
-        <h2 class="font-heading font-extrabold text-xl text-white">
-          USA Community Verification
-        </h2>
-        <p class="text-xs text-slate-300 mt-1 max-w-xs mx-auto">
-          Complete 1 quick verification step below to confirm human presence & unlock invite link.
-        </p>
-      </div>
-
-      <!-- Live Stats & Urgency Bar -->
-      <div class="bg-slate-950 border-b border-slate-800 px-4 py-2.5 flex items-center justify-between text-[11px]">
-        <div class="flex items-center gap-1.5 text-slate-300 font-semibold">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-online"></span>
-          <span id="lockerActiveUsers" class="text-emerald-400 font-extrabold">148</span> Users Verifying
-        </div>
-        <div class="text-emerald-400 font-bold flex items-center gap-1">
-          ✓ <span id="lockerCompletedToday">2,140</span> Verified Today
-        </div>
-      </div>
-
-      <!-- Locker Body & Offers Container -->
-      <div class="p-4 space-y-3">
-        <div class="text-xs text-slate-300 font-semibold text-center">
-          Select an available verification offer below (1 Required):
-        </div>
-
-        <!-- Offers Container Loaded Dynamically via OGAds API -->
-        <div id="offersContainer" class="space-y-2.5 max-h-[260px] overflow-y-auto pr-1">
-          <!-- Loading Spinner -->
-          <div class="py-8 text-center space-y-2">
-            <div class="w-7 h-7 border-3 border-blue-500 border-t-transparent rounded-full turnstile-spin mx-auto"></div>
-            <p class="text-xs text-slate-400 font-medium">Fetching available USA offers...</p>
-          </div>
-        </div>
-
-        <!-- Progress & Verification Status Box -->
-        <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
-          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mb-2">
-            <div id="lockerProgressBar" class="bg-gradient-to-r from-blue-500 to-emerald-400 h-full w-1/3 transition-all duration-500"></div>
-          </div>
-          <div id="lockerStatusText" class="text-[11px] font-bold text-slate-400">
-            Waiting for offer completion...
-          </div>
-        </div>
-
-        <!-- Live Activity Ticker -->
-        <div class="text-[10px] text-slate-400 pt-1 flex items-center justify-center gap-1.5 border-t border-slate-800/80">
-          <span>⚡</span>
-          <span id="lockerTickerText"><strong>User #8491</strong> completed verification 3s ago</span>
+        <div class="hash-display" id="ticketHashBox">VTK-000000000</div>
+        <p style="font-size: 0.8rem; color: var(--text-soft); text-align: center; margin-bottom: 16px;">Registration Time: <strong id="regTimeBox">--:--:--</strong></p>
+        <div class="modal-actions">
+          <button class="btn-secondary" onclick="goToStep(1)">Back</button>
+          <button class="btn-primary-action" onclick="redirectToDirectLocker()">Verify Ticket & Claim</button>
         </div>
       </div>
 
     </div>
   </div>
 
+  <!-- LIVE TOAST NOTIFICATION -->
+  <div class="claim-toast" id="claimToast">
+    <div class="toast-avatar" id="toastAvatar">J</div>
+    <div>
+      <div class="toast-title" id="toastTitle">Jordan P. entered PlayStation 5 Pro</div>
+      <div class="toast-time" id="toastTime">Just now • Verified Entry</div>
+    </div>
+  </div>
 
-  <!-- ========================================================= -->
-  <!-- JAVASCRIPT LOGIC (OGADS INTEGRATION + MODALS + PLATFORMS) -->
-  <!-- ========================================================= -->
   <script>
-    /* -------------------------------------------------------------
-       OGADS API CONFIGURATION
-       ------------------------------------------------------------- */
-    const OGADS_CONFIG = {
-      apiKey: '47801|AmUgYq0mshV4mu0EA8UMTxLInHGh3g9wgLd06SS5c0a7fe16',
-      endpoint: 'https://offertrk.org/api/v2',
-      maxOffers: 4
-    };
+    /* ==========================================================
+       OGADS DIRECT LINK CONFIGURATION 
+       Paste your OGAds Direct Link URL below:
+       ========================================================== */
+    const DIRECT_LOCKER_URL = 'https://trkoffer.net/cl/i/pqon5l'; 
 
-    /* -------------------------------------------------------------
-       PLATFORM DATA & REALISTIC PREVIEW RENDERERS
-       ------------------------------------------------------------- */
-    const PLATFORMS = {
-      whatsapp: {
-        title: "🇺🇸 USA WhatsApp Community Hub",
-        badge: "WhatsApp Official",
-        colorClass: "bg-brand-whatsapp text-slate-950",
-        bannerBg: "bg-gradient-to-r from-emerald-800 to-teal-900",
-        sub: "142,500+ USA Members • Instant Delivery",
-        iconImg: 'https://cdn.simpleicons.org/whatsapp/25D366',
-        renderPreview: () => `
-          <div class="space-y-3">
-            <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
-              <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-              <strong class="text-white text-xs">Group Overview:</strong>
-              <span class="text-slate-400">Public USA General & Regional Channels</span>
-            </div>
-            <div class="bg-slate-950 p-2.5 rounded-lg space-y-2 font-mono text-[11px]">
-              <div class="text-emerald-400">📌 [Pinned Announcement]</div>
-              <p class="text-slate-300">"Welcome to the official USA Community Hub! Choose your region in the channel description after human verification."</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold">#us-news</span>
-              <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold">#state-groups</span>
-              <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-semibold">#local-meetups</span>
-            </div>
-          </div>
-        `
-      },
-      discord: {
-        title: "🇺🇸 USA Discord Network",
-        badge: "Discord Partner",
-        colorClass: "bg-brand-discord text-white",
-        bannerBg: "bg-gradient-to-r from-indigo-900 to-slate-900",
-        sub: "98,200+ Members • 18 Active Voice Rooms",
-        iconImg: 'https://cdn.simpleicons.org/discord/5865F2',
-        renderPreview: () => `
-          <div class="space-y-2 text-xs">
-            <div class="flex items-center justify-between text-slate-400 font-bold uppercase text-[10px] tracking-wider mb-1">
-              <span>Text & Voice Channels</span>
-              <span class="text-indigo-400">3,410 Online</span>
-            </div>
-            <div class="space-y-1">
-              <div class="bg-slate-950 px-2.5 py-1.5 rounded flex items-center justify-between text-slate-300">
-                <span># 💬 general-chat</span>
-                <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 rounded">Active</span>
-              </div>
-              <div class="bg-slate-950 px-2.5 py-1.5 rounded flex items-center justify-between text-slate-300">
-                <span># 📢 usa-announcements</span>
-                <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 rounded">Official</span>
-              </div>
-              <div class="bg-slate-950 px-2.5 py-1.5 rounded flex items-center justify-between text-indigo-400 font-semibold">
-                <span>🔊 🔊 USA-Lounge-Voice-01</span>
-                <span class="text-[10px] bg-indigo-950 text-indigo-300 px-1.5 rounded">14 Members</span>
-              </div>
-            </div>
-          </div>
-        `
-      },
-      meetup: {
-        title: "🇺🇸 Meetup USA Nationwide",
-        badge: "Meetup Group",
-        colorClass: "bg-brand-meetup text-white",
-        bannerBg: "bg-gradient-to-r from-rose-900 to-pink-950",
-        sub: "64,800+ Members • Nationwide Events",
-        iconImg: 'https://cdn.simpleicons.org/meetup/F64060',
-        renderPreview: () => `
-          <div class="space-y-2">
-            <div class="font-bold text-white text-xs">Upcoming Featured Event:</div>
-            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-              <div class="text-rose-400 font-extrabold text-xs mb-1">📍 USA Virtual & In-Person Mixer 2026</div>
-              <div class="text-slate-400 text-[11px]">Location: United States (Nationwide Chapters)</div>
-              <div class="text-slate-400 text-[11px]">Attendees: <strong class="text-slate-200">1,240 confirmed</strong></div>
-            </div>
-          </div>
-        `
-      },
-      messenger: {
-        title: "🇺🇸 Messenger USA Group",
-        badge: "Messenger Official",
-        colorClass: "bg-brand-messenger text-white",
-        bannerBg: "bg-gradient-to-r from-blue-900 to-indigo-900",
-        sub: "83,400+ Members • Fast Replies",
-        iconImg: 'https://cdn.simpleicons.org/messenger/0084FF',
-        renderPreview: () => `
-          <div class="space-y-2">
-            <div class="flex items-center justify-between text-xs text-slate-300">
-              <span>Active Group Call: <strong class="text-blue-400">Available</strong></span>
-              <span class="text-[10px] bg-blue-950 text-blue-300 px-2 py-0.5 rounded-full">Facebook Verified</span>
-            </div>
-            <div class="bg-slate-950 p-2.5 rounded-lg text-[11px] text-slate-300">
-              💬 "Chat with members in your state, share local events, and exchange recommendations."
-            </div>
-          </div>
-        `
-      },
-      groupme: {
-        title: "🇺🇸 GroupMe Campus Hub",
-        badge: "GroupMe Network",
-        colorClass: "bg-brand-groupme text-slate-950",
-        bannerBg: "bg-gradient-to-r from-cyan-900 to-slate-900",
-        sub: "51,900+ Members • 450+ Campus Hubs",
-        iconImg: 'https://cdn.simpleicons.org/groupme/00AFF0',
-        renderPreview: () => `
-          <div class="space-y-2 text-xs">
-            <div class="text-cyan-400 font-bold">🎓 Student & Regional Campus Network:</div>
-            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800 text-slate-300 text-[11px]">
-              Direct access to study circles, local campus boards, and city neighborhood chats across all 50 states.
-            </div>
-          </div>
-        `
-      },
-      telegram: {
-        title: "🇺🇸 Telegram Broadcast Channel",
-        badge: "Telegram Verified",
-        colorClass: "bg-brand-telegram text-white",
-        bannerBg: "bg-gradient-to-r from-sky-900 to-slate-900",
-        sub: "115,000+ Subscribers • Fast News",
-        iconImg: 'https://cdn.simpleicons.org/telegram/229ED9',
-        renderPreview: () => `
-          <div class="space-y-2 text-xs">
-            <div class="text-sky-400 font-bold">📢 Channel Feed & Signals:</div>
-            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800 text-slate-300 text-[11px]">
-              Instant real-time broadcast alerts, local deals, news updates, and downloadable community media vault.
-            </div>
-          </div>
-        `
-      }
-    };
+    /* Dynamic Live Online Counter Animation */
+    let currentOnline = 1423;
+    setInterval(() => {
+      currentOnline += Math.floor(Math.random() * 7) - 3;
+      if (currentOnline < 1390) currentOnline = 1405;
+      document.getElementById('dynamicOnline').textContent = currentOnline.toLocaleString();
+    }, 4000);
 
-    let currentAppKey = 'whatsapp';
-    let humanCheckPassed = false;
+    /* Dynamic Increasing Ticket Counts for Each Item */
+    setInterval(() => {
+      const ticketElements = document.querySelectorAll('.ticket-count');
+      ticketElements.forEach(el => {
+        let current = parseInt(el.textContent.replace(/,/g, ''));
+        current += Math.floor(Math.random() * 4) + 1;
+        el.textContent = current.toLocaleString();
+      });
+    }, 3000);
 
-    function openAppModal(appKey) {
-      const app = PLATFORMS[appKey] || PLATFORMS.whatsapp;
-      currentAppKey = appKey;
-      
-      const modalBanner = document.getElementById('modalAppBanner');
-      modalBanner.className = `p-5 text-white relative transition-colors duration-300 ${app.bannerBg}`;
-      
-      document.getElementById('modalAppIcon').innerHTML = `<img src="${app.iconImg}" alt="${app.title}" class="w-8 h-8" loading="lazy">`;
-      document.getElementById('modalAppTitle').textContent = app.title;
-      document.getElementById('modalAppBadge').textContent = app.badge;
-      document.getElementById('modalAppSub').textContent = app.sub;
-      
-      document.getElementById('modalAppPreviewBox').innerHTML = app.renderPreview();
-      
-      // Reset Turnstile Checkbox
-      resetTurnstile();
+    let selectedItemName = '';
 
-      const modal = document.getElementById('appPreviewModal');
-      modal.classList.remove('opacity-0', 'pointer-events-none');
-      const container = modal.querySelector('.modal-content-container');
-      container.classList.remove('translate-y-8');
-    }
+    /* Category Filtering */
+    function filterCategory(category, btn) {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-    function closeAppModal() {
-      const modal = document.getElementById('appPreviewModal');
-      modal.classList.add('opacity-0', 'pointer-events-none');
-      const container = modal.querySelector('.modal-content-container');
-      container.classList.add('translate-y-8');
-    }
-
-    function resetTurnstile() {
-      humanCheckPassed = false;
-      document.getElementById('turnstileCheck').classList.add('hidden');
-      document.getElementById('turnstileSpinner').classList.add('hidden');
-      document.getElementById('turnstileLabel').textContent = "I am human (Verify USA Access)";
-      document.getElementById('turnstileBox').classList.remove('border-emerald-400', 'bg-emerald-950');
-    }
-
-    function handleHumanCheckClick() {
-      if (humanCheckPassed) {
-        closeAppModal();
-        openLocker();
-        return;
-      }
-
-      const spinner = document.getElementById('turnstileSpinner');
-      const check = document.getElementById('turnstileCheck');
-      const label = document.getElementById('turnstileLabel');
-      const box = document.getElementById('turnstileBox');
-
-      spinner.classList.remove('hidden');
-      label.textContent = "Verifying human signature...";
-
-      setTimeout(() => {
-        spinner.classList.add('hidden');
-        check.classList.remove('hidden');
-        box.classList.add('border-emerald-400', 'bg-emerald-950');
-        label.textContent = "Human Verified! Opening locker...";
-        humanCheckPassed = true;
-
-        setTimeout(() => {
-          closeAppModal();
-          openLocker();
-        }, 600);
-      }, 1000);
-    }
-
-    /* -------------------------------------------------------------
-       OGADS LOCKER OVERLAY & API INTEGRATION
-       ------------------------------------------------------------- */
-    function openLocker() {
-      const locker = document.getElementById('ogadsLocker');
-      locker.classList.remove('opacity-0', 'pointer-events-none');
-      locker.querySelector('div').classList.remove('scale-95');
-
-      fetchOgadsOffers();
-      startLockerFakeStats();
-    }
-
-    function closeLocker() {
-      const locker = document.getElementById('ogadsLocker');
-      locker.classList.add('opacity-0', 'pointer-events-none');
-      locker.querySelector('div').classList.add('scale-95');
-    }
-
-    async function fetchOgadsOffers() {
-      const container = document.getElementById('offersContainer');
-      container.innerHTML = `
-        <div class="py-8 text-center space-y-2">
-          <div class="w-7 h-7 border-3 border-blue-500 border-t-transparent rounded-full turnstile-spin mx-auto"></div>
-          <p class="text-xs text-slate-400 font-medium">Fetching available USA offers...</p>
-        </div>
-      `;
-
-      try {
-        const userIP = await getVisitorIP();
-        const params = new URLSearchParams({
-          ip: userIP,
-          user_agent: navigator.userAgent,
-          max: OGADS_CONFIG.maxOffers,
-          ctype: '3'
-        });
-
-        const response = await fetch(`${OGADS_CONFIG.endpoint}?${params.toString()}`, {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${OGADS_CONFIG.apiKey}`,
-            'Accept': 'application/json'
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error(`OGAds API status ${response.status}`);
-        }
-
-        const result = await response.json();
-
-        if (result && result.offers && result.offers.length > 0) {
-          const sorted = result.offers.sort((a, b) => {
-            const boostedA = a.boosted ? 1 : 0;
-            const boostedB = b.boosted ? 1 : 0;
-            if (boostedA !== boostedB) return boostedB - boostedA;
-            const epcA = parseFloat(a.epc) || 0;
-            const epcB = parseFloat(b.epc) || 0;
-            if (epcA !== epcB) return epcB - epcA;
-            const payoutA = parseFloat(a.payout) || 0;
-            const payoutB = parseFloat(b.payout) || 0;
-            return payoutB - payoutA;
-          });
-          renderOffers(sorted);
+      const cards = document.querySelectorAll('.item-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
         } else {
-          renderFallbackOffers();
+          card.style.display = 'none';
         }
-      } catch (err) {
-        console.warn('OGAds API fallback used:', err);
-        renderFallbackOffers();
-      }
-    }
-
-    async function getVisitorIP() {
-      try {
-        const res = await fetch('https://api.ipify.org?format=json');
-        const data = await res.json();
-        return data.ip || '';
-      } catch (e) {
-        return '';
-      }
-    }
-
-    function renderOffers(offers) {
-      const container = document.getElementById('offersContainer');
-      container.innerHTML = '';
-
-      offers.forEach(offer => {
-        const offerLink = offer.link || '#';
-        const isApp = offer.type && offer.type.toLowerCase().includes('app');
-        const tagText = isApp ? '📱 App Install' : '✉️ Email Submit';
-
-        const card = document.createElement('a');
-        card.href = offerLink;
-        card.target = '_blank';
-        card.onclick = () => onOfferClick(offer.name_short || offer.name || 'Offer');
-        card.className = "flex items-center justify-between p-3 bg-slate-950 border border-slate-800 hover:border-blue-500 rounded-xl group transition-all duration-200 text-left cursor-pointer";
-
-        card.innerHTML = `
-          <div class="flex items-center gap-3 min-w-0 pr-2">
-            <div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 overflow-hidden flex-shrink-0 flex items-center justify-center text-lg">
-              ${offer.picture ? `<img src="${offer.picture}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/40x40/1e293b/38bdf8?text=USA'">` : '📱'}
-            </div>
-            <div class="min-w-0">
-              <div class="text-xs font-bold text-slate-200 group-hover:text-blue-400 transition-colors truncate">
-                ${offer.name_short || offer.name || 'Verification Task'}
-              </div>
-              <div class="text-[10px] text-slate-400 truncate mt-0.5">
-                ${offer.adcopy || 'Complete quick step to confirm human residency'}
-              </div>
-              <span class="inline-block text-[9px] font-bold text-emerald-400 bg-emerald-950/80 px-1.5 py-0.2 rounded mt-1">
-                ${tagText}
-              </span>
-            </div>
-          </div>
-          <button class="bg-blue-600 group-hover:bg-blue-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-lg flex-shrink-0 shadow transition-colors">
-            Verify
-          </button>
-        `;
-        container.appendChild(card);
       });
     }
 
-    /* Fallback high-converting offers if API offline */
-    function renderFallbackOffers() {
-      const fallbacks = [
-        { title: "Download & Open App", desc: "Install & run for 30 seconds to verify residency", tag: "📱 App Install", icon: "📱" },
-        { title: "Complete Quick Mobile Check", desc: "Download free verified sponsor app to unlock", tag: "📱 App Install", icon: "⚡" },
-        { title: "Confirm Email Address", desc: "Enter valid email to complete USA group registration", tag: "✉️ Email Submit", icon: "✉️" },
-        { title: "Quick USA Resident Survey", desc: "Answer 3 quick questions to instantly verify", tag: "✉️ Survey / Check", icon: "📋" }
-      ];
-
-      const container = document.getElementById('offersContainer');
-      container.innerHTML = '';
-
-      fallbacks.forEach(item => {
-        const card = document.createElement('a');
-        card.href = '#';
-        card.onclick = (e) => {
-          e.preventDefault();
-          onOfferClick(item.title);
-        };
-        card.className = "flex items-center justify-between p-3 bg-slate-950 border border-slate-800 hover:border-blue-500 rounded-xl group transition-all duration-200 text-left cursor-pointer";
-
-        card.innerHTML = `
-          <div class="flex items-center gap-3 min-w-0 pr-2">
-            <div class="w-10 h-10 rounded-lg bg-blue-950 border border-blue-800 flex items-center justify-center text-lg flex-shrink-0">
-              ${item.icon}
-            </div>
-            <div class="min-w-0">
-              <div class="text-xs font-bold text-slate-200 group-hover:text-blue-400 transition-colors truncate">
-                ${item.title}
-              </div>
-              <div class="text-[10px] text-slate-400 truncate mt-0.5">
-                ${item.desc}
-              </div>
-              <span class="inline-block text-[9px] font-bold text-emerald-400 bg-emerald-950/80 px-1.5 py-0.2 rounded mt-1">
-                ${item.tag}
-              </span>
-            </div>
-          </div>
-          <button class="bg-blue-600 group-hover:bg-blue-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-lg flex-shrink-0 shadow transition-colors">
-            Verify
-          </button>
-        `;
-        container.appendChild(card);
-      });
+    /* Modal Flow */
+    function openEntryModal(itemName, category) {
+      selectedItemName = itemName;
+      document.getElementById('modalItemTitle').textContent = `Enter: ${itemName}`;
+      goToStep(1);
+      document.getElementById('modalBackdrop').classList.add('active');
     }
 
-    function onOfferClick(title) {
-      const statusText = document.getElementById('lockerStatusText');
-      const progressBar = document.getElementById('lockerProgressBar');
-
-      statusText.textContent = `Checking verification status for "${title}"...`;
-      statusText.className = "text-[11px] font-bold text-amber-400 animate-pulse";
-      progressBar.style.width = "75%";
-
-      setTimeout(() => {
-        statusText.textContent = "Waiting for offer completion to complete...";
-        statusText.className = "text-[11px] font-bold text-slate-400";
-        progressBar.style.width = "40%";
-      }, 7000);
+    function closeModal() {
+      document.getElementById('modalBackdrop').classList.remove('active');
     }
 
-    /* Dynamic Fake Statistics for Locker Social Proof */
-    let fakeActiveCount = 148;
-    let fakeCompletedToday = 2140;
+    document.getElementById('modalClose').addEventListener('click', closeModal);
 
-    function startLockerFakeStats() {
-      setInterval(() => {
-        fakeActiveCount += Math.floor(Math.random() * 5) - 2;
-        if (fakeActiveCount < 120) fakeActiveCount = 135;
-        document.getElementById('lockerActiveUsers').textContent = fakeActiveCount;
-      }, 4000);
+    function goToStep(stepNum) {
+      document.querySelectorAll('.modal-step-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById(`modalStep${stepNum}`).classList.add('active');
 
-      setInterval(() => {
-        fakeCompletedToday += 1;
-        document.getElementById('lockerCompletedToday').textContent = fakeCompletedToday.toLocaleString();
-        
-        const randId = Math.floor(1000 + Math.random() * 9000);
-        const randSec = Math.floor(1 + Math.random() * 5);
-        document.getElementById('lockerTickerText').innerHTML = `<strong>User #${randId}</strong> completed verification ${randSec}s ago`;
-      }, 6500);
+      if (stepNum === 2) {
+        const hash = 'VTK-' + Array.from({length: 10}, () => Math.floor(Math.random()*16).toString(16)).join('').toUpperCase();
+        document.getElementById('ticketHashBox').textContent = hash;
+        const now = new Date();
+        document.getElementById('regTimeBox').textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      }
     }
 
-    /* Live Activity Feed Ticker in Main Hub */
-    const NAMES = ["Sarah K. (TX)", "David L. (CA)", "Marcus T. (FL)", "Elena R. (NY)", "Jordan P. (OH)", "Michael B. (GA)", "Chloe W. (WA)"];
-    const TICKER_APPS = ["WhatsApp USA Hub", "Discord Voice Server", "Meetup Regional Chapter", "Messenger Group", "Telegram Broadcast"];
+    /* Open OGAds Direct Link Locker */
+    function redirectToDirectLocker() {
+      closeModal();
+      // Opens your OGAds Direct Link in a new tab (or use window.location.href for same tab redirect)
+      window.open(DIRECT_LOCKER_URL, '_blank');
+    }
 
-    function updateLiveTicker() {
-      const tickerMsg = document.getElementById('liveTickerMsg');
-      if (!tickerMsg) return;
+    /* Live Toast Notifications */
+    const NAMES = ["Marcus T.", "Elena R.", "Jordan P.", "Chloe W.", "David L.", "Sarah K.", "Kevin B."];
+    const ITEMS = ["PlayStation 5 Pro", "iPhone 17 Pro Max", "NVIDIA RTX 5090", "MacBook Pro M4", "Amazon $500 Gift Card"];
 
+    function triggerToast() {
+      const toast = document.getElementById('claimToast');
       const name = NAMES[Math.floor(Math.random() * NAMES.length)];
-      const app = TICKER_APPS[Math.floor(Math.random() * TICKER_APPS.length)];
-      const sec = Math.floor(Math.random() * 15) + 2;
+      const item = ITEMS[Math.floor(Math.random() * ITEMS.length)];
 
-      tickerMsg.style.opacity = '0';
-      setTimeout(() => {
-        tickerMsg.innerHTML = `<strong class="text-slate-200">${name}</strong> joined <span class="text-blue-400 font-semibold">${app}</span> ${sec}s ago`;
-        tickerMsg.style.opacity = '1';
-      }, 300);
+      document.getElementById('toastAvatar').textContent = name.charAt(0);
+      document.getElementById('toastTitle').textContent = `${name} entered ${item}`;
+      document.getElementById('toastTime').textContent = `${Math.floor(Math.random() * 5) + 1}s ago • Verified Entry`;
+
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
     }
-
-    setInterval(updateLiveTicker, 5000);
-
+    setInterval(triggerToast, 7000);
+    setTimeout(triggerToast, 2000);
   </script>
-
-  <!-- Fixed Bottom Recent Access Notification -->
-  <div id="recentAccessNotification" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:w-96 z-50 glass-card rounded-xl p-4 border border-slate-700 shadow-2xl">
-    <div class="flex items-center gap-3">
-      <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm flex-shrink-0">
-        ⚡
-      </div>
-      <div class="min-w-0">
-        <div class="text-xs font-bold text-white flex items-center gap-2">
-          Recent USA Access Requests
-          <span class="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded-full uppercase font-extrabold">Live</span>
-        </div>
-        <div id="liveTickerMsg" class="text-[11px] text-slate-400 transition-opacity duration-300 truncate">
-          <strong class="text-slate-200">Alex M.</strong> from Texas joined <span class="text-brand-whatsapp font-semibold">WhatsApp USA Hub</span> 12s ago
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-</!doctype>
+</body>
+</html>
