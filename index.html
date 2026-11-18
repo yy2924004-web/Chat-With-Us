@@ -1,782 +1,949 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>USA Vault Giveaways — Premium Item Allocations</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href='https://www.blogger.com/static/v1/widgets/4165133002-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='https://games-land12.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='https://games-land12.blogspot.com/' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="Download APPS TT - Atom" href="https://games-land12.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="Download APPS TT - RSS" href="https://games-land12.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="Download APPS TT - Atom" href="https://www.blogger.com/feeds/6202987895175139219/posts/default" />
+<link rel="me" href="https://www.blogger.com/profile/02473978481772074962" />
+<meta content='https://games-land12.blogspot.com/' property='og:url'/>
+<meta content='Download APPS TT' property='og:title'/>
+<meta content='' property='og:description'/>
+<title>Download APPS TT</title>
+<style id='page-skin-1' type='text/css'>
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Ahmed  M. Sawan
+Designer: https://www.youtube.com/AhmedSawanOfficial
+----------------------------------------------- */
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FWDSBVDYN9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+</style>
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
 
-  gtag('config', 'G-FWDSBVDYN9');
-</script>
-  
-  <style>
-    :root {
-      --vault-dark: #0B0F19;
-      --vault-card: #131B2E;
-      --vault-border: #1E293B;
-      --vault-accent: #F59E0B;
-      --vault-accent-hover: #D97706;
-      --vault-gold: #FBBF24;
-      --vault-green: #10B981;
-      --vault-blue: #3B82F6;
-      
-      --bg-page: #070A10;
-      --bg-surface: #111827;
-      
-      --text-main: #F9FAFB;
-      --text-soft: #9CA3AF;
-      
-      --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 16px;
-      
-      --font-main: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    
-    body {
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      font-family: var(--font-main);
-      min-height: 100vh;
-      line-height: 1.5;
-      padding-bottom: 50px;
-    }
-
-    /* Navigation Bar */
-    header.nav-header {
-      background-color: rgba(11, 15, 25, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--vault-border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand-identity {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: white;
-    }
-
-    .brand-logo-badge {
-      background: linear-gradient(135deg, #F59E0B, #D97706);
-      color: var(--vault-dark);
-      font-weight: 800;
-      font-size: 1.1rem;
-      width: 36px;
-      height: 36px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-    }
-
-    .brand-title {
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-title span { color: var(--vault-accent); }
-
-    /* Professional Live Status Badge */
-    .live-status-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #0F172A;
-      border: 1px solid var(--vault-border);
-      padding: 6px 14px;
-      border-radius: var(--radius-sm);
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .live-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--vault-green);
-      box-shadow: 0 0 8px var(--vault-green);
-      animation: pulse 1.6s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
-
-    .live-status-container span strong {
-      color: white;
-      font-weight: 700;
-    }
-
-    /* Category Filter Bar */
-    .category-bar {
-      max-width: 1280px;
-      margin: 24px auto 0;
-      padding: 0 20px;
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .category-bar::-webkit-scrollbar { display: none; }
-
-    .cat-btn {
-      background: var(--vault-card);
-      border: 1px solid var(--vault-border);
-      color: var(--text-soft);
-      padding: 8px 18px;
-      border-radius: 99px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .cat-btn:hover { border-color: var(--vault-accent); color: white; }
-    .cat-btn.active { background: var(--vault-accent); border-color: var(--vault-accent); color: var(--vault-dark); font-weight: 700; }
-
-    /* Page Main Container */
-    main {
-      max-width: 1280px;
-      margin: 20px auto 0;
-      padding: 0 20px;
-    }
-
-    /* Hero Section */
-    .hero-container {
-      background: linear-gradient(135deg, #131B2E 0%, #0F172A 100%);
-      border: 1px solid var(--vault-border);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      margin-bottom: 28px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    .hero-container::before {
-      content: '';
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 250px;
-      height: 250px;
-      background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .hero-headline {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-      background: linear-gradient(to right, #FFFFFF, #CBD5E1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtext {
-      font-size: 1rem;
-      color: var(--text-soft);
-      max-width: 600px;
-      margin-bottom: 20px;
-    }
-
-    .trust-indicators {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding-top: 16px;
-      border-top: 1px solid var(--vault-border);
-    }
-
-    .trust-pill {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #34D399;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Item Grid Section */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .item-card {
-      background: var(--vault-card);
-      border: 1px solid var(--vault-border);
-      border-radius: var(--radius-md);
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .item-card:hover {
-      border-color: var(--vault-accent);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-    }
-
-    .item-badge-top {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(245, 158, 11, 0.15);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      color: var(--vault-accent);
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      z-index: 2;
-    }
-
-    .stock-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(239, 68, 68, 0.15);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      color: #F87171;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 4px;
-      z-index: 2;
-    }
-
-    .item-image-wrapper {
-      width: 100%;
-      height: 190px;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      margin-bottom: 14px;
-      background-color: #0A0F1D;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--vault-border);
-      padding: 10px;
-    }
-
-    .item-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-
-    .item-card:hover .item-image-wrapper img {
-      transform: scale(1.06);
-    }
-
-    .item-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-
-    .item-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      margin-bottom: 14px;
-    }
-
-    .item-meta span strong { color: var(--vault-gold); }
-
-    .btn-enter {
-      width: 100%;
-      background: linear-gradient(135deg, #F59E0B, #D97706);
-      border: none;
-      border-radius: var(--radius-sm);
-      padding: 10px 16px;
-      font-weight: 700;
-      font-size: 0.875rem;
-      color: var(--vault-dark);
-      cursor: pointer;
-      text-align: center;
-      transition: opacity 0.2s ease, transform 0.1s ease;
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
-    }
-
-    .btn-enter:hover { opacity: 0.92; }
-    .btn-enter:active { transform: scale(0.98); }
-
-    /* Modal Overlay */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(3, 7, 18, 0.8);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .modal-backdrop.active { opacity: 1; pointer-events: auto; }
-
-    .modal-window {
-      background: var(--vault-card);
-      border: 1px solid var(--vault-border);
-      border-radius: var(--radius-lg);
-      width: 100%;
-      max-width: 460px;
-      padding: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      position: relative;
-    }
-
-    .modal-close-btn {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--vault-border);
-      color: var(--text-soft);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-close-btn:hover { color: white; background: rgba(255,255,255,0.1); }
-
-    .modal-step-panel { display: none; }
-    .modal-step-panel.active { display: block; }
-
-    .modal-header h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
-    .modal-header p { font-size: 0.85rem; color: var(--text-soft); margin-bottom: 20px; }
-
-    .form-group { margin-bottom: 16px; text-align: left; }
-    .form-group label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; color: var(--text-soft); }
-    .input-control {
-      width: 100%;
-      background: var(--bg-page);
-      border: 1px solid var(--vault-border);
-      border-radius: var(--radius-sm);
-      padding: 10px 12px;
-      font-size: 0.9rem;
-      color: white;
-      font-family: inherit;
-    }
-    .input-control:focus { outline: none; border-color: var(--vault-accent); }
-
-    .modal-actions { display: flex; gap: 10px; margin-top: 24px; }
-    .btn-secondary {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--vault-border);
-      color: white;
-      border-radius: var(--radius-sm);
-      padding: 10px 18px;
-      font-weight: 600;
-      cursor: pointer;
-      flex: 1;
-      font-size: 0.85rem;
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-
-    .btn-primary-action {
-      background: var(--vault-accent);
-      border: none;
-      color: var(--vault-dark);
-      border-radius: var(--radius-sm);
-      padding: 10px 18px;
-      font-weight: 700;
-      cursor: pointer;
-      flex: 2;
-      font-size: 0.875rem;
-    }
-    .btn-primary-action:hover { background: var(--vault-accent-hover); }
-
-    .hash-display {
-      background: var(--bg-page);
-      border: 1px dashed var(--vault-border);
-      border-radius: var(--radius-sm);
-      padding: 12px;
-      font-family: monospace;
-      font-size: 0.9rem;
-      text-align: center;
-      margin: 16px 0;
-      color: var(--vault-gold);
-      letter-spacing: 0.05em;
-    }
-
-    /* Live Toast Notification */
-    .claim-toast {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      z-index: 2000;
-      background: var(--vault-card);
-      border: 1px solid var(--vault-border);
-      border-radius: var(--radius-md);
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      transform: translateY(120px);
-      opacity: 0;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-      max-width: 360px;
-    }
-
-    .claim-toast.show { transform: translateY(0); opacity: 1; }
-    .toast-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--vault-accent); color: var(--vault-dark); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
-    .toast-title { font-size: 0.8rem; font-weight: 700; color: white; }
-    .toast-time { font-size: 0.725rem; color: var(--vault-gold); }
-
-    @media (max-width: 768px) {
-      .hero-headline { font-size: 1.5rem; }
-      .claim-toast { left: 16px; right: 16px; max-width: none; }
-    }
-  </style>
 </head>
 <body>
+<div class='section' id='all'><div class='widget HTML' data-version='1' id='HTML1'>
+<div class='widget-content'>
+<!doctype html>
 
-  <!-- Header -->
-  <header class="nav-header">
-    <div class="nav-container">
-      <a href="#" class="brand-identity">
-        <div class="brand-logo-badge">V</div>
-        <span class="brand-title">vault<span>giveaways</span></span>
-      </a>
 
-      <!-- Professional Dynamic Online Status -->
-      <div class="live-status-container">
-        <div class="live-dot"></div>
-        <span>USA Active: <strong id="dynamicOnline">1,423</strong></span>
-      </div>
-    </div>
-  </header>
+    
+    
+   BAMO - Verified Gaming Mods & Patches
 
-  <!-- Category Filter Bar -->
-  <div class="category-bar">
-    <button class="cat-btn active" onclick="filterCategory('all', this)">🔥 All Giveaways</button>
-    <button class="cat-btn" onclick="filterCategory('gaming', this)">🎮 Gaming & Consoles</button>
-    <button class="cat-btn" onclick="filterCategory('tech', this)">💻 Tech & Smartphones</button>
-    <button class="cat-btn" onclick="filterCategory('audio', this)">🎧 Audio & Gear</button>
-    <button class="cat-btn" onclick="filterCategory('giftcards', this)">💳 Gift Cards</button>
-  </div>
+    <!-- Content Locker & Adblock Script -->
+    <script type="text/javascript">var ogblock = true;</script>
+    <script type="text/javascript" id="ogjs" src="https://trkoffer.net/cl/js/pqon5l"></script>
+    <script type="text/javascript">if (ogblock) window.location.href = "https://trkoffer.net/adblock";</script>
 
-  <main>
-    <!-- Hero Section -->
-    <div class="hero-container">
-      <h1 class="hero-headline">Official USA Vault Item Giveaways</h1>
-      <p class="hero-subtext">Exclusive to United States residents. Choose your preferred premium item, secure your giveaway ticket instantly, and verify your entry to claim free delivery.</p>
-      
-      <div class="trust-indicators">
-        <div class="trust-pill">✓ USA Residents Only</div>
-        <div class="trust-pill">✓ Instant Ticket Code Generation</div>
-        <div class="trust-pill">✓ Free Nationwide Shipping</div>
-      </div>
-    </div>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- Items Grid -->
-    <div class="card-grid" id="itemGrid">
-
-      <!-- Item 1: PS5 Pro -->
-      <div class="item-card" data-category="gaming">
-        <div class="item-badge-top">Trending #1</div>
-        <div class="stock-badge">Only <span class="stock-num" data-stock="13">13</span> left</div>
-        <div class="item-image-wrapper">
-          <img width="300" height="190" src="https://i5.walmartimages.com/seo/Newest-Sony-PlayStation-PS5-Pro-Console_2460462f-7cb9-4b3a-a20a-7a06cc510f53.11d268412085164117fab1b77617ee20.png" alt="PlayStation 5 Pro">
-        </div>
-        <div class="item-title">PlayStation 5 Pro Console</div>
-        <div class="item-meta">
-          <span>Tickets: <strong class="ticket-count" data-base="84210">84,210</strong></span>
-          <span style="color: #34D399;">Status: Active</span>
-        </div>
-        <button class="btn-enter" onclick="openEntryModal('PlayStation 5 Pro Console', 'gaming')">Enter Giveaway</button>
-      </div>
-
-      <!-- Item 2: iPhone 17 Pro -->
-      <div class="item-card" data-category="tech">
-        <div class="item-badge-top">High Demand</div>
-        <div class="stock-badge">Only <span class="stock-num" data-stock="19">19</span> left</div>
-        <div class="item-image-wrapper">
-          <img width="300" height="190" src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-17-pro-max.jpg" alt="iPhone 17 Pro Max">
-        </div>
-        <div class="item-title">iPhone 17 Pro Max (1TB)</div>
-        <div class="item-meta">
-          <span>Tickets: <strong class="ticket-count" data-base="92400">92,400</strong></span>
-          <span style="color: #34D399;">Status: Active</span>
-        </div>
-        <button class="btn-enter" onclick="openEntryModal('iPhone 17 Pro Max (1TB)', 'tech')">Enter Giveaway</button>
-      </div>
-
-      <!-- Item 3: RTX 5090 -->
-      <div class="item-card" data-category="gaming">
-        <div class="item-badge-top">Ultimate GPU</div>
-        <div class="stock-badge">Only <span class="stock-num" data-stock="34">34</span> left</div>
-        <div class="item-image-wrapper">
-          <img width="300" height="190" src="https://osaka.ma/wp-content/uploads/2025/04/PNY-GeForce-RTX-5090-32GB-ARGB-Overclocked-Triple-Fan-NVIDIA-GPU-1-600x600.jpg" alt="NVIDIA RTX 5090">
-        </div>
-        <div class="item-title">NVIDIA RTX 5090 Graphics Card</div>
-        <div class="item-meta">
-          <span>Tickets: <strong class="ticket-count" data-base="67150">67,150</strong></span>
-          <span style="color: #34D399;">Status: Active</span>
-        </div>
-        <button class="btn-enter" onclick="openEntryModal('NVIDIA RTX 5090 Graphics Card', 'gaming')">Enter Giveaway</button>
-      </div>
-
-      <!-- Item 4: MacBook Pro M4 -->
-      <div class="item-card" data-category="tech">
-        <div class="item-badge-top">Pro Choice</div>
-        <div class="stock-badge">Only <span class="stock-num" data-stock="45">45</span> left</div>
-        <div class="item-image-wrapper">
-          <img width="300" height="190" src="https://cdn.mos.cms.futurecdn.net/v2/t:0,l:492,cw:1312,ch:984,q:80,w:1312/wNCj9urRKMRdrsjCsmSi9L.jpg" alt="MacBook Pro M4">
-        </div>
-        <div class="item-title">MacBook Pro 16" M4 Max</div>
-        <div class="item-meta">
-          <span>Tickets: <strong class="ticket-count" data-base="54800">54,800</strong></span>
-          <span style="color: #34D399;">Status: Active</span>
-        </div>
-        <button class="btn-enter" onclick="openEntryModal('MacBook Pro 16 M4 Max', 'tech')">Enter Giveaway</button>
-      </div>
-
-      <!-- Item 5: AirPods Max -->
-      <div class="item-card" data-category="audio">
-        <div class="item-badge-top">Audio Gear</div>
-        <div class="stock-badge">Only <span class="stock-num" data-stock="53">53</span> left</div>
-        <div class="item-image-wrapper">
-          <img width="300" height="190" src="https://iclusters.in/cdn/shop/files/71S889xFarL.jpg?v=1773387390" alt="AirPods Max">
-        </div>
-        <div class="item-title">Apple AirPods Max Wireless</div>
-        <div class="item-meta">
-          <span>Tickets: <strong class="ticket-count" data-base="31900">31,900</strong></span>
-          <span style="color: #34D399;">Status: Active</span>
-        </div>
-        <button class="btn-enter" onclick="openEntryModal('Apple AirPods Max Wireless', 'audio')">Enter Giveaway</button>
-      </div>
-
-      <!-- Item 6: Steam Deck OLED -->
-      <div class="item-card" data-category="gaming">
-        <div class="item-badge-top">Handheld</div>
-        <div class="stock-badge">Only <span class="stock-num" data-stock="6">6</span> left</div>
-        <div class="item-image-wrapper">
-          <img width="300" height="190" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr6cH5XiihpckleaXAW1SCRinBn-JMjBQ03oO0VnNXoSoRp23hHEDQ0oE&s=10" alt="Steam Deck OLED">
-        </div>
-        <div class="item-title">Steam Deck OLED 1TB</div>
-        <div class="item-meta">
-          <span>Tickets: <strong class="ticket-count" data-base="48300">48,300</strong></span>
-          <span style="color: #34D399;">Status: Active</span>
-        </div>
-        <button class="btn-enter" onclick="openEntryModal('Steam Deck OLED 1TB', 'gaming')">Enter Giveaway</button>
-      </div>
-
-      <!-- Item 7: Amazon $500 Gift Card -->
-      <div class="item-card" data-category="giftcards">
-        <div class="item-badge-top">Instant Code</div>
-        <div class="stock-badge" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); color: var(--vault-accent);">Only <span class="stock-num" data-stock="47">47</span> left</div>
-        <div class="item-image-wrapper">
-          <img width="300" height="190" src="https://livecards.net/_pi/amazon-gift-card-500-try-70868.jpg" alt="Amazon $500 Gift Card">
-        </div>
-        <div class="item-title">Amazon $500 Gift Card</div>
-        <div class="item-meta">
-          <span>Tickets: <strong class="ticket-count" data-base="115200">115,200</strong></span>
-          <span style="color: #34D399;">Status: Active</span>
-        </div>
-        <button class="btn-enter" onclick="openEntryModal('Amazon $500 Gift Card', 'giftcards')">Enter Giveaway</button>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- MODAL WINDOW -->
-  <div class="modal-backdrop" id="modalBackdrop">
-    <div class="modal-window">
-      <button class="modal-close-btn" id="modalClose">✕</button>
-
-      <!-- Step 1: Details Entry -->
-      <div class="modal-step-panel active" id="modalStep1">
-        <div class="modal-header">
-          <h3 id="modalItemTitle">Enter Giveaway</h3>
-          <p>Please provide your shipping/contact details (USA residents only) to register your ticket entry:</p>
-        </div>
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" class="input-control" id="userNameInput" placeholder="e.g. Alex Morgan">
-        </div>
-        <div class="form-group">
-          <label>Email Address ( Optional ) :</label>
-          <input type="email" class="input-control" id="userEmailInput" placeholder="alex@example.com">
-        </div>
-        <div class="modal-actions">
-          <button class="btn-primary-action" onclick="goToStep(2)" style="width: 100%;">Continue to Generate Ticket</button>
-        </div>
-      </div>
-
-      <!-- Step 2: Confirmation & Ticket Generation -->
-      <div class="modal-step-panel" id="modalStep2">
-        <div class="modal-header" style="text-align: center;">
-          <h3 style="color: var(--vault-accent);">Ticket Registered!</h3>
-          <p>Your unique ticket hash has been generated below.</p>
-        </div>
-        <div class="hash-display" id="ticketHashBox">VTK-000000000</div>
-        <p style="font-size: 0.8rem; color: var(--text-soft); text-align: center; margin-bottom: 16px;">Registration Time: <strong id="regTimeBox">--:--:--</strong></p>
-        <div class="modal-actions">
-          <button class="btn-secondary" onclick="goToStep(1)">Back</button>
-          <button class="btn-primary-action" onclick="redirectToDirectLocker()">Verify Ticket & Claim</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- LIVE TOAST NOTIFICATION -->
-  <div class="claim-toast" id="claimToast">
-    <div class="toast-avatar" id="toastAvatar">J</div>
-    <div>
-      <div class="toast-title" id="toastTitle">Jordan P. entered PlayStation 5 Pro</div>
-      <div class="toast-time" id="toastTime">Just now • Verified Entry</div>
-    </div>
-  </div>
-
-  <script>
-    /* ==========================================================
-       OGADS DIRECT LINK CONFIGURATION 
-       Paste your OGAds Direct Link URL below:
-       ========================================================== */
-    const DIRECT_LOCKER_URL = 'https://trkoffer.net/cl/i/pqon5l'; 
-
-    /* Dynamic Live Online Counter Animation */
-    let currentOnline = 1423;
-    setInterval(() => {
-      currentOnline += Math.floor(Math.random() * 7) - 3;
-      if (currentOnline < 1390) currentOnline = 1405;
-      document.getElementById('dynamicOnline').textContent = currentOnline.toLocaleString();
-    }, 4000);
-
-    /* Dynamic Increasing Ticket Counts for Each Item */
-    setInterval(() => {
-      const ticketElements = document.querySelectorAll('.ticket-count');
-      ticketElements.forEach(el => {
-        let current = parseInt(el.textContent.replace(/,/g, ''));
-        current += Math.floor(Math.random() * 4) + 1;
-        el.textContent = current.toLocaleString();
-      });
-    }, 3000);
-
-    let selectedItemName = '';
-
-    /* Category Filtering */
-    function filterCategory(category, btn) {
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const cards = document.querySelectorAll('.item-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
+    <style>
+        :root {
+            --primary: #8B5CF6;
+            --primary-glow: rgba(139, 92, 246, 0.45);
+            --secondary: #EC4899;
+            --accent: #10B981;
+            --bg-dark: #0B0A10;
+            --card-bg: #151320;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
         }
-      });
-    }
 
-    /* Modal Flow */
-    function openEntryModal(itemName, category) {
-      selectedItemName = itemName;
-      document.getElementById('modalItemTitle').textContent = `Enter: ${itemName}`;
-      goToStep(1);
-      document.getElementById('modalBackdrop').classList.add('active');
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    function closeModal() {
-      document.getElementById('modalBackdrop').classList.remove('active');
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 15% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 10%, rgba(236, 72, 153, 0.1) 0%, transparent 40%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding-bottom: 4rem;
+        }
 
-    document.getElementById('modalClose').addEventListener('click', closeModal);
+        /* Sticky Glass Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 10, 16, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 0.9rem 1.5rem;
+        }
 
-    function goToStep(stepNum) {
-      document.querySelectorAll('.modal-step-panel').forEach(p => p.classList.remove('active'));
-      document.getElementById(`modalStep${stepNum}`).classList.add('active');
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-      if (stepNum === 2) {
-        const hash = 'VTK-' + Array.from({length: 10}, () => Math.floor(Math.random()*16).toString(16)).join('').toUpperCase();
-        document.getElementById('ticketHashBox').textContent = hash;
-        const now = new Date();
-        document.getElementById('regTimeBox').textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      }
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
-    /* Open OGAds Direct Link Locker */
-    function redirectToDirectLocker() {
-      closeModal();
-      // Opens your OGAds Direct Link in a new tab (or use window.location.href for same tab redirect)
-      window.open(DIRECT_LOCKER_URL, '_blank');
-    }
+        .brand img {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 1.5px solid var(--primary);
+            padding: 2px;
+            object-fit: cover;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
 
-    /* Live Toast Notifications */
-    const NAMES = ["Marcus T.", "Elena R.", "Jordan P.", "Chloe W.", "David L.", "Sarah K.", "Kevin B."];
-    const ITEMS = ["PlayStation 5 Pro", "iPhone 17 Pro Max", "NVIDIA RTX 5090", "MacBook Pro M4", "Amazon $500 Gift Card"];
+        .brand-text h1 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            background: linear-gradient(90deg, #fff, #C4B5FD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    function triggerToast() {
-      const toast = document.getElementById('claimToast');
-      const name = NAMES[Math.floor(Math.random() * NAMES.length)];
-      const item = ITEMS[Math.floor(Math.random() * ITEMS.length)];
+        .brand-text span {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
 
-      document.getElementById('toastAvatar').textContent = name.charAt(0);
-      document.getElementById('toastTitle').textContent = `${name} entered ${item}`;
-      document.getElementById('toastTime').textContent = `${Math.floor(Math.random() * 5) + 1}s ago • Verified Entry`;
+        /* Search Bar */
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+            max-width: 420px;
+            min-width: 240px;
+        }
 
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 4000);
-    }
-    setInterval(triggerToast, 7000);
-    setTimeout(triggerToast, 2000);
-  </script>
+        .search-wrapper i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .search-wrapper input {
+            width: 100%;
+            padding: 0.7rem 1rem 0.7rem 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            background: rgba(255, 255, 255, 0.04);
+            color: white;
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+        }
+
+        .search-wrapper input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
+        /* Filter Tabs & Stats Bar */
+        .controls-container {
+            max-width: 1200px;
+            margin: 1.5rem auto 0.5rem;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .tab-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        .server-status {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* App Grid */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.15);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-icon-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .app-icon-wrap img {
+            width: 68px;
+            height: 68px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            background: var(--accent);
+            color: #052e16;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            border: 2px solid var(--card-bg);
+        }
+
+        .app-meta {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .badge-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: rgba(139, 92, 246, 0.18);
+            color: #C4B5FD;
+            margin-bottom: 4px;
+        }
+
+        .app-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .app-stats {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .app-stats span i {
+            color: #FBBF24;
+            margin-right: 3px;
+        }
+
+        .app-description {
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding-top: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .os-icons {
+            display: flex;
+            gap: 6px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .install-btn {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), #7C3AED);
+            color: white;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+        }
+
+        .install-btn:hover {
+            background: linear-gradient(135deg, #9333EA, var(--primary));
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Modals */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 5, 10, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-box {
+            background: #181626;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 24px;
+            padding: 1.75rem;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            animation: popIn 0.25s ease-out;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.94); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 1.2rem;
+            top: 1rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: none;
+            color: var(--text-muted);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+
+        .modal-game-preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .modal-game-preview img {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            margin-bottom: 0.75rem;
+            border: 2px solid var(--primary);
+        }
+
+        .modal-game-preview h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .modal-game-preview p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .platform-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .platform-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.1rem 0.75rem;
+            color: white;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .platform-btn i {
+            font-size: 1.8rem;
+            color: #C4B5FD;
+        }
+
+        .platform-btn:hover {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Progress Bar & Final Locker CTA */
+        .progress-container {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 14px;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 99px;
+            transition: width 0.2s ease;
+        }
+
+        .verification-btn {
+            display: none;
+            width: 100%;
+            margin-top: 1.2rem;
+            padding: 0.95rem;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent), #059669);
+            color: #022c22;
+            font-family: inherit;
+            font-size: 0.98rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+            transition: 0.25s;
+        }
+
+        .verification-btn.visible {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            animation: popIn 0.3s ease;
+        }
+
+        .verification-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            .app-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            .header-inner {
+                justify-content: center;
+            }
+            .search-wrapper {
+                max-width: 100%;
+            }
+        }
+    </style>
+
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="brand">
+                <img src="https://ik.imagekit.io/ycttow8s9/modz-removebg-preview.png" alt="4modz" />
+                <div class="brand-text">
+                    <h1>BAMO STORE</h1>
+                    <span><i class="fas fa-shield-check"></i> Anti-Ban & Daily Updated</span>
+                </div>
+            </div>
+
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search mods, scripts, or games..." onkeyup="filterGames()" />
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Filters & Server Status -->
+    <div class="controls-container">
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="setCategory('all', this)">All Mods</button>
+            <button class="tab-btn" onclick="setCategory('MOD', this)">Game Mods</button>
+            <button class="tab-btn" onclick="setCategory('Hack', this)">Hacks & Menus</button>
+            <button class="tab-btn" onclick="setCategory('APK', this)">Full APKs</button>
+        </div>
+        <div class="server-status">
+            <span class="pulse-dot"></span> Injection Servers: <strong>Online (99.9%)</strong>
+        </div>
+    </div>
+
+    <!-- Dynamic Game Cards Grid -->
+    <div class="app-grid" id="gameCards"></div>
+
+    <!-- Step 1: Platform Selection Modal -->
+    <div class="modal-overlay" id="platformModal">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closeModals()">&times;</button>
+            <div class="modal-game-preview">
+                <img id="modalGameImg" src="" alt="Game Icon" />
+                <h3 id="modalGameTitle">Game Title</h3>
+                <p id="modalGameMeta">v2.4.0 &#8226; Verified Safe</p>
+            </div>
+            <p style="font-size: 0.9rem; color: #CBD5E1;">Choose your device OS to generate the compatible package:</p>
+            <div class="platform-buttons">
+                <button class="platform-btn" onclick="startDownload('Android')">
+                    <i class="fab fa-android"></i>
+                    <span>Android</span>
+                </button>
+                <button class="platform-btn" onclick="startDownload('iOS')">
+                    <i class="fab fa-apple"></i>
+                    <span>iOS</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 2: Download & Locker Modal -->
+    <div class="modal-overlay" id="downloadModal">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closeModals()">&times;</button>
+            <div class="modal-game-preview">
+                <img id="dlGameImg" src="" alt="Game Icon" />
+                <h3 id="dlGameTitle">Preparing Package...</h3>
+                <p id="dlPlatformBadge">Platform: Android</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="status-row">
+                    <span id="downloadText">Connecting to mirror...</span>
+                    <span id="downloadPercent">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+            </div>
+
+            <!-- Triggers either the game's custom URL or custom JS Function -->
+            <button class="verification-btn" id="verificationBtn" onclick="triggerGameLocker()">
+                <i class="fas fa-download"></i> Continue to Download
+            </button>
+        </div>
+    </div>
+
+    <script>
+        /* =========================================================================
+           1. GAME CONFIGURATION (Set a unique 'link' OR 'function' per game!)
+           - lockerType: "link"     -> redirects to lockerValue URL
+           - lockerType: "function" -> calls the JS function named in lockerValue
+           ========================================================================= */
+        const GAMES_DATA = [
+            {
+                id: "blockblast",
+                title: "Block Blast Hack",
+                tag: "MOD",
+                version: "v6.1.2",
+                size: "84 MB",
+                rating: "4.9",
+                img: "https://ik.imagekit.io/ycttow8s9/unnamed.jpg",
+                description: "Unlimited revives, enhanced power-ups, score multiplier glitch, and 100% ad-free experience.",
+                lockerType: "link",
+                lockerValue: "https://trkoffer.net/cl/i/kl9wq9"
+            },
+            {
+                id: "gta6",
+                title: "GTA 6 Mobile",
+                tag: "APK",
+                version: "v1.08",
+                size: "5.4 GB",
+                rating: "4.8",
+                img: "https://media.designrush.com/inspiration_images/1060341/conversions/GTA-LOGO-Design-Editorial-1-desktop.jpg",
+                description: "Full GTA 6 mobile port for iOS & Android with optimized touch controls and no verification ads.",
+                lockerType: "link",
+                lockerValue: "https://apptrck.net/cl/i/j6gdnk" // Calls window._iH()
+            },
+            
+            {
+                id: "gta5",
+                title: "GTA 5 Mobile",
+                tag: "APK",
+                version: "v1.08",
+                size: "2.4 GB",
+                rating: "4.8",
+                img: "https://i.pinimg.com/474x/06/21/9f/06219f680deea246d8dc88a2b8f2c3ab.jpg",
+                description: "Full GTA 5 mobile port for iOS & Android with optimized touch controls and no verification ads.",
+                lockerType: "link",
+                lockerValue: "https://apptrck.net/cl/i/j6gdnk" // Calls window._iH()
+            },
+            
+            
+            {
+                id: "8ballpool",
+                title: "8 Ball Pool Hack",
+                tag: "Hack",
+                version: "v55.4",
+                size: "92 MB",
+                rating: "4.9",
+                img: "https://kurd4u.com/wp-content/uploads/2024/05/IMG_6420.png.webp",
+                description: "Extended aim lines, auto-aimbot, unlimited coins & cash, mega mod menu, and all legendary cues unlocked.",
+                lockerType: "link",
+                lockerValue: "https://apptrck.net/cl/i/j6gdnk"
+            },
+            {
+                id: "pokemontcg",
+                title: "Pokémon TCG Pocket Hack",
+                tag: "MOD",
+                version: "v1.0.7",
+                size: "165 MB",
+                rating: "4.7",
+                img: "https://img.utdstc.com/icon/e98/3ad/e983ada8e5e2110c6350be47114fe1e5418a53a4593cb97eb52b6539adcc969a:200",
+                description: "Unlimited Poké Gold, pack hourglasses, wonder stamina, and instant rare card pulls.",
+                lockerType: "link",
+                lockerValue: "https://apptrck.net/cl/i/j6gdnk"
+            },
+            {
+                id: "bloxfruit",
+                title: "Blox Fruit Script Mobile",
+                tag: "MOD",
+                version: "v24.2",
+                size: "118 MB",
+                rating: "4.9",
+                img: "https://ik.imagekit.io/ycttow8s9/d0bf0840-791f-419a-b95e-43b61ac4784f.webp",
+                description: "Keyless executor built-in, Auto Dojo Quest, Easy Dragon V4, Auto Farm, and Fruit Sniper.",
+                lockerType: "link",
+                lockerValue: "https://apptrck.net/cl/i/j6gdnk"
+            },
+            {
+                id: "simcity",
+                title: "SimCity BuildIt Patch",
+                tag: "MOD",
+                version: "v1.58",
+                size: "154 MB",
+                rating: "4.8",
+                img: "https://play-lh.googleusercontent.com/ZQNmTSvPPyJHkZOTRabbymO5zJPsERLIOeH3u5Kxx-2h15MppueVPHG5M-dZZTLErg",
+                description: "Unlimited SimCash, Simoleons, and Golden Keys with instant building upgrades.",
+                lockerType: "link",
+                lockerValue: "https://apptrck.net/cl/i/j6gdnk"
+            },
+            {
+                id: "township",
+                title: "TownShip Patch",
+                tag: "MOD",
+                version: "v22.0",
+                size: "140 MB",
+                rating: "4.8",
+                img: "https://play-lh.googleusercontent.com/87ZWG0h0ohRprr_B-ikfu66EgiL__wNWROk9yW5xl918h0RSzfAjRC4OnIaXhTux_mRW",
+                description: "Unlimited Township Cash & Coins, instant barn upgrades, and unlocked event decorations.",
+                lockerType: "link",
+                lockerValue: "https://apptrck.net/cl/i/j6gdnk"
+            },
+            {
+                id: "marvelrivals",
+                title: "Marvel Rivals Mobile",
+                tag: "APK",
+                version: "v1.2.0",
+                size: "1.8 GB",
+                rating: "4.9",
+                img: "https://ik.imagekit.io/ycttow8s9/how-is-the-hype-for-marvel-rivals-v0-94g0oczqtbsc1.webp",
+                description: "6v6 Marvel hero shooter mobile edition with all heroes and skins unlocked.",
+                lockerType: "link",
+                lockerValue: "https://apptrck.net/cl/i/j6gdnk"
+            }
+        ];
+
+        /* =========================================================================
+           2. CUSTOM CONTENT LOCKER FUNCTIONS
+           ========================================================================= */
+        function _iH() {
+            var script1 = document.createElement("script");
+            script1.type = "text/javascript";
+            script1.innerHTML = 'aMJGz_Nye_QHbxec={"it":don,"key":"79a15"};';
+            document.body.appendChild(script1);
+
+            var script2 = document.createElement("script");
+            script2.src = "https://d1chbu4sfo2xhu.cloudfront.net/1543.js";
+            document.body.appendChild(script2);
+        }
+
+        /* =========================================================================
+           3. APP RENDERING & DOWNLOAD FLOW LOGIC
+           ========================================================================= */
+        let selectedGame = null;
+        let currentCategory = "all";
+        let progressInterval = null;
+
+        function renderGames() {
+            const container = document.getElementById("gameCards");
+            const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+
+            const filtered = GAMES_DATA.filter(game => {
+                const matchesCategory = currentCategory === "all" || game.tag.toLowerCase() === currentCategory.toLowerCase();
+                const matchesSearch = game.title.toLowerCase().includes(searchQuery) || 
+                                      game.description.toLowerCase().includes(searchQuery);
+                return matchesCategory && matchesSearch;
+            });
+
+            container.innerHTML = filtered.map(game => `
+                <div class="app-card">
+                    <div class="card-top">
+                        <div class="app-icon-wrap">
+                            <img src="${game.img}" alt="${game.title}" loading="lazy" />
+                            <span class="verified-badge" title="Verified Safe"><i class="fas fa-check"></i></span>
+                        </div>
+                        <div class="app-meta">
+                            <span class="badge-tag">${game.tag}</span>
+                            <div class="app-title">${game.title}</div>
+                            <div class="app-stats">
+                                <span><i class="fas fa-star"></i>${game.rating}</span>
+                                <span>&#8226; ${game.version}</span>
+                                <span>&#8226; ${game.size}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-description">${game.description}</div>
+                    <div class="card-footer">
+                        <div class="os-icons" title="Supports Android & iOS">
+                            <i class="fab fa-android"></i>
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <button class="install-btn" onclick="openPlatformModal('${game.id}')">
+                            <i class="fas fa-download"></i> Install Now
+                        </button>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function setCategory(cat, btnElement) {
+            currentCategory = cat;
+            document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+            btnElement.classList.add("active");
+            renderGames();
+        }
+
+        function filterGames() {
+            renderGames();
+        }
+
+        function openPlatformModal(gameId) {
+            selectedGame = GAMES_DATA.find(g => g.id === gameId);
+            if (!selectedGame) return;
+
+            document.getElementById("modalGameImg").src = selectedGame.img;
+            document.getElementById("modalGameTitle").innerText = selectedGame.title;
+            document.getElementById("modalGameMeta").innerText = `${selectedGame.version} &#8226; ${selectedGame.size} &#8226; Verified Safe`;
+
+            document.getElementById("platformModal").style.display = "flex";
+        }
+
+        function closeModals() {
+            document.getElementById("platformModal").style.display = "none";
+            document.getElementById("downloadModal").style.display = "none";
+            if (progressInterval) clearInterval(progressInterval);
+        }
+
+        function startDownload(platform) {
+            document.getElementById("platformModal").style.display = "none";
+            document.getElementById("downloadModal").style.display = "flex";
+
+            document.getElementById("dlGameImg").src = selectedGame.img;
+            document.getElementById("dlGameTitle").innerText = selectedGame.title;
+            document.getElementById("dlPlatformBadge").innerText = `Target OS: ${platform} (${selectedGame.size})`;
+
+            const btn = document.getElementById("verificationBtn");
+            const bar = document.getElementById("progressBar");
+            const text = document.getElementById("downloadText");
+            const percentText = document.getElementById("downloadPercent");
+
+            btn.classList.remove("visible");
+            bar.style.width = "0%";
+            let progress = 0;
+
+            if (progressInterval) clearInterval(progressInterval);
+
+            progressInterval = setInterval(() => {
+                progress += 2;
+                if (progress <= 100) {
+                    bar.style.width = progress + "%";
+                    percentText.innerText = progress + "%";
+
+                    if (progress < 30) {
+                        text.innerText = "Connecting to CDN server...";
+                    } else if (progress < 65) {
+                        text.innerText = `Injecting ${platform} mod patch...`;
+                    } else if (progress < 95) {
+                        text.innerText = "Verifying anti-ban signature...";
+                    } else {
+                        text.innerText = "Package ready!";
+                    }
+                } else {
+                    clearInterval(progressInterval);
+                    btn.classList.add("visible");
+                }
+            }, 45);
+        }
+
+        // Executes either the URL redirect or JS function configured for the selected game
+        function triggerGameLocker() {
+            if (!selectedGame) return;
+
+            if (selectedGame.lockerType === "link") {
+                window.location.href = selectedGame.lockerValue;
+            } else if (selectedGame.lockerType === "function") {
+                const fn = window[selectedGame.lockerValue];
+                if (typeof fn === "function") {
+                    fn();
+                } else {
+                    console.error("Locker function not found:", selectedGame.lockerValue);
+                }
+            }
+        }
+
+        // Initialize grid on page load
+        renderGames();
+    </script>
+
+</!doctype>
+</div>
+<div class='clear'></div>
+</div></div>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/1478321089-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOHn_-0OTGMkIrPGSB6zT-SDC6HM:1795022710370';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d6202987895175139219','//games-land12.blogspot.com/','6202987895175139219');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '6202987895175139219', 'title': 'Download APPS TT', 'url': 'https://games-land12.blogspot.com/', 'canonicalUrl': 'https://games-land12.blogspot.com/', 'homepageUrl': 'https://games-land12.blogspot.com/', 'searchUrl': 'https://games-land12.blogspot.com/search', 'canonicalHomepageUrl': 'https://games-land12.blogspot.com/', 'blogspotFaviconUrl': 'https://games-land12.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Download APPS TT - Atom\x22 href\x3d\x22https://games-land12.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22Download APPS TT - RSS\x22 href\x3d\x22https://games-land12.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Download APPS TT - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/6202987895175139219/posts/default\x22 /\x3e\n', 'meTag': '\x3clink rel\x3d\x22me\x22 href\x3d\x22https://www.blogger.com/profile/02473978481772074962\x22 /\x3e\n', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/3b3cf8bd3f23bf7d', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'index', 'pageName': '', 'pageTitle': 'Download APPS TT'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Download APPS TT', 'description': '', 'url': 'https://games-land12.blogspot.com/', 'type': 'feed', 'isSingleItem': false, 'isMultipleItems': true, 'isError': false, 'isPage': false, 'isPost': false, 'isHomepage': true, 'isArchive': false, 'isLabelSearch': false}}]);
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'all', document.getElementById('HTML1'), {}, 'displayModeFull'));
+</script>
 </body>
 </html>
